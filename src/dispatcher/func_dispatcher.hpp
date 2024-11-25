@@ -8,15 +8,15 @@
  * linked against the dependent library.
  *
  */
-class FuncDispatcher final {
+class FuncDispatcherTS final {
   public:
-    explicit FuncDispatcher() = default;
-    ~FuncDispatcher() = default;
+    explicit FuncDispatcherTS() = default;
+    ~FuncDispatcherTS() = default;
 
-    FuncDispatcher(const FuncDispatcher&) = delete;
-    FuncDispatcher(FuncDispatcher&&) = delete;
-    FuncDispatcher& operator=(const FuncDispatcher&) = delete;
-    FuncDispatcher& operator=(FuncDispatcher&&) = delete;
+    FuncDispatcherTS(const FuncDispatcherTS&) = delete;
+    FuncDispatcherTS(FuncDispatcherTS&&) = delete;
+    FuncDispatcherTS& operator=(const FuncDispatcherTS&) = delete;
+    FuncDispatcherTS& operator=(FuncDispatcherTS&&) = delete;
 
     /**
      * @brief Dynamically dispatch to a given function with provided arguments. To ensure data
@@ -34,4 +34,30 @@ class FuncDispatcher final {
 
   private:
     mutable std::mutex mtx;
+};
+
+class FuncDispatcher final {
+  public:
+    explicit FuncDispatcher() = default;
+    ~FuncDispatcher() = default;
+
+    FuncDispatcher(const FuncDispatcher&) = delete;
+    FuncDispatcher(FuncDispatcher&&) = delete;
+    FuncDispatcher& operator=(const FuncDispatcher&) = delete;
+    FuncDispatcher& operator=(FuncDispatcher&&) = delete;
+
+    /**
+     * @brief Dynamically dispatch to a given function with provided arguments. To ensure data
+     * access and thread-safety, a locking mutex is used on a per call basis.
+     */
+    template <class Func, class... Args>
+    static constexpr auto fn(Func&& func, Args&&... args) noexcept -> decltype(auto) {
+        if constexpr (std::is_void_v<std::invoke_result_t<Func, Args...>>) {
+            std::invoke(std::forward<Func>(func), std::forward<Args>(args)...);
+        } else {
+            return std::invoke(std::forward<Func>(func), std::forward<Args>(args)...);
+        }
+    }
+
+  private:
 };
