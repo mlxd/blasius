@@ -3,10 +3,10 @@
 #include <type_traits>
 
 /**
-* @brief BLAS/LAPACK provider base-class.
-* 
-* @tparam IndexT 
-*/
+ * @brief BLAS/LAPACK provider base-class.
+ *
+ * @tparam IndexT
+ */
 template <std::integral IndexT>
 class BLVariant {
   public:
