@@ -5,7 +5,8 @@
 
 /**
  * @brief This class defines a CPP interface to call arbitrary functions
- * linked against the dependent library.
+ * linked against the dependent library. To ensure data
+ * access and thread-safety, a locking mutex is used on a per call basis.
  *
  */
 class FuncDispatcherTS final {
@@ -19,8 +20,7 @@ class FuncDispatcherTS final {
     FuncDispatcherTS& operator=(FuncDispatcherTS&&) = delete;
 
     /**
-     * @brief Dynamically dispatch to a given function with provided arguments. To ensure data
-     * access and thread-safety, a locking mutex is used on a per call basis.
+     * @brief Dynamically dispatch to a given function with provided arguments.
      */
     template <class Func, class... Args>
     constexpr auto fn(Func&& func, Args&&... args) noexcept -> decltype(auto) {
@@ -36,6 +36,12 @@ class FuncDispatcherTS final {
     mutable std::mutex mtx;
 };
 
+/**
+ * @brief This class defines a CPP interface to call arbitrary functions
+ * linked against the dependent library. Calls are not expected to be thread-safe.
+ * To guarantee thread-safety, please use `FuncDispatcherTS`.
+ *
+ */
 class FuncDispatcher final {
   public:
     explicit FuncDispatcher() = default;
@@ -47,8 +53,7 @@ class FuncDispatcher final {
     FuncDispatcher& operator=(FuncDispatcher&&) = delete;
 
     /**
-     * @brief Dynamically dispatch to a given function with provided arguments. To ensure data
-     * access and thread-safety, a locking mutex is used on a per call basis.
+     * @brief Dynamically dispatch to a given function with provided arguments.
      */
     template <class Func, class... Args>
     static constexpr auto fn(Func&& func, Args&&... args) noexcept -> decltype(auto) {
