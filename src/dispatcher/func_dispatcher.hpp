@@ -4,8 +4,8 @@
 #include <type_traits>
 
 /**
- * @brief This class defines a CPP interface to call the respective BLAS/LAPACK function dynamically
- * through the provided library.
+ * @brief This class defines a CPP interface to call arbitrary functions
+ * linked against the dependent library.
  *
  */
 class FuncDispatcher final {
@@ -19,8 +19,8 @@ class FuncDispatcher final {
     FuncDispatcher& operator=(FuncDispatcher&&) = delete;
 
     /**
-     * @brief Dynamically dispatch to a BLAS/LAPACK standard function.
-     *
+     * @brief Dynamically dispatch to a given function with provided arguments. To ensure data
+     * access and thread-safety, a locking mutex is used on a per call basis.
      */
     template <class Func, class... Args>
     constexpr auto fn(Func&& func, Args&&... args) noexcept -> decltype(auto) {
