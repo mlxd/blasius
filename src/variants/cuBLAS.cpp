@@ -1,8 +1,6 @@
 
-namespace blasius::variants{
+namespace blasius::variants {
 
-class cuBLAS : public BLVariant {
-    
-}
+class cuBLAS : public BLVariant {}
 
-}
+} // namespace blasius::variants

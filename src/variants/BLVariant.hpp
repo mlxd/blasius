@@ -4,12 +4,11 @@
 
 template <std::integral IndexT>
 class BLVariant {
-    public:
+  public:
     using index_type = typename IndexT;
 
-    BLVariant(std::string_view lib_name) : lib_name_{lib_name}{
+    BLVariant(std::string_view lib_name) : lib_name_{lib_name} {}
 
-    }
-    private:
+  private:
     std::string lib_name_;
 };
