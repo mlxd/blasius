@@ -17,27 +17,27 @@ struct CPU {};
 struct X64_CPU : CPU {};
 
 /**
-* @brief aarch64 CPU type.
-* 
-*/
+ * @brief aarch64 CPU type.
+ *
+ */
 struct ARM64_CPU : CPU {};
 
 /**
-* @brief Generic GPU type
-* 
-*/
+ * @brief Generic GPU type
+ *
+ */
 struct GPU {};
 
 /**
-* @brief NVIDIA CUDA GPU type.
-* 
-*/
+ * @brief NVIDIA CUDA GPU type.
+ *
+ */
 struct CUDA_GPU : GPU {};
 
 /**
-* @brief AMD ROCM GPU type.
-* 
-*/
+ * @brief AMD ROCM GPU type.
+ *
+ */
 struct ROCM_GPU : GPU {};
 
 } // namespace devices
