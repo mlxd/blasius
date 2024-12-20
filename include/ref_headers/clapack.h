@@ -122,11 +122,9 @@ typedef lapack_logical (*LAPACK_D_SELECT2)(const double*, const double*);
 typedef lapack_logical (*LAPACK_D_SELECT3)(const double*, const double*, const double*);
 
 typedef lapack_logical (*LAPACK_C_SELECT1)(const lapack_complex_float*);
-typedef lapack_logical (*LAPACK_C_SELECT2)(const lapack_complex_float*,
-                                           const lapack_complex_float*);
+typedef lapack_logical (*LAPACK_C_SELECT2)(const lapack_complex_float*, const lapack_complex_float*);
 typedef lapack_logical (*LAPACK_Z_SELECT1)(const lapack_complex_double*);
-typedef lapack_logical (*LAPACK_Z_SELECT2)(const lapack_complex_double*,
-                                           const lapack_complex_double*);
+typedef lapack_logical (*LAPACK_Z_SELECT2)(const lapack_complex_double*, const lapack_complex_double*);
 
 #define LAPACK_lsame_base LAPACK_GLOBAL(lsame, LSAME)
 lapack_logical LAPACK_lsame_base(const char* ca, const char* cb, lapack_int lca, lapack_int lcb
@@ -145,14 +143,11 @@ lapack_logical LAPACK_lsame_base(const char* ca, const char* cb, lapack_int lca,
 /* This is in alphabetical order (ignoring leading precision). */
 
 #define LAPACK_cbbcsd_base LAPACK_GLOBAL(cbbcsd, CBBCSD)
-void LAPACK_cbbcsd_base(const char* jobu1, const char* jobu2, const char* jobv1t,
-                        const char* jobv2t, const char* trans, const lapack_int* m,
-                        const lapack_int* p, const lapack_int* q, float* theta, float* phi,
-                        lapack_complex_float* U1, const lapack_int* ldu1, lapack_complex_float* U2,
-                        const lapack_int* ldu2, lapack_complex_float* V1T, const lapack_int* ldv1t,
-                        lapack_complex_float* V2T, const lapack_int* ldv2t, float* B11D,
-                        float* B11E, float* B12D, float* B12E, float* B21D, float* B21E,
-                        float* B22D, float* B22E, float* rwork, const lapack_int* lrwork,
+void LAPACK_cbbcsd_base(const char* jobu1, const char* jobu2, const char* jobv1t, const char* jobv2t, const char* trans,
+                        const lapack_int* m, const lapack_int* p, const lapack_int* q, float* theta, float* phi, lapack_complex_float* U1,
+                        const lapack_int* ldu1, lapack_complex_float* U2, const lapack_int* ldu2, lapack_complex_float* V1T,
+                        const lapack_int* ldv1t, lapack_complex_float* V2T, const lapack_int* ldv2t, float* B11D, float* B11E, float* B12D,
+                        float* B12E, float* B21D, float* B21E, float* B22D, float* B22E, float* rwork, const lapack_int* lrwork,
                         lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -166,14 +161,11 @@ void LAPACK_cbbcsd_base(const char* jobu1, const char* jobu2, const char* jobv1t
 #endif
 
 #define LAPACK_dbbcsd_base LAPACK_GLOBAL(dbbcsd, DBBCSD)
-void LAPACK_dbbcsd_base(const char* jobu1, const char* jobu2, const char* jobv1t,
-                        const char* jobv2t, const char* trans, const lapack_int* m,
-                        const lapack_int* p, const lapack_int* q, double* theta, double* phi,
-                        double* U1, const lapack_int* ldu1, double* U2, const lapack_int* ldu2,
-                        double* V1T, const lapack_int* ldv1t, double* V2T, const lapack_int* ldv2t,
-                        double* B11D, double* B11E, double* B12D, double* B12E, double* b21d,
-                        double* b21e, double* b22d, double* b22e, double* work,
-                        const lapack_int* lwork, lapack_int* info
+void LAPACK_dbbcsd_base(const char* jobu1, const char* jobu2, const char* jobv1t, const char* jobv2t, const char* trans,
+                        const lapack_int* m, const lapack_int* p, const lapack_int* q, double* theta, double* phi, double* U1,
+                        const lapack_int* ldu1, double* U2, const lapack_int* ldu2, double* V1T, const lapack_int* ldv1t, double* V2T,
+                        const lapack_int* ldv2t, double* B11D, double* B11E, double* B12D, double* B12E, double* b21d, double* b21e,
+                        double* b22d, double* b22e, double* work, const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t, size_t
@@ -186,14 +178,11 @@ void LAPACK_dbbcsd_base(const char* jobu1, const char* jobu2, const char* jobv1t
 #endif
 
 #define LAPACK_sbbcsd_base LAPACK_GLOBAL(sbbcsd, SBBCSD)
-void LAPACK_sbbcsd_base(const char* jobu1, const char* jobu2, const char* jobv1t,
-                        const char* jobv2t, const char* trans, const lapack_int* m,
-                        const lapack_int* p, const lapack_int* q, float* theta, float* phi,
-                        float* U1, const lapack_int* ldu1, float* U2, const lapack_int* ldu2,
-                        float* V1T, const lapack_int* ldv1t, float* V2T, const lapack_int* ldv2t,
-                        float* B11D, float* B11E, float* B12D, float* B12E, float* B21D,
-                        float* B21E, float* B22D, float* B22E, float* work, const lapack_int* lwork,
-                        lapack_int* info
+void LAPACK_sbbcsd_base(const char* jobu1, const char* jobu2, const char* jobv1t, const char* jobv2t, const char* trans,
+                        const lapack_int* m, const lapack_int* p, const lapack_int* q, float* theta, float* phi, float* U1,
+                        const lapack_int* ldu1, float* U2, const lapack_int* ldu2, float* V1T, const lapack_int* ldv1t, float* V2T,
+                        const lapack_int* ldv2t, float* B11D, float* B11E, float* B12D, float* B12E, float* B21D, float* B21E, float* B22D,
+                        float* B22E, float* work, const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t, size_t
@@ -206,16 +195,12 @@ void LAPACK_sbbcsd_base(const char* jobu1, const char* jobu2, const char* jobv1t
 #endif
 
 #define LAPACK_zbbcsd_base LAPACK_GLOBAL(zbbcsd, ZBBCSD)
-void LAPACK_zbbcsd_base(const char* jobu1, const char* jobu2, const char* jobv1t,
-                        const char* jobv2t, const char* trans, const lapack_int* m,
-                        const lapack_int* p, const lapack_int* q, double* theta, double* phi,
-                        lapack_complex_double* U1, const lapack_int* ldu1,
-                        lapack_complex_double* U2, const lapack_int* ldu2,
-                        lapack_complex_double* V1T, const lapack_int* ldv1t,
-                        lapack_complex_double* V2T, const lapack_int* ldv2t, double* B11D,
-                        double* B11E, double* B12D, double* B12E, double* B21D, double* B21E,
-                        double* B22D, double* B22E, double* rwork, const lapack_int* lrwork,
-                        lapack_int* info
+void LAPACK_zbbcsd_base(const char* jobu1, const char* jobu2, const char* jobv1t, const char* jobv2t, const char* trans,
+                        const lapack_int* m, const lapack_int* p, const lapack_int* q, double* theta, double* phi,
+                        lapack_complex_double* U1, const lapack_int* ldu1, lapack_complex_double* U2, const lapack_int* ldu2,
+                        lapack_complex_double* V1T, const lapack_int* ldv1t, lapack_complex_double* V2T, const lapack_int* ldv2t,
+                        double* B11D, double* B11E, double* B12D, double* B12E, double* B21D, double* B21E, double* B22D, double* B22E,
+                        double* rwork, const lapack_int* lrwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t, size_t
@@ -228,10 +213,8 @@ void LAPACK_zbbcsd_base(const char* jobu1, const char* jobu2, const char* jobv1t
 #endif
 
 #define LAPACK_dbdsdc_base LAPACK_GLOBAL(dbdsdc, DBDSDC)
-void LAPACK_dbdsdc_base(const char* uplo, const char* compq, const lapack_int* n, double* D,
-                        double* E, double* U, const lapack_int* ldu, double* VT,
-                        const lapack_int* ldvt, double* Q, lapack_int* IQ, double* work,
-                        lapack_int* iwork, lapack_int* info
+void LAPACK_dbdsdc_base(const char* uplo, const char* compq, const lapack_int* n, double* D, double* E, double* U, const lapack_int* ldu,
+                        double* VT, const lapack_int* ldvt, double* Q, lapack_int* IQ, double* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -244,10 +227,8 @@ void LAPACK_dbdsdc_base(const char* uplo, const char* compq, const lapack_int* n
 #endif
 
 #define LAPACK_sbdsdc_base LAPACK_GLOBAL(sbdsdc, SBDSDC)
-void LAPACK_sbdsdc_base(const char* uplo, const char* compq, const lapack_int* n, float* D,
-                        float* E, float* U, const lapack_int* ldu, float* VT,
-                        const lapack_int* ldvt, float* Q, lapack_int* IQ, float* work,
-                        lapack_int* iwork, lapack_int* info
+void LAPACK_sbdsdc_base(const char* uplo, const char* compq, const lapack_int* n, float* D, float* E, float* U, const lapack_int* ldu,
+                        float* VT, const lapack_int* ldvt, float* Q, lapack_int* IQ, float* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -260,11 +241,9 @@ void LAPACK_sbdsdc_base(const char* uplo, const char* compq, const lapack_int* n
 #endif
 
 #define LAPACK_cbdsqr_base LAPACK_GLOBAL(cbdsqr, CBDSQR)
-void LAPACK_cbdsqr_base(const char* uplo, const lapack_int* n, const lapack_int* ncvt,
-                        const lapack_int* nru, const lapack_int* ncc, float* D, float* E,
-                        lapack_complex_float* VT, const lapack_int* ldvt, lapack_complex_float* U,
-                        const lapack_int* ldu, lapack_complex_float* C, const lapack_int* ldc,
-                        float* rwork, lapack_int* info
+void LAPACK_cbdsqr_base(const char* uplo, const lapack_int* n, const lapack_int* ncvt, const lapack_int* nru, const lapack_int* ncc,
+                        float* D, float* E, lapack_complex_float* VT, const lapack_int* ldvt, lapack_complex_float* U,
+                        const lapack_int* ldu, lapack_complex_float* C, const lapack_int* ldc, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -277,10 +256,9 @@ void LAPACK_cbdsqr_base(const char* uplo, const lapack_int* n, const lapack_int*
 #endif
 
 #define LAPACK_dbdsqr_base LAPACK_GLOBAL(dbdsqr, DBDSQR)
-void LAPACK_dbdsqr_base(const char* uplo, const lapack_int* n, const lapack_int* ncvt,
-                        const lapack_int* nru, const lapack_int* ncc, double* D, double* E,
-                        double* VT, const lapack_int* ldvt, double* U, const lapack_int* ldu,
-                        double* C, const lapack_int* ldc, double* work, lapack_int* info
+void LAPACK_dbdsqr_base(const char* uplo, const lapack_int* n, const lapack_int* ncvt, const lapack_int* nru, const lapack_int* ncc,
+                        double* D, double* E, double* VT, const lapack_int* ldvt, double* U, const lapack_int* ldu, double* C,
+                        const lapack_int* ldc, double* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -293,9 +271,8 @@ void LAPACK_dbdsqr_base(const char* uplo, const lapack_int* n, const lapack_int*
 #endif
 
 #define LAPACK_sbdsqr_base LAPACK_GLOBAL(sbdsqr, SBDSQR)
-void LAPACK_sbdsqr_base(const char* uplo, const lapack_int* n, const lapack_int* ncvt,
-                        const lapack_int* nru, const lapack_int* ncc, float* D, float* E, float* VT,
-                        const lapack_int* ldvt, float* U, const lapack_int* ldu, float* C,
+void LAPACK_sbdsqr_base(const char* uplo, const lapack_int* n, const lapack_int* ncvt, const lapack_int* nru, const lapack_int* ncc,
+                        float* D, float* E, float* VT, const lapack_int* ldvt, float* U, const lapack_int* ldu, float* C,
                         const lapack_int* ldc, float* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -309,11 +286,9 @@ void LAPACK_sbdsqr_base(const char* uplo, const lapack_int* n, const lapack_int*
 #endif
 
 #define LAPACK_zbdsqr_base LAPACK_GLOBAL(zbdsqr, ZBDSQR)
-void LAPACK_zbdsqr_base(const char* uplo, const lapack_int* n, const lapack_int* ncvt,
-                        const lapack_int* nru, const lapack_int* ncc, double* D, double* E,
-                        lapack_complex_double* VT, const lapack_int* ldvt, lapack_complex_double* U,
-                        const lapack_int* ldu, lapack_complex_double* C, const lapack_int* ldc,
-                        double* rwork, lapack_int* info
+void LAPACK_zbdsqr_base(const char* uplo, const lapack_int* n, const lapack_int* ncvt, const lapack_int* nru, const lapack_int* ncc,
+                        double* D, double* E, lapack_complex_double* VT, const lapack_int* ldvt, lapack_complex_double* U,
+                        const lapack_int* ldu, lapack_complex_double* C, const lapack_int* ldc, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -326,11 +301,9 @@ void LAPACK_zbdsqr_base(const char* uplo, const lapack_int* n, const lapack_int*
 #endif
 
 #define LAPACK_dbdsvdx_base LAPACK_GLOBAL(dbdsvdx, DBDSVDX)
-void LAPACK_dbdsvdx_base(const char* uplo, const char* jobz, const char* range, const lapack_int* n,
-                         const double* D, const double* E, const double* vl, const double* vu,
-                         const lapack_int* il, const lapack_int* iu, lapack_int* ns, double* S,
-                         double* Z, const lapack_int* ldz, double* work, lapack_int* iwork,
-                         lapack_int* info
+void LAPACK_dbdsvdx_base(const char* uplo, const char* jobz, const char* range, const lapack_int* n, const double* D, const double* E,
+                         const double* vl, const double* vu, const lapack_int* il, const lapack_int* iu, lapack_int* ns, double* S,
+                         double* Z, const lapack_int* ldz, double* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t
@@ -343,11 +316,9 @@ void LAPACK_dbdsvdx_base(const char* uplo, const char* jobz, const char* range, 
 #endif
 
 #define LAPACK_sbdsvdx_base LAPACK_GLOBAL(sbdsvdx, SBDSVDX)
-void LAPACK_sbdsvdx_base(const char* uplo, const char* jobz, const char* range, const lapack_int* n,
-                         const float* D, const float* E, const float* vl, const float* vu,
-                         const lapack_int* il, const lapack_int* iu, lapack_int* ns, float* S,
-                         float* Z, const lapack_int* ldz, float* work, lapack_int* iwork,
-                         lapack_int* info
+void LAPACK_sbdsvdx_base(const char* uplo, const char* jobz, const char* range, const lapack_int* n, const float* D, const float* E,
+                         const float* vl, const float* vu, const lapack_int* il, const lapack_int* iu, lapack_int* ns, float* S, float* Z,
+                         const lapack_int* ldz, float* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t
@@ -360,8 +331,7 @@ void LAPACK_sbdsvdx_base(const char* uplo, const char* jobz, const char* range, 
 #endif
 
 #define LAPACK_ddisna_base LAPACK_GLOBAL(ddisna, DDISNA)
-void LAPACK_ddisna_base(const char* job, const lapack_int* m, const lapack_int* n, const double* D,
-                        double* SEP, lapack_int* info
+void LAPACK_ddisna_base(const char* job, const lapack_int* m, const lapack_int* n, const double* D, double* SEP, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -374,8 +344,7 @@ void LAPACK_ddisna_base(const char* job, const lapack_int* m, const lapack_int* 
 #endif
 
 #define LAPACK_sdisna_base LAPACK_GLOBAL(sdisna, SDISNA)
-void LAPACK_sdisna_base(const char* job, const lapack_int* m, const lapack_int* n, const float* D,
-                        float* SEP, lapack_int* info
+void LAPACK_sdisna_base(const char* job, const lapack_int* m, const lapack_int* n, const float* D, float* SEP, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -388,12 +357,10 @@ void LAPACK_sdisna_base(const char* job, const lapack_int* m, const lapack_int* 
 #endif
 
 #define LAPACK_cgbbrd_base LAPACK_GLOBAL(cgbbrd, CGBBRD)
-void LAPACK_cgbbrd_base(const char* vect, const lapack_int* m, const lapack_int* n,
-                        const lapack_int* ncc, const lapack_int* kl, const lapack_int* ku,
-                        lapack_complex_float* AB, const lapack_int* ldab, float* D, float* E,
-                        lapack_complex_float* Q, const lapack_int* ldq, lapack_complex_float* PT,
-                        const lapack_int* ldpt, lapack_complex_float* C, const lapack_int* ldc,
-                        lapack_complex_float* work, float* rwork, lapack_int* info
+void LAPACK_cgbbrd_base(const char* vect, const lapack_int* m, const lapack_int* n, const lapack_int* ncc, const lapack_int* kl,
+                        const lapack_int* ku, lapack_complex_float* AB, const lapack_int* ldab, float* D, float* E, lapack_complex_float* Q,
+                        const lapack_int* ldq, lapack_complex_float* PT, const lapack_int* ldpt, lapack_complex_float* C,
+                        const lapack_int* ldc, lapack_complex_float* work, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -406,11 +373,9 @@ void LAPACK_cgbbrd_base(const char* vect, const lapack_int* m, const lapack_int*
 #endif
 
 #define LAPACK_dgbbrd_base LAPACK_GLOBAL(dgbbrd, DGBBRD)
-void LAPACK_dgbbrd_base(const char* vect, const lapack_int* m, const lapack_int* n,
-                        const lapack_int* ncc, const lapack_int* kl, const lapack_int* ku,
-                        double* AB, const lapack_int* ldab, double* D, double* E, double* Q,
-                        const lapack_int* ldq, double* PT, const lapack_int* ldpt, double* C,
-                        const lapack_int* ldc, double* work, lapack_int* info
+void LAPACK_dgbbrd_base(const char* vect, const lapack_int* m, const lapack_int* n, const lapack_int* ncc, const lapack_int* kl,
+                        const lapack_int* ku, double* AB, const lapack_int* ldab, double* D, double* E, double* Q, const lapack_int* ldq,
+                        double* PT, const lapack_int* ldpt, double* C, const lapack_int* ldc, double* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -423,11 +388,9 @@ void LAPACK_dgbbrd_base(const char* vect, const lapack_int* m, const lapack_int*
 #endif
 
 #define LAPACK_sgbbrd_base LAPACK_GLOBAL(sgbbrd, SGBBRD)
-void LAPACK_sgbbrd_base(const char* vect, const lapack_int* m, const lapack_int* n,
-                        const lapack_int* ncc, const lapack_int* kl, const lapack_int* ku,
-                        float* AB, const lapack_int* ldab, float* D, float* E, float* Q,
-                        const lapack_int* ldq, float* PT, const lapack_int* ldpt, float* C,
-                        const lapack_int* ldc, float* work, lapack_int* info
+void LAPACK_sgbbrd_base(const char* vect, const lapack_int* m, const lapack_int* n, const lapack_int* ncc, const lapack_int* kl,
+                        const lapack_int* ku, float* AB, const lapack_int* ldab, float* D, float* E, float* Q, const lapack_int* ldq,
+                        float* PT, const lapack_int* ldpt, float* C, const lapack_int* ldc, float* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -440,12 +403,10 @@ void LAPACK_sgbbrd_base(const char* vect, const lapack_int* m, const lapack_int*
 #endif
 
 #define LAPACK_zgbbrd_base LAPACK_GLOBAL(zgbbrd, ZGBBRD)
-void LAPACK_zgbbrd_base(const char* vect, const lapack_int* m, const lapack_int* n,
-                        const lapack_int* ncc, const lapack_int* kl, const lapack_int* ku,
-                        lapack_complex_double* AB, const lapack_int* ldab, double* D, double* E,
-                        lapack_complex_double* Q, const lapack_int* ldq, lapack_complex_double* PT,
-                        const lapack_int* ldpt, lapack_complex_double* C, const lapack_int* ldc,
-                        lapack_complex_double* work, double* rwork, lapack_int* info
+void LAPACK_zgbbrd_base(const char* vect, const lapack_int* m, const lapack_int* n, const lapack_int* ncc, const lapack_int* kl,
+                        const lapack_int* ku, lapack_complex_double* AB, const lapack_int* ldab, double* D, double* E,
+                        lapack_complex_double* Q, const lapack_int* ldq, lapack_complex_double* PT, const lapack_int* ldpt,
+                        lapack_complex_double* C, const lapack_int* ldc, lapack_complex_double* work, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -458,10 +419,9 @@ void LAPACK_zgbbrd_base(const char* vect, const lapack_int* m, const lapack_int*
 #endif
 
 #define LAPACK_cgbcon_base LAPACK_GLOBAL(cgbcon, CGBCON)
-void LAPACK_cgbcon_base(const char* norm, const lapack_int* n, const lapack_int* kl,
-                        const lapack_int* ku, const lapack_complex_float* AB,
-                        const lapack_int* ldab, const lapack_int* ipiv, const float* anorm,
-                        float* rcond, lapack_complex_float* work, float* rwork, lapack_int* info
+void LAPACK_cgbcon_base(const char* norm, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const lapack_complex_float* AB,
+                        const lapack_int* ldab, const lapack_int* ipiv, const float* anorm, float* rcond, lapack_complex_float* work,
+                        float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -474,10 +434,9 @@ void LAPACK_cgbcon_base(const char* norm, const lapack_int* n, const lapack_int*
 #endif
 
 #define LAPACK_dgbcon_base LAPACK_GLOBAL(dgbcon, DGBCON)
-void LAPACK_dgbcon_base(const char* norm, const lapack_int* n, const lapack_int* kl,
-                        const lapack_int* ku, const double* AB, const lapack_int* ldab,
-                        const lapack_int* ipiv, const double* anorm, double* rcond, double* work,
-                        lapack_int* iwork, lapack_int* info
+void LAPACK_dgbcon_base(const char* norm, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const double* AB,
+                        const lapack_int* ldab, const lapack_int* ipiv, const double* anorm, double* rcond, double* work, lapack_int* iwork,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -490,10 +449,9 @@ void LAPACK_dgbcon_base(const char* norm, const lapack_int* n, const lapack_int*
 #endif
 
 #define LAPACK_sgbcon_base LAPACK_GLOBAL(sgbcon, SGBCON)
-void LAPACK_sgbcon_base(const char* norm, const lapack_int* n, const lapack_int* kl,
-                        const lapack_int* ku, const float* AB, const lapack_int* ldab,
-                        const lapack_int* ipiv, const float* anorm, float* rcond, float* work,
-                        lapack_int* iwork, lapack_int* info
+void LAPACK_sgbcon_base(const char* norm, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const float* AB,
+                        const lapack_int* ldab, const lapack_int* ipiv, const float* anorm, float* rcond, float* work, lapack_int* iwork,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -506,10 +464,9 @@ void LAPACK_sgbcon_base(const char* norm, const lapack_int* n, const lapack_int*
 #endif
 
 #define LAPACK_zgbcon_base LAPACK_GLOBAL(zgbcon, ZGBCON)
-void LAPACK_zgbcon_base(const char* norm, const lapack_int* n, const lapack_int* kl,
-                        const lapack_int* ku, const lapack_complex_double* AB,
-                        const lapack_int* ldab, const lapack_int* ipiv, const double* anorm,
-                        double* rcond, lapack_complex_double* work, double* rwork, lapack_int* info
+void LAPACK_zgbcon_base(const char* norm, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const lapack_complex_double* AB,
+                        const lapack_int* ldab, const lapack_int* ipiv, const double* anorm, double* rcond, lapack_complex_double* work,
+                        double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -522,57 +479,42 @@ void LAPACK_zgbcon_base(const char* norm, const lapack_int* n, const lapack_int*
 #endif
 
 #define LAPACK_cgbequ LAPACK_GLOBAL(cgbequ, CGBEQU)
-void LAPACK_cgbequ(const lapack_int* m, const lapack_int* n, const lapack_int* kl,
-                   const lapack_int* ku, const lapack_complex_float* AB, const lapack_int* ldab,
-                   float* R, float* C, float* rowcnd, float* colcnd, float* amax, lapack_int* info);
+void LAPACK_cgbequ(const lapack_int* m, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const lapack_complex_float* AB,
+                   const lapack_int* ldab, float* R, float* C, float* rowcnd, float* colcnd, float* amax, lapack_int* info);
 
 #define LAPACK_dgbequ LAPACK_GLOBAL(dgbequ, DGBEQU)
-void LAPACK_dgbequ(const lapack_int* m, const lapack_int* n, const lapack_int* kl,
-                   const lapack_int* ku, const double* AB, const lapack_int* ldab, double* R,
-                   double* C, double* rowcnd, double* colcnd, double* amax, lapack_int* info);
+void LAPACK_dgbequ(const lapack_int* m, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const double* AB,
+                   const lapack_int* ldab, double* R, double* C, double* rowcnd, double* colcnd, double* amax, lapack_int* info);
 
 #define LAPACK_sgbequ LAPACK_GLOBAL(sgbequ, SGBEQU)
-void LAPACK_sgbequ(const lapack_int* m, const lapack_int* n, const lapack_int* kl,
-                   const lapack_int* ku, const float* AB, const lapack_int* ldab, float* R,
-                   float* C, float* rowcnd, float* colcnd, float* amax, lapack_int* info);
+void LAPACK_sgbequ(const lapack_int* m, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const float* AB,
+                   const lapack_int* ldab, float* R, float* C, float* rowcnd, float* colcnd, float* amax, lapack_int* info);
 
 #define LAPACK_zgbequ LAPACK_GLOBAL(zgbequ, ZGBEQU)
-void LAPACK_zgbequ(const lapack_int* m, const lapack_int* n, const lapack_int* kl,
-                   const lapack_int* ku, const lapack_complex_double* AB, const lapack_int* ldab,
-                   double* R, double* C, double* rowcnd, double* colcnd, double* amax,
-                   lapack_int* info);
+void LAPACK_zgbequ(const lapack_int* m, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const lapack_complex_double* AB,
+                   const lapack_int* ldab, double* R, double* C, double* rowcnd, double* colcnd, double* amax, lapack_int* info);
 
 #define LAPACK_cgbequb LAPACK_GLOBAL(cgbequb, CGBEQUB)
-void LAPACK_cgbequb(const lapack_int* m, const lapack_int* n, const lapack_int* kl,
-                    const lapack_int* ku, const lapack_complex_float* AB, const lapack_int* ldab,
-                    float* R, float* C, float* rowcnd, float* colcnd, float* amax,
-                    lapack_int* info);
+void LAPACK_cgbequb(const lapack_int* m, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const lapack_complex_float* AB,
+                    const lapack_int* ldab, float* R, float* C, float* rowcnd, float* colcnd, float* amax, lapack_int* info);
 
 #define LAPACK_dgbequb LAPACK_GLOBAL(dgbequb, DGBEQUB)
-void LAPACK_dgbequb(const lapack_int* m, const lapack_int* n, const lapack_int* kl,
-                    const lapack_int* ku, const double* AB, const lapack_int* ldab, double* R,
-                    double* C, double* rowcnd, double* colcnd, double* amax, lapack_int* info);
+void LAPACK_dgbequb(const lapack_int* m, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const double* AB,
+                    const lapack_int* ldab, double* R, double* C, double* rowcnd, double* colcnd, double* amax, lapack_int* info);
 
 #define LAPACK_sgbequb LAPACK_GLOBAL(sgbequb, SGBEQUB)
-void LAPACK_sgbequb(const lapack_int* m, const lapack_int* n, const lapack_int* kl,
-                    const lapack_int* ku, const float* AB, const lapack_int* ldab, float* R,
-                    float* C, float* rowcnd, float* colcnd, float* amax, lapack_int* info);
+void LAPACK_sgbequb(const lapack_int* m, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const float* AB,
+                    const lapack_int* ldab, float* R, float* C, float* rowcnd, float* colcnd, float* amax, lapack_int* info);
 
 #define LAPACK_zgbequb LAPACK_GLOBAL(zgbequb, ZGBEQUB)
-void LAPACK_zgbequb(const lapack_int* m, const lapack_int* n, const lapack_int* kl,
-                    const lapack_int* ku, const lapack_complex_double* AB, const lapack_int* ldab,
-                    double* R, double* C, double* rowcnd, double* colcnd, double* amax,
-                    lapack_int* info);
+void LAPACK_zgbequb(const lapack_int* m, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const lapack_complex_double* AB,
+                    const lapack_int* ldab, double* R, double* C, double* rowcnd, double* colcnd, double* amax, lapack_int* info);
 
 #define LAPACK_cgbrfs_base LAPACK_GLOBAL(cgbrfs, CGBRFS)
-void LAPACK_cgbrfs_base(const char* trans, const lapack_int* n, const lapack_int* kl,
-                        const lapack_int* ku, const lapack_int* nrhs,
-                        const lapack_complex_float* AB, const lapack_int* ldab,
-                        const lapack_complex_float* AFB, const lapack_int* ldafb,
-                        const lapack_int* ipiv, const lapack_complex_float* B,
-                        const lapack_int* ldb, lapack_complex_float* X, const lapack_int* ldx,
-                        float* ferr, float* berr, lapack_complex_float* work, float* rwork,
-                        lapack_int* info
+void LAPACK_cgbrfs_base(const char* trans, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
+                        const lapack_complex_float* AB, const lapack_int* ldab, const lapack_complex_float* AFB, const lapack_int* ldafb,
+                        const lapack_int* ipiv, const lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* X,
+                        const lapack_int* ldx, float* ferr, float* berr, lapack_complex_float* work, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -585,11 +527,9 @@ void LAPACK_cgbrfs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_dgbrfs_base LAPACK_GLOBAL(dgbrfs, DGBRFS)
-void LAPACK_dgbrfs_base(const char* trans, const lapack_int* n, const lapack_int* kl,
-                        const lapack_int* ku, const lapack_int* nrhs, const double* AB,
-                        const lapack_int* ldab, const double* AFB, const lapack_int* ldafb,
-                        const lapack_int* ipiv, const double* B, const lapack_int* ldb, double* X,
-                        const lapack_int* ldx, double* ferr, double* berr, double* work,
+void LAPACK_dgbrfs_base(const char* trans, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
+                        const double* AB, const lapack_int* ldab, const double* AFB, const lapack_int* ldafb, const lapack_int* ipiv,
+                        const double* B, const lapack_int* ldb, double* X, const lapack_int* ldx, double* ferr, double* berr, double* work,
                         lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -603,11 +543,9 @@ void LAPACK_dgbrfs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_sgbrfs_base LAPACK_GLOBAL(sgbrfs, SGBRFS)
-void LAPACK_sgbrfs_base(const char* trans, const lapack_int* n, const lapack_int* kl,
-                        const lapack_int* ku, const lapack_int* nrhs, const float* AB,
-                        const lapack_int* ldab, const float* AFB, const lapack_int* ldafb,
-                        const lapack_int* ipiv, const float* B, const lapack_int* ldb, float* X,
-                        const lapack_int* ldx, float* ferr, float* berr, float* work,
+void LAPACK_sgbrfs_base(const char* trans, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
+                        const float* AB, const lapack_int* ldab, const float* AFB, const lapack_int* ldafb, const lapack_int* ipiv,
+                        const float* B, const lapack_int* ldb, float* X, const lapack_int* ldx, float* ferr, float* berr, float* work,
                         lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -621,14 +559,10 @@ void LAPACK_sgbrfs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_zgbrfs_base LAPACK_GLOBAL(zgbrfs, ZGBRFS)
-void LAPACK_zgbrfs_base(const char* trans, const lapack_int* n, const lapack_int* kl,
-                        const lapack_int* ku, const lapack_int* nrhs,
-                        const lapack_complex_double* AB, const lapack_int* ldab,
-                        const lapack_complex_double* AFB, const lapack_int* ldafb,
-                        const lapack_int* ipiv, const lapack_complex_double* B,
-                        const lapack_int* ldb, lapack_complex_double* X, const lapack_int* ldx,
-                        double* ferr, double* berr, lapack_complex_double* work, double* rwork,
-                        lapack_int* info
+void LAPACK_zgbrfs_base(const char* trans, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
+                        const lapack_complex_double* AB, const lapack_int* ldab, const lapack_complex_double* AFB, const lapack_int* ldafb,
+                        const lapack_int* ipiv, const lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* X,
+                        const lapack_int* ldx, double* ferr, double* berr, lapack_complex_double* work, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -641,16 +575,12 @@ void LAPACK_zgbrfs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_cgbrfsx_base LAPACK_GLOBAL(cgbrfsx, CGBRFSX)
-void LAPACK_cgbrfsx_base(const char* trans, const char* equed, const lapack_int* n,
-                         const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
-                         const lapack_complex_float* AB, const lapack_int* ldab,
-                         const lapack_complex_float* AFB, const lapack_int* ldafb,
-                         const lapack_int* ipiv, const float* R, const float* C,
-                         const lapack_complex_float* B, const lapack_int* ldb,
-                         lapack_complex_float* X, const lapack_int* ldx, float* rcond, float* berr,
-                         const lapack_int* n_err_bnds, float* err_bnds_norm, float* err_bnds_comp,
-                         const lapack_int* nparams, float* params, lapack_complex_float* work,
-                         float* rwork, lapack_int* info
+void LAPACK_cgbrfsx_base(const char* trans, const char* equed, const lapack_int* n, const lapack_int* kl, const lapack_int* ku,
+                         const lapack_int* nrhs, const lapack_complex_float* AB, const lapack_int* ldab, const lapack_complex_float* AFB,
+                         const lapack_int* ldafb, const lapack_int* ipiv, const float* R, const float* C, const lapack_complex_float* B,
+                         const lapack_int* ldb, lapack_complex_float* X, const lapack_int* ldx, float* rcond, float* berr,
+                         const lapack_int* n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, const lapack_int* nparams, float* params,
+                         lapack_complex_float* work, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t
@@ -663,15 +593,11 @@ void LAPACK_cgbrfsx_base(const char* trans, const char* equed, const lapack_int*
 #endif
 
 #define LAPACK_dgbrfsx_base LAPACK_GLOBAL(dgbrfsx, DGBRFSX)
-void LAPACK_dgbrfsx_base(const char* trans, const char* equed, const lapack_int* n,
-                         const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
-                         const double* AB, const lapack_int* ldab, const double* AFB,
-                         const lapack_int* ldafb, const lapack_int* ipiv, const double* R,
-                         const double* C, const double* B, const lapack_int* ldb, double* X,
-                         const lapack_int* ldx, double* rcond, double* berr,
-                         const lapack_int* n_err_bnds, double* err_bnds_norm, double* err_bnds_comp,
-                         const lapack_int* nparams, double* params, double* work, lapack_int* iwork,
-                         lapack_int* info
+void LAPACK_dgbrfsx_base(const char* trans, const char* equed, const lapack_int* n, const lapack_int* kl, const lapack_int* ku,
+                         const lapack_int* nrhs, const double* AB, const lapack_int* ldab, const double* AFB, const lapack_int* ldafb,
+                         const lapack_int* ipiv, const double* R, const double* C, const double* B, const lapack_int* ldb, double* X,
+                         const lapack_int* ldx, double* rcond, double* berr, const lapack_int* n_err_bnds, double* err_bnds_norm,
+                         double* err_bnds_comp, const lapack_int* nparams, double* params, double* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t
@@ -684,15 +610,11 @@ void LAPACK_dgbrfsx_base(const char* trans, const char* equed, const lapack_int*
 #endif
 
 #define LAPACK_sgbrfsx_base LAPACK_GLOBAL(sgbrfsx, SGBRFSX)
-void LAPACK_sgbrfsx_base(const char* trans, const char* equed, const lapack_int* n,
-                         const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
-                         const float* AB, const lapack_int* ldab, const float* AFB,
-                         const lapack_int* ldafb, const lapack_int* ipiv, const float* R,
-                         const float* C, const float* B, const lapack_int* ldb, float* X,
-                         const lapack_int* ldx, float* rcond, float* berr,
-                         const lapack_int* n_err_bnds, float* err_bnds_norm, float* err_bnds_comp,
-                         const lapack_int* nparams, float* params, float* work, lapack_int* iwork,
-                         lapack_int* info
+void LAPACK_sgbrfsx_base(const char* trans, const char* equed, const lapack_int* n, const lapack_int* kl, const lapack_int* ku,
+                         const lapack_int* nrhs, const float* AB, const lapack_int* ldab, const float* AFB, const lapack_int* ldafb,
+                         const lapack_int* ipiv, const float* R, const float* C, const float* B, const lapack_int* ldb, float* X,
+                         const lapack_int* ldx, float* rcond, float* berr, const lapack_int* n_err_bnds, float* err_bnds_norm,
+                         float* err_bnds_comp, const lapack_int* nparams, float* params, float* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t
@@ -705,16 +627,12 @@ void LAPACK_sgbrfsx_base(const char* trans, const char* equed, const lapack_int*
 #endif
 
 #define LAPACK_zgbrfsx_base LAPACK_GLOBAL(zgbrfsx, ZGBRFSX)
-void LAPACK_zgbrfsx_base(const char* trans, const char* equed, const lapack_int* n,
-                         const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
-                         const lapack_complex_double* AB, const lapack_int* ldab,
-                         const lapack_complex_double* AFB, const lapack_int* ldafb,
-                         const lapack_int* ipiv, const double* R, const double* C,
-                         const lapack_complex_double* B, const lapack_int* ldb,
-                         lapack_complex_double* X, const lapack_int* ldx, double* rcond,
-                         double* berr, const lapack_int* n_err_bnds, double* err_bnds_norm,
-                         double* err_bnds_comp, const lapack_int* nparams, double* params,
-                         lapack_complex_double* work, double* rwork, lapack_int* info
+void LAPACK_zgbrfsx_base(const char* trans, const char* equed, const lapack_int* n, const lapack_int* kl, const lapack_int* ku,
+                         const lapack_int* nrhs, const lapack_complex_double* AB, const lapack_int* ldab, const lapack_complex_double* AFB,
+                         const lapack_int* ldafb, const lapack_int* ipiv, const double* R, const double* C, const lapack_complex_double* B,
+                         const lapack_int* ldb, lapack_complex_double* X, const lapack_int* ldx, double* rcond, double* berr,
+                         const lapack_int* n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, const lapack_int* nparams,
+                         double* params, lapack_complex_double* work, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t
@@ -727,34 +645,26 @@ void LAPACK_zgbrfsx_base(const char* trans, const char* equed, const lapack_int*
 #endif
 
 #define LAPACK_cgbsv LAPACK_GLOBAL(cgbsv, CGBSV)
-void LAPACK_cgbsv(const lapack_int* n, const lapack_int* kl, const lapack_int* ku,
-                  const lapack_int* nrhs, lapack_complex_float* AB, const lapack_int* ldab,
-                  lapack_int* ipiv, lapack_complex_float* B, const lapack_int* ldb,
-                  lapack_int* info);
+void LAPACK_cgbsv(const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs, lapack_complex_float* AB,
+                  const lapack_int* ldab, lapack_int* ipiv, lapack_complex_float* B, const lapack_int* ldb, lapack_int* info);
 
 #define LAPACK_dgbsv LAPACK_GLOBAL(dgbsv, DGBSV)
-void LAPACK_dgbsv(const lapack_int* n, const lapack_int* kl, const lapack_int* ku,
-                  const lapack_int* nrhs, double* AB, const lapack_int* ldab, lapack_int* ipiv,
-                  double* B, const lapack_int* ldb, lapack_int* info);
+void LAPACK_dgbsv(const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs, double* AB,
+                  const lapack_int* ldab, lapack_int* ipiv, double* B, const lapack_int* ldb, lapack_int* info);
 
 #define LAPACK_sgbsv LAPACK_GLOBAL(sgbsv, SGBSV)
-void LAPACK_sgbsv(const lapack_int* n, const lapack_int* kl, const lapack_int* ku,
-                  const lapack_int* nrhs, float* AB, const lapack_int* ldab, lapack_int* ipiv,
-                  float* B, const lapack_int* ldb, lapack_int* info);
+void LAPACK_sgbsv(const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs, float* AB,
+                  const lapack_int* ldab, lapack_int* ipiv, float* B, const lapack_int* ldb, lapack_int* info);
 
 #define LAPACK_zgbsv LAPACK_GLOBAL(zgbsv, ZGBSV)
-void LAPACK_zgbsv(const lapack_int* n, const lapack_int* kl, const lapack_int* ku,
-                  const lapack_int* nrhs, lapack_complex_double* AB, const lapack_int* ldab,
-                  lapack_int* ipiv, lapack_complex_double* B, const lapack_int* ldb,
-                  lapack_int* info);
+void LAPACK_zgbsv(const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs, lapack_complex_double* AB,
+                  const lapack_int* ldab, lapack_int* ipiv, lapack_complex_double* B, const lapack_int* ldb, lapack_int* info);
 
 #define LAPACK_cgbsvx_base LAPACK_GLOBAL(cgbsvx, CGBSVX)
-void LAPACK_cgbsvx_base(const char* fact, const char* trans, const lapack_int* n,
-                        const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
-                        lapack_complex_float* AB, const lapack_int* ldab, lapack_complex_float* AFB,
-                        const lapack_int* ldafb, lapack_int* ipiv, char* equed, float* R, float* C,
-                        lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* X,
-                        const lapack_int* ldx, float* rcond, float* ferr, float* berr,
+void LAPACK_cgbsvx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* kl, const lapack_int* ku,
+                        const lapack_int* nrhs, lapack_complex_float* AB, const lapack_int* ldab, lapack_complex_float* AFB,
+                        const lapack_int* ldafb, lapack_int* ipiv, char* equed, float* R, float* C, lapack_complex_float* B,
+                        const lapack_int* ldb, lapack_complex_float* X, const lapack_int* ldx, float* rcond, float* ferr, float* berr,
                         lapack_complex_float* work, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -768,13 +678,10 @@ void LAPACK_cgbsvx_base(const char* fact, const char* trans, const lapack_int* n
 #endif
 
 #define LAPACK_dgbsvx_base LAPACK_GLOBAL(dgbsvx, DGBSVX)
-void LAPACK_dgbsvx_base(const char* fact, const char* trans, const lapack_int* n,
-                        const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
-                        double* AB, const lapack_int* ldab, double* AFB, const lapack_int* ldafb,
-                        lapack_int* ipiv, char* equed, double* R, double* C, double* B,
-                        const lapack_int* ldb, double* X, const lapack_int* ldx, double* rcond,
-                        double* ferr, double* berr, double* work, lapack_int* iwork,
-                        lapack_int* info
+void LAPACK_dgbsvx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* kl, const lapack_int* ku,
+                        const lapack_int* nrhs, double* AB, const lapack_int* ldab, double* AFB, const lapack_int* ldafb, lapack_int* ipiv,
+                        char* equed, double* R, double* C, double* B, const lapack_int* ldb, double* X, const lapack_int* ldx,
+                        double* rcond, double* ferr, double* berr, double* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -787,11 +694,9 @@ void LAPACK_dgbsvx_base(const char* fact, const char* trans, const lapack_int* n
 #endif
 
 #define LAPACK_sgbsvx_base LAPACK_GLOBAL(sgbsvx, SGBSVX)
-void LAPACK_sgbsvx_base(const char* fact, const char* trans, const lapack_int* n,
-                        const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
-                        float* AB, const lapack_int* ldab, float* AFB, const lapack_int* ldafb,
-                        lapack_int* ipiv, char* equed, float* R, float* C, float* B,
-                        const lapack_int* ldb, float* X, const lapack_int* ldx, float* rcond,
+void LAPACK_sgbsvx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* kl, const lapack_int* ku,
+                        const lapack_int* nrhs, float* AB, const lapack_int* ldab, float* AFB, const lapack_int* ldafb, lapack_int* ipiv,
+                        char* equed, float* R, float* C, float* B, const lapack_int* ldb, float* X, const lapack_int* ldx, float* rcond,
                         float* ferr, float* berr, float* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -805,14 +710,11 @@ void LAPACK_sgbsvx_base(const char* fact, const char* trans, const lapack_int* n
 #endif
 
 #define LAPACK_zgbsvx_base LAPACK_GLOBAL(zgbsvx, ZGBSVX)
-void LAPACK_zgbsvx_base(const char* fact, const char* trans, const lapack_int* n,
-                        const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
-                        lapack_complex_double* AB, const lapack_int* ldab,
-                        lapack_complex_double* AFB, const lapack_int* ldafb, lapack_int* ipiv,
-                        char* equed, double* R, double* C, lapack_complex_double* B,
-                        const lapack_int* ldb, lapack_complex_double* X, const lapack_int* ldx,
-                        double* rcond, double* ferr, double* berr, lapack_complex_double* work,
-                        double* rwork, lapack_int* info
+void LAPACK_zgbsvx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* kl, const lapack_int* ku,
+                        const lapack_int* nrhs, lapack_complex_double* AB, const lapack_int* ldab, lapack_complex_double* AFB,
+                        const lapack_int* ldafb, lapack_int* ipiv, char* equed, double* R, double* C, lapack_complex_double* B,
+                        const lapack_int* ldb, lapack_complex_double* X, const lapack_int* ldx, double* rcond, double* ferr, double* berr,
+                        lapack_complex_double* work, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -825,15 +727,12 @@ void LAPACK_zgbsvx_base(const char* fact, const char* trans, const lapack_int* n
 #endif
 
 #define LAPACK_cgbsvxx_base LAPACK_GLOBAL(cgbsvxx, CGBSVXX)
-void LAPACK_cgbsvxx_base(const char* fact, const char* trans, const lapack_int* n,
-                         const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
-                         lapack_complex_float* AB, const lapack_int* ldab,
-                         lapack_complex_float* AFB, const lapack_int* ldafb, lapack_int* ipiv,
-                         char* equed, float* R, float* C, lapack_complex_float* B,
-                         const lapack_int* ldb, lapack_complex_float* X, const lapack_int* ldx,
-                         float* rcond, float* rpvgrw, float* berr, const lapack_int* n_err_bnds,
-                         float* err_bnds_norm, float* err_bnds_comp, const lapack_int* nparams,
-                         float* params, lapack_complex_float* work, float* rwork, lapack_int* info
+void LAPACK_cgbsvxx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* kl, const lapack_int* ku,
+                         const lapack_int* nrhs, lapack_complex_float* AB, const lapack_int* ldab, lapack_complex_float* AFB,
+                         const lapack_int* ldafb, lapack_int* ipiv, char* equed, float* R, float* C, lapack_complex_float* B,
+                         const lapack_int* ldb, lapack_complex_float* X, const lapack_int* ldx, float* rcond, float* rpvgrw, float* berr,
+                         const lapack_int* n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, const lapack_int* nparams, float* params,
+                         lapack_complex_float* work, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t
@@ -846,14 +745,11 @@ void LAPACK_cgbsvxx_base(const char* fact, const char* trans, const lapack_int* 
 #endif
 
 #define LAPACK_dgbsvxx_base LAPACK_GLOBAL(dgbsvxx, DGBSVXX)
-void LAPACK_dgbsvxx_base(const char* fact, const char* trans, const lapack_int* n,
-                         const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
-                         double* AB, const lapack_int* ldab, double* AFB, const lapack_int* ldafb,
-                         lapack_int* ipiv, char* equed, double* R, double* C, double* B,
-                         const lapack_int* ldb, double* X, const lapack_int* ldx, double* rcond,
-                         double* rpvgrw, double* berr, const lapack_int* n_err_bnds,
-                         double* err_bnds_norm, double* err_bnds_comp, const lapack_int* nparams,
-                         double* params, double* work, lapack_int* iwork, lapack_int* info
+void LAPACK_dgbsvxx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* kl, const lapack_int* ku,
+                         const lapack_int* nrhs, double* AB, const lapack_int* ldab, double* AFB, const lapack_int* ldafb, lapack_int* ipiv,
+                         char* equed, double* R, double* C, double* B, const lapack_int* ldb, double* X, const lapack_int* ldx,
+                         double* rcond, double* rpvgrw, double* berr, const lapack_int* n_err_bnds, double* err_bnds_norm,
+                         double* err_bnds_comp, const lapack_int* nparams, double* params, double* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t
@@ -866,14 +762,11 @@ void LAPACK_dgbsvxx_base(const char* fact, const char* trans, const lapack_int* 
 #endif
 
 #define LAPACK_sgbsvxx_base LAPACK_GLOBAL(sgbsvxx, SGBSVXX)
-void LAPACK_sgbsvxx_base(const char* fact, const char* trans, const lapack_int* n,
-                         const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
-                         float* AB, const lapack_int* ldab, float* AFB, const lapack_int* ldafb,
-                         lapack_int* ipiv, char* equed, float* R, float* C, float* B,
-                         const lapack_int* ldb, float* X, const lapack_int* ldx, float* rcond,
-                         float* rpvgrw, float* berr, const lapack_int* n_err_bnds,
-                         float* err_bnds_norm, float* err_bnds_comp, const lapack_int* nparams,
-                         float* params, float* work, lapack_int* iwork, lapack_int* info
+void LAPACK_sgbsvxx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* kl, const lapack_int* ku,
+                         const lapack_int* nrhs, float* AB, const lapack_int* ldab, float* AFB, const lapack_int* ldafb, lapack_int* ipiv,
+                         char* equed, float* R, float* C, float* B, const lapack_int* ldb, float* X, const lapack_int* ldx, float* rcond,
+                         float* rpvgrw, float* berr, const lapack_int* n_err_bnds, float* err_bnds_norm, float* err_bnds_comp,
+                         const lapack_int* nparams, float* params, float* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t
@@ -886,16 +779,12 @@ void LAPACK_sgbsvxx_base(const char* fact, const char* trans, const lapack_int* 
 #endif
 
 #define LAPACK_zgbsvxx_base LAPACK_GLOBAL(zgbsvxx, ZGBSVXX)
-void LAPACK_zgbsvxx_base(const char* fact, const char* trans, const lapack_int* n,
-                         const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
-                         lapack_complex_double* AB, const lapack_int* ldab,
-                         lapack_complex_double* AFB, const lapack_int* ldafb, lapack_int* ipiv,
-                         char* equed, double* R, double* C, lapack_complex_double* B,
-                         const lapack_int* ldb, lapack_complex_double* X, const lapack_int* ldx,
-                         double* rcond, double* rpvgrw, double* berr, const lapack_int* n_err_bnds,
-                         double* err_bnds_norm, double* err_bnds_comp, const lapack_int* nparams,
-                         double* params, lapack_complex_double* work, double* rwork,
-                         lapack_int* info
+void LAPACK_zgbsvxx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* kl, const lapack_int* ku,
+                         const lapack_int* nrhs, lapack_complex_double* AB, const lapack_int* ldab, lapack_complex_double* AFB,
+                         const lapack_int* ldafb, lapack_int* ipiv, char* equed, double* R, double* C, lapack_complex_double* B,
+                         const lapack_int* ldb, lapack_complex_double* X, const lapack_int* ldx, double* rcond, double* rpvgrw,
+                         double* berr, const lapack_int* n_err_bnds, double* err_bnds_norm, double* err_bnds_comp,
+                         const lapack_int* nparams, double* params, lapack_complex_double* work, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t
@@ -908,31 +797,25 @@ void LAPACK_zgbsvxx_base(const char* fact, const char* trans, const lapack_int* 
 #endif
 
 #define LAPACK_cgbtrf LAPACK_GLOBAL(cgbtrf, CGBTRF)
-void LAPACK_cgbtrf(const lapack_int* m, const lapack_int* n, const lapack_int* kl,
-                   const lapack_int* ku, lapack_complex_float* AB, const lapack_int* ldab,
-                   lapack_int* ipiv, lapack_int* info);
+void LAPACK_cgbtrf(const lapack_int* m, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, lapack_complex_float* AB,
+                   const lapack_int* ldab, lapack_int* ipiv, lapack_int* info);
 
 #define LAPACK_dgbtrf LAPACK_GLOBAL(dgbtrf, DGBTRF)
-void LAPACK_dgbtrf(const lapack_int* m, const lapack_int* n, const lapack_int* kl,
-                   const lapack_int* ku, double* AB, const lapack_int* ldab, lapack_int* ipiv,
-                   lapack_int* info);
-
-#define LAPACK_sgbtrf LAPACK_GLOBAL(sgbtrf, SGBTRF)
-void LAPACK_sgbtrf(const lapack_int* m, const lapack_int* n, const lapack_int* kl,
-                   const lapack_int* ku, float* AB, const lapack_int* ldab, lapack_int* ipiv,
-                   lapack_int* info);
-
-#define LAPACK_zgbtrf LAPACK_GLOBAL(zgbtrf, ZGBTRF)
-void LAPACK_zgbtrf(const lapack_int* m, const lapack_int* n, const lapack_int* kl,
-                   const lapack_int* ku, lapack_complex_double* AB, const lapack_int* ldab,
+void LAPACK_dgbtrf(const lapack_int* m, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, double* AB, const lapack_int* ldab,
                    lapack_int* ipiv, lapack_int* info);
 
+#define LAPACK_sgbtrf LAPACK_GLOBAL(sgbtrf, SGBTRF)
+void LAPACK_sgbtrf(const lapack_int* m, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, float* AB, const lapack_int* ldab,
+                   lapack_int* ipiv, lapack_int* info);
+
+#define LAPACK_zgbtrf LAPACK_GLOBAL(zgbtrf, ZGBTRF)
+void LAPACK_zgbtrf(const lapack_int* m, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, lapack_complex_double* AB,
+                   const lapack_int* ldab, lapack_int* ipiv, lapack_int* info);
+
 #define LAPACK_cgbtrs_base LAPACK_GLOBAL(cgbtrs, CGBTRS)
-void LAPACK_cgbtrs_base(const char* trans, const lapack_int* n, const lapack_int* kl,
-                        const lapack_int* ku, const lapack_int* nrhs,
-                        const lapack_complex_float* AB, const lapack_int* ldab,
-                        const lapack_int* ipiv, lapack_complex_float* B, const lapack_int* ldb,
-                        lapack_int* info
+void LAPACK_cgbtrs_base(const char* trans, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
+                        const lapack_complex_float* AB, const lapack_int* ldab, const lapack_int* ipiv, lapack_complex_float* B,
+                        const lapack_int* ldb, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -945,10 +828,8 @@ void LAPACK_cgbtrs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_dgbtrs_base LAPACK_GLOBAL(dgbtrs, DGBTRS)
-void LAPACK_dgbtrs_base(const char* trans, const lapack_int* n, const lapack_int* kl,
-                        const lapack_int* ku, const lapack_int* nrhs, const double* AB,
-                        const lapack_int* ldab, const lapack_int* ipiv, double* B,
-                        const lapack_int* ldb, lapack_int* info
+void LAPACK_dgbtrs_base(const char* trans, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
+                        const double* AB, const lapack_int* ldab, const lapack_int* ipiv, double* B, const lapack_int* ldb, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -961,10 +842,8 @@ void LAPACK_dgbtrs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_sgbtrs_base LAPACK_GLOBAL(sgbtrs, SGBTRS)
-void LAPACK_sgbtrs_base(const char* trans, const lapack_int* n, const lapack_int* kl,
-                        const lapack_int* ku, const lapack_int* nrhs, const float* AB,
-                        const lapack_int* ldab, const lapack_int* ipiv, float* B,
-                        const lapack_int* ldb, lapack_int* info
+void LAPACK_sgbtrs_base(const char* trans, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
+                        const float* AB, const lapack_int* ldab, const lapack_int* ipiv, float* B, const lapack_int* ldb, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -977,11 +856,9 @@ void LAPACK_sgbtrs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_zgbtrs_base LAPACK_GLOBAL(zgbtrs, ZGBTRS)
-void LAPACK_zgbtrs_base(const char* trans, const lapack_int* n, const lapack_int* kl,
-                        const lapack_int* ku, const lapack_int* nrhs,
-                        const lapack_complex_double* AB, const lapack_int* ldab,
-                        const lapack_int* ipiv, lapack_complex_double* B, const lapack_int* ldb,
-                        lapack_int* info
+void LAPACK_zgbtrs_base(const char* trans, const lapack_int* n, const lapack_int* kl, const lapack_int* ku, const lapack_int* nrhs,
+                        const lapack_complex_double* AB, const lapack_int* ldab, const lapack_int* ipiv, lapack_complex_double* B,
+                        const lapack_int* ldb, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -994,10 +871,8 @@ void LAPACK_zgbtrs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_cgebak_base LAPACK_GLOBAL(cgebak, CGEBAK)
-void LAPACK_cgebak_base(const char* job, const char* side, const lapack_int* n,
-                        const lapack_int* ilo, const lapack_int* ihi, const float* scale,
-                        const lapack_int* m, lapack_complex_float* V, const lapack_int* ldv,
-                        lapack_int* info
+void LAPACK_cgebak_base(const char* job, const char* side, const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi,
+                        const float* scale, const lapack_int* m, lapack_complex_float* V, const lapack_int* ldv, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -1010,9 +885,8 @@ void LAPACK_cgebak_base(const char* job, const char* side, const lapack_int* n,
 #endif
 
 #define LAPACK_dgebak_base LAPACK_GLOBAL(dgebak, DGEBAK)
-void LAPACK_dgebak_base(const char* job, const char* side, const lapack_int* n,
-                        const lapack_int* ilo, const lapack_int* ihi, const double* scale,
-                        const lapack_int* m, double* V, const lapack_int* ldv, lapack_int* info
+void LAPACK_dgebak_base(const char* job, const char* side, const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi,
+                        const double* scale, const lapack_int* m, double* V, const lapack_int* ldv, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -1025,9 +899,8 @@ void LAPACK_dgebak_base(const char* job, const char* side, const lapack_int* n,
 #endif
 
 #define LAPACK_sgebak_base LAPACK_GLOBAL(sgebak, SGEBAK)
-void LAPACK_sgebak_base(const char* job, const char* side, const lapack_int* n,
-                        const lapack_int* ilo, const lapack_int* ihi, const float* scale,
-                        const lapack_int* m, float* V, const lapack_int* ldv, lapack_int* info
+void LAPACK_sgebak_base(const char* job, const char* side, const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi,
+                        const float* scale, const lapack_int* m, float* V, const lapack_int* ldv, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -1040,10 +913,8 @@ void LAPACK_sgebak_base(const char* job, const char* side, const lapack_int* n,
 #endif
 
 #define LAPACK_zgebak_base LAPACK_GLOBAL(zgebak, ZGEBAK)
-void LAPACK_zgebak_base(const char* job, const char* side, const lapack_int* n,
-                        const lapack_int* ilo, const lapack_int* ihi, const double* scale,
-                        const lapack_int* m, lapack_complex_double* V, const lapack_int* ldv,
-                        lapack_int* info
+void LAPACK_zgebak_base(const char* job, const char* side, const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi,
+                        const double* scale, const lapack_int* m, lapack_complex_double* V, const lapack_int* ldv, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -1056,9 +927,8 @@ void LAPACK_zgebak_base(const char* job, const char* side, const lapack_int* n,
 #endif
 
 #define LAPACK_cgebal_base LAPACK_GLOBAL(cgebal, CGEBAL)
-void LAPACK_cgebal_base(const char* job, const lapack_int* n, lapack_complex_float* A,
-                        const lapack_int* lda, lapack_int* ilo, lapack_int* ihi, float* scale,
-                        lapack_int* info
+void LAPACK_cgebal_base(const char* job, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_int* ilo,
+                        lapack_int* ihi, float* scale, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -1071,8 +941,8 @@ void LAPACK_cgebal_base(const char* job, const lapack_int* n, lapack_complex_flo
 #endif
 
 #define LAPACK_dgebal_base LAPACK_GLOBAL(dgebal, DGEBAL)
-void LAPACK_dgebal_base(const char* job, const lapack_int* n, double* A, const lapack_int* lda,
-                        lapack_int* ilo, lapack_int* ihi, double* scale, lapack_int* info
+void LAPACK_dgebal_base(const char* job, const lapack_int* n, double* A, const lapack_int* lda, lapack_int* ilo, lapack_int* ihi,
+                        double* scale, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -1085,8 +955,8 @@ void LAPACK_dgebal_base(const char* job, const lapack_int* n, double* A, const l
 #endif
 
 #define LAPACK_sgebal_base LAPACK_GLOBAL(sgebal, SGEBAL)
-void LAPACK_sgebal_base(const char* job, const lapack_int* n, float* A, const lapack_int* lda,
-                        lapack_int* ilo, lapack_int* ihi, float* scale, lapack_int* info
+void LAPACK_sgebal_base(const char* job, const lapack_int* n, float* A, const lapack_int* lda, lapack_int* ilo, lapack_int* ihi,
+                        float* scale, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -1099,9 +969,8 @@ void LAPACK_sgebal_base(const char* job, const lapack_int* n, float* A, const la
 #endif
 
 #define LAPACK_zgebal_base LAPACK_GLOBAL(zgebal, ZGEBAL)
-void LAPACK_zgebal_base(const char* job, const lapack_int* n, lapack_complex_double* A,
-                        const lapack_int* lda, lapack_int* ilo, lapack_int* ihi, double* scale,
-                        lapack_int* info
+void LAPACK_zgebal_base(const char* job, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_int* ilo,
+                        lapack_int* ihi, double* scale, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -1114,31 +983,26 @@ void LAPACK_zgebal_base(const char* job, const lapack_int* n, lapack_complex_dou
 #endif
 
 #define LAPACK_cgebrd LAPACK_GLOBAL(cgebrd, CGEBRD)
-void LAPACK_cgebrd(const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                   const lapack_int* lda, float* D, float* E, lapack_complex_float* tauq,
-                   lapack_complex_float* taup, lapack_complex_float* work, const lapack_int* lwork,
+void LAPACK_cgebrd(const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, float* D, float* E,
+                   lapack_complex_float* tauq, lapack_complex_float* taup, lapack_complex_float* work, const lapack_int* lwork,
                    lapack_int* info);
 
 #define LAPACK_dgebrd LAPACK_GLOBAL(dgebrd, DGEBRD)
-void LAPACK_dgebrd(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                   double* D, double* E, double* tauq, double* taup, double* work,
-                   const lapack_int* lwork, lapack_int* info);
+void LAPACK_dgebrd(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, double* D, double* E, double* tauq,
+                   double* taup, double* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_sgebrd LAPACK_GLOBAL(sgebrd, SGEBRD)
-void LAPACK_sgebrd(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                   float* D, float* E, float* tauq, float* taup, float* work,
-                   const lapack_int* lwork, lapack_int* info);
+void LAPACK_sgebrd(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, float* D, float* E, float* tauq, float* taup,
+                   float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_zgebrd LAPACK_GLOBAL(zgebrd, ZGEBRD)
-void LAPACK_zgebrd(const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                   const lapack_int* lda, double* D, double* E, lapack_complex_double* tauq,
-                   lapack_complex_double* taup, lapack_complex_double* work,
-                   const lapack_int* lwork, lapack_int* info);
+void LAPACK_zgebrd(const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, double* D, double* E,
+                   lapack_complex_double* tauq, lapack_complex_double* taup, lapack_complex_double* work, const lapack_int* lwork,
+                   lapack_int* info);
 
 #define LAPACK_cgecon_base LAPACK_GLOBAL(cgecon, CGECON)
-void LAPACK_cgecon_base(const char* norm, const lapack_int* n, const lapack_complex_float* A,
-                        const lapack_int* lda, const float* anorm, float* rcond,
-                        lapack_complex_float* work, float* rwork, lapack_int* info
+void LAPACK_cgecon_base(const char* norm, const lapack_int* n, const lapack_complex_float* A, const lapack_int* lda, const float* anorm,
+                        float* rcond, lapack_complex_float* work, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -1151,9 +1015,8 @@ void LAPACK_cgecon_base(const char* norm, const lapack_int* n, const lapack_comp
 #endif
 
 #define LAPACK_dgecon_base LAPACK_GLOBAL(dgecon, DGECON)
-void LAPACK_dgecon_base(const char* norm, const lapack_int* n, const double* A,
-                        const lapack_int* lda, const double* anorm, double* rcond, double* work,
-                        lapack_int* iwork, lapack_int* info
+void LAPACK_dgecon_base(const char* norm, const lapack_int* n, const double* A, const lapack_int* lda, const double* anorm, double* rcond,
+                        double* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -1166,9 +1029,8 @@ void LAPACK_dgecon_base(const char* norm, const lapack_int* n, const double* A,
 #endif
 
 #define LAPACK_sgecon_base LAPACK_GLOBAL(sgecon, SGECON)
-void LAPACK_sgecon_base(const char* norm, const lapack_int* n, const float* A,
-                        const lapack_int* lda, const float* anorm, float* rcond, float* work,
-                        lapack_int* iwork, lapack_int* info
+void LAPACK_sgecon_base(const char* norm, const lapack_int* n, const float* A, const lapack_int* lda, const float* anorm, float* rcond,
+                        float* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -1181,9 +1043,8 @@ void LAPACK_sgecon_base(const char* norm, const lapack_int* n, const float* A,
 #endif
 
 #define LAPACK_zgecon_base LAPACK_GLOBAL(zgecon, ZGECON)
-void LAPACK_zgecon_base(const char* norm, const lapack_int* n, const lapack_complex_double* A,
-                        const lapack_int* lda, const double* anorm, double* rcond,
-                        lapack_complex_double* work, double* rwork, lapack_int* info
+void LAPACK_zgecon_base(const char* norm, const lapack_int* n, const lapack_complex_double* A, const lapack_int* lda, const double* anorm,
+                        double* rcond, lapack_complex_double* work, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -1196,50 +1057,41 @@ void LAPACK_zgecon_base(const char* norm, const lapack_int* n, const lapack_comp
 #endif
 
 #define LAPACK_cgeequ LAPACK_GLOBAL(cgeequ, CGEEQU)
-void LAPACK_cgeequ(const lapack_int* m, const lapack_int* n, const lapack_complex_float* A,
-                   const lapack_int* lda, float* R, float* C, float* rowcnd, float* colcnd,
-                   float* amax, lapack_int* info);
+void LAPACK_cgeequ(const lapack_int* m, const lapack_int* n, const lapack_complex_float* A, const lapack_int* lda, float* R, float* C,
+                   float* rowcnd, float* colcnd, float* amax, lapack_int* info);
 
 #define LAPACK_dgeequ LAPACK_GLOBAL(dgeequ, DGEEQU)
-void LAPACK_dgeequ(const lapack_int* m, const lapack_int* n, const double* A, const lapack_int* lda,
-                   double* R, double* C, double* rowcnd, double* colcnd, double* amax,
-                   lapack_int* info);
+void LAPACK_dgeequ(const lapack_int* m, const lapack_int* n, const double* A, const lapack_int* lda, double* R, double* C, double* rowcnd,
+                   double* colcnd, double* amax, lapack_int* info);
 
 #define LAPACK_sgeequ LAPACK_GLOBAL(sgeequ, SGEEQU)
-void LAPACK_sgeequ(const lapack_int* m, const lapack_int* n, const float* A, const lapack_int* lda,
-                   float* R, float* C, float* rowcnd, float* colcnd, float* amax, lapack_int* info);
+void LAPACK_sgeequ(const lapack_int* m, const lapack_int* n, const float* A, const lapack_int* lda, float* R, float* C, float* rowcnd,
+                   float* colcnd, float* amax, lapack_int* info);
 
 #define LAPACK_zgeequ LAPACK_GLOBAL(zgeequ, ZGEEQU)
-void LAPACK_zgeequ(const lapack_int* m, const lapack_int* n, const lapack_complex_double* A,
-                   const lapack_int* lda, double* R, double* C, double* rowcnd, double* colcnd,
-                   double* amax, lapack_int* info);
+void LAPACK_zgeequ(const lapack_int* m, const lapack_int* n, const lapack_complex_double* A, const lapack_int* lda, double* R, double* C,
+                   double* rowcnd, double* colcnd, double* amax, lapack_int* info);
 
 #define LAPACK_cgeequb LAPACK_GLOBAL(cgeequb, CGEEQUB)
-void LAPACK_cgeequb(const lapack_int* m, const lapack_int* n, const lapack_complex_float* A,
-                    const lapack_int* lda, float* R, float* C, float* rowcnd, float* colcnd,
-                    float* amax, lapack_int* info);
+void LAPACK_cgeequb(const lapack_int* m, const lapack_int* n, const lapack_complex_float* A, const lapack_int* lda, float* R, float* C,
+                    float* rowcnd, float* colcnd, float* amax, lapack_int* info);
 
 #define LAPACK_dgeequb LAPACK_GLOBAL(dgeequb, DGEEQUB)
-void LAPACK_dgeequb(const lapack_int* m, const lapack_int* n, const double* A,
-                    const lapack_int* lda, double* R, double* C, double* rowcnd, double* colcnd,
-                    double* amax, lapack_int* info);
+void LAPACK_dgeequb(const lapack_int* m, const lapack_int* n, const double* A, const lapack_int* lda, double* R, double* C, double* rowcnd,
+                    double* colcnd, double* amax, lapack_int* info);
 
 #define LAPACK_sgeequb LAPACK_GLOBAL(sgeequb, SGEEQUB)
-void LAPACK_sgeequb(const lapack_int* m, const lapack_int* n, const float* A, const lapack_int* lda,
-                    float* R, float* C, float* rowcnd, float* colcnd, float* amax,
-                    lapack_int* info);
+void LAPACK_sgeequb(const lapack_int* m, const lapack_int* n, const float* A, const lapack_int* lda, float* R, float* C, float* rowcnd,
+                    float* colcnd, float* amax, lapack_int* info);
 
 #define LAPACK_zgeequb LAPACK_GLOBAL(zgeequb, ZGEEQUB)
-void LAPACK_zgeequb(const lapack_int* m, const lapack_int* n, const lapack_complex_double* A,
-                    const lapack_int* lda, double* R, double* C, double* rowcnd, double* colcnd,
-                    double* amax, lapack_int* info);
+void LAPACK_zgeequb(const lapack_int* m, const lapack_int* n, const lapack_complex_double* A, const lapack_int* lda, double* R, double* C,
+                    double* rowcnd, double* colcnd, double* amax, lapack_int* info);
 
 #define LAPACK_cgees_base LAPACK_GLOBAL(cgees, CGEES)
-void LAPACK_cgees_base(const char* jobvs, const char* sort, LAPACK_C_SELECT1 select,
-                       const lapack_int* n, lapack_complex_float* A, const lapack_int* lda,
-                       lapack_int* sdim, lapack_complex_float* W, lapack_complex_float* VS,
-                       const lapack_int* ldvs, lapack_complex_float* work, const lapack_int* lwork,
-                       float* rwork, lapack_logical* BWORK, lapack_int* info
+void LAPACK_cgees_base(const char* jobvs, const char* sort, LAPACK_C_SELECT1 select, const lapack_int* n, lapack_complex_float* A,
+                       const lapack_int* lda, lapack_int* sdim, lapack_complex_float* W, lapack_complex_float* VS, const lapack_int* ldvs,
+                       lapack_complex_float* work, const lapack_int* lwork, float* rwork, lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t
@@ -1252,10 +1104,9 @@ void LAPACK_cgees_base(const char* jobvs, const char* sort, LAPACK_C_SELECT1 sel
 #endif
 
 #define LAPACK_dgees_base LAPACK_GLOBAL(dgees, DGEES)
-void LAPACK_dgees_base(const char* jobvs, const char* sort, LAPACK_D_SELECT2 select,
-                       const lapack_int* n, double* A, const lapack_int* lda, lapack_int* sdim,
-                       double* WR, double* WI, double* VS, const lapack_int* ldvs, double* work,
-                       const lapack_int* lwork, lapack_logical* BWORK, lapack_int* info
+void LAPACK_dgees_base(const char* jobvs, const char* sort, LAPACK_D_SELECT2 select, const lapack_int* n, double* A, const lapack_int* lda,
+                       lapack_int* sdim, double* WR, double* WI, double* VS, const lapack_int* ldvs, double* work, const lapack_int* lwork,
+                       lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t
@@ -1268,10 +1119,9 @@ void LAPACK_dgees_base(const char* jobvs, const char* sort, LAPACK_D_SELECT2 sel
 #endif
 
 #define LAPACK_sgees_base LAPACK_GLOBAL(sgees, SGEES)
-void LAPACK_sgees_base(const char* jobvs, const char* sort, LAPACK_S_SELECT2 select,
-                       const lapack_int* n, float* A, const lapack_int* lda, lapack_int* sdim,
-                       float* WR, float* WI, float* VS, const lapack_int* ldvs, float* work,
-                       const lapack_int* lwork, lapack_logical* BWORK, lapack_int* info
+void LAPACK_sgees_base(const char* jobvs, const char* sort, LAPACK_S_SELECT2 select, const lapack_int* n, float* A, const lapack_int* lda,
+                       lapack_int* sdim, float* WR, float* WI, float* VS, const lapack_int* ldvs, float* work, const lapack_int* lwork,
+                       lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t
@@ -1284,11 +1134,9 @@ void LAPACK_sgees_base(const char* jobvs, const char* sort, LAPACK_S_SELECT2 sel
 #endif
 
 #define LAPACK_zgees_base LAPACK_GLOBAL(zgees, ZGEES)
-void LAPACK_zgees_base(const char* jobvs, const char* sort, LAPACK_Z_SELECT1 select,
-                       const lapack_int* n, lapack_complex_double* A, const lapack_int* lda,
-                       lapack_int* sdim, lapack_complex_double* W, lapack_complex_double* VS,
-                       const lapack_int* ldvs, lapack_complex_double* work, const lapack_int* lwork,
-                       double* rwork, lapack_logical* BWORK, lapack_int* info
+void LAPACK_zgees_base(const char* jobvs, const char* sort, LAPACK_Z_SELECT1 select, const lapack_int* n, lapack_complex_double* A,
+                       const lapack_int* lda, lapack_int* sdim, lapack_complex_double* W, lapack_complex_double* VS, const lapack_int* ldvs,
+                       lapack_complex_double* work, const lapack_int* lwork, double* rwork, lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t
@@ -1301,11 +1149,9 @@ void LAPACK_zgees_base(const char* jobvs, const char* sort, LAPACK_Z_SELECT1 sel
 #endif
 
 #define LAPACK_cgeesx_base LAPACK_GLOBAL(cgeesx, CGEESX)
-void LAPACK_cgeesx_base(const char* jobvs, const char* sort, LAPACK_C_SELECT1 select,
-                        const char* sense, const lapack_int* n, lapack_complex_float* A,
-                        const lapack_int* lda, lapack_int* sdim, lapack_complex_float* W,
-                        lapack_complex_float* VS, const lapack_int* ldvs, float* rconde,
-                        float* rcondv, lapack_complex_float* work, const lapack_int* lwork,
+void LAPACK_cgeesx_base(const char* jobvs, const char* sort, LAPACK_C_SELECT1 select, const char* sense, const lapack_int* n,
+                        lapack_complex_float* A, const lapack_int* lda, lapack_int* sdim, lapack_complex_float* W, lapack_complex_float* VS,
+                        const lapack_int* ldvs, float* rconde, float* rcondv, lapack_complex_float* work, const lapack_int* lwork,
                         float* rwork, lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -1319,11 +1165,9 @@ void LAPACK_cgeesx_base(const char* jobvs, const char* sort, LAPACK_C_SELECT1 se
 #endif
 
 #define LAPACK_dgeesx_base LAPACK_GLOBAL(dgeesx, DGEESX)
-void LAPACK_dgeesx_base(const char* jobvs, const char* sort, LAPACK_D_SELECT2 select,
-                        const char* sense, const lapack_int* n, double* A, const lapack_int* lda,
-                        lapack_int* sdim, double* WR, double* WI, double* VS,
-                        const lapack_int* ldvs, double* rconde, double* rcondv, double* work,
-                        const lapack_int* lwork, lapack_int* iwork, const lapack_int* liwork,
+void LAPACK_dgeesx_base(const char* jobvs, const char* sort, LAPACK_D_SELECT2 select, const char* sense, const lapack_int* n, double* A,
+                        const lapack_int* lda, lapack_int* sdim, double* WR, double* WI, double* VS, const lapack_int* ldvs, double* rconde,
+                        double* rcondv, double* work, const lapack_int* lwork, lapack_int* iwork, const lapack_int* liwork,
                         lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -1337,12 +1181,10 @@ void LAPACK_dgeesx_base(const char* jobvs, const char* sort, LAPACK_D_SELECT2 se
 #endif
 
 #define LAPACK_sgeesx_base LAPACK_GLOBAL(sgeesx, SGEESX)
-void LAPACK_sgeesx_base(const char* jobvs, const char* sort, LAPACK_S_SELECT2 select,
-                        const char* sense, const lapack_int* n, float* A, const lapack_int* lda,
-                        lapack_int* sdim, float* WR, float* WI, float* VS, const lapack_int* ldvs,
-                        float* rconde, float* rcondv, float* work, const lapack_int* lwork,
-                        lapack_int* iwork, const lapack_int* liwork, lapack_logical* BWORK,
-                        lapack_int* info
+void LAPACK_sgeesx_base(const char* jobvs, const char* sort, LAPACK_S_SELECT2 select, const char* sense, const lapack_int* n, float* A,
+                        const lapack_int* lda, lapack_int* sdim, float* WR, float* WI, float* VS, const lapack_int* ldvs, float* rconde,
+                        float* rcondv, float* work, const lapack_int* lwork, lapack_int* iwork, const lapack_int* liwork,
+                        lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -1355,12 +1197,10 @@ void LAPACK_sgeesx_base(const char* jobvs, const char* sort, LAPACK_S_SELECT2 se
 #endif
 
 #define LAPACK_zgeesx_base LAPACK_GLOBAL(zgeesx, ZGEESX)
-void LAPACK_zgeesx_base(const char* jobvs, const char* sort, LAPACK_Z_SELECT1 select,
-                        const char* sense, const lapack_int* n, lapack_complex_double* A,
-                        const lapack_int* lda, lapack_int* sdim, lapack_complex_double* W,
-                        lapack_complex_double* VS, const lapack_int* ldvs, double* rconde,
-                        double* rcondv, lapack_complex_double* work, const lapack_int* lwork,
-                        double* rwork, lapack_logical* BWORK, lapack_int* info
+void LAPACK_zgeesx_base(const char* jobvs, const char* sort, LAPACK_Z_SELECT1 select, const char* sense, const lapack_int* n,
+                        lapack_complex_double* A, const lapack_int* lda, lapack_int* sdim, lapack_complex_double* W,
+                        lapack_complex_double* VS, const lapack_int* ldvs, double* rconde, double* rcondv, lapack_complex_double* work,
+                        const lapack_int* lwork, double* rwork, lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -1373,11 +1213,9 @@ void LAPACK_zgeesx_base(const char* jobvs, const char* sort, LAPACK_Z_SELECT1 se
 #endif
 
 #define LAPACK_cgeev_base LAPACK_GLOBAL(cgeev, CGEEV)
-void LAPACK_cgeev_base(const char* jobvl, const char* jobvr, const lapack_int* n,
-                       lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* W,
-                       lapack_complex_float* VL, const lapack_int* ldvl, lapack_complex_float* VR,
-                       const lapack_int* ldvr, lapack_complex_float* work, const lapack_int* lwork,
-                       float* rwork, lapack_int* info
+void LAPACK_cgeev_base(const char* jobvl, const char* jobvr, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda,
+                       lapack_complex_float* W, lapack_complex_float* VL, const lapack_int* ldvl, lapack_complex_float* VR,
+                       const lapack_int* ldvr, lapack_complex_float* work, const lapack_int* lwork, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t
@@ -1390,10 +1228,9 @@ void LAPACK_cgeev_base(const char* jobvl, const char* jobvr, const lapack_int* n
 #endif
 
 #define LAPACK_dgeev_base LAPACK_GLOBAL(dgeev, DGEEV)
-void LAPACK_dgeev_base(const char* jobvl, const char* jobvr, const lapack_int* n, double* A,
-                       const lapack_int* lda, double* WR, double* WI, double* VL,
-                       const lapack_int* ldvl, double* VR, const lapack_int* ldvr, double* work,
-                       const lapack_int* lwork, lapack_int* info
+void LAPACK_dgeev_base(const char* jobvl, const char* jobvr, const lapack_int* n, double* A, const lapack_int* lda, double* WR, double* WI,
+                       double* VL, const lapack_int* ldvl, double* VR, const lapack_int* ldvr, double* work, const lapack_int* lwork,
+                       lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t
@@ -1406,10 +1243,9 @@ void LAPACK_dgeev_base(const char* jobvl, const char* jobvr, const lapack_int* n
 #endif
 
 #define LAPACK_sgeev_base LAPACK_GLOBAL(sgeev, SGEEV)
-void LAPACK_sgeev_base(const char* jobvl, const char* jobvr, const lapack_int* n, float* A,
-                       const lapack_int* lda, float* WR, float* WI, float* VL,
-                       const lapack_int* ldvl, float* VR, const lapack_int* ldvr, float* work,
-                       const lapack_int* lwork, lapack_int* info
+void LAPACK_sgeev_base(const char* jobvl, const char* jobvr, const lapack_int* n, float* A, const lapack_int* lda, float* WR, float* WI,
+                       float* VL, const lapack_int* ldvl, float* VR, const lapack_int* ldvr, float* work, const lapack_int* lwork,
+                       lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t
@@ -1422,11 +1258,9 @@ void LAPACK_sgeev_base(const char* jobvl, const char* jobvr, const lapack_int* n
 #endif
 
 #define LAPACK_zgeev_base LAPACK_GLOBAL(zgeev, ZGEEV)
-void LAPACK_zgeev_base(const char* jobvl, const char* jobvr, const lapack_int* n,
-                       lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* W,
-                       lapack_complex_double* VL, const lapack_int* ldvl, lapack_complex_double* VR,
-                       const lapack_int* ldvr, lapack_complex_double* work, const lapack_int* lwork,
-                       double* rwork, lapack_int* info
+void LAPACK_zgeev_base(const char* jobvl, const char* jobvr, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda,
+                       lapack_complex_double* W, lapack_complex_double* VL, const lapack_int* ldvl, lapack_complex_double* VR,
+                       const lapack_int* ldvr, lapack_complex_double* work, const lapack_int* lwork, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t
@@ -1439,13 +1273,11 @@ void LAPACK_zgeev_base(const char* jobvl, const char* jobvr, const lapack_int* n
 #endif
 
 #define LAPACK_cgeevx_base LAPACK_GLOBAL(cgeevx, CGEEVX)
-void LAPACK_cgeevx_base(const char* balanc, const char* jobvl, const char* jobvr, const char* sense,
-                        const lapack_int* n, lapack_complex_float* A, const lapack_int* lda,
-                        lapack_complex_float* W, lapack_complex_float* VL, const lapack_int* ldvl,
-                        lapack_complex_float* VR, const lapack_int* ldvr, lapack_int* ilo,
-                        lapack_int* ihi, float* scale, float* abnrm, float* rconde, float* rcondv,
-                        lapack_complex_float* work, const lapack_int* lwork, float* rwork,
-                        lapack_int* info
+void LAPACK_cgeevx_base(const char* balanc, const char* jobvl, const char* jobvr, const char* sense, const lapack_int* n,
+                        lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* W, lapack_complex_float* VL,
+                        const lapack_int* ldvl, lapack_complex_float* VR, const lapack_int* ldvr, lapack_int* ilo, lapack_int* ihi,
+                        float* scale, float* abnrm, float* rconde, float* rcondv, lapack_complex_float* work, const lapack_int* lwork,
+                        float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t
@@ -1458,12 +1290,10 @@ void LAPACK_cgeevx_base(const char* balanc, const char* jobvl, const char* jobvr
 #endif
 
 #define LAPACK_dgeevx_base LAPACK_GLOBAL(dgeevx, DGEEVX)
-void LAPACK_dgeevx_base(const char* balanc, const char* jobvl, const char* jobvr, const char* sense,
-                        const lapack_int* n, double* A, const lapack_int* lda, double* WR,
-                        double* WI, double* VL, const lapack_int* ldvl, double* VR,
-                        const lapack_int* ldvr, lapack_int* ilo, lapack_int* ihi, double* scale,
-                        double* abnrm, double* rconde, double* rcondv, double* work,
-                        const lapack_int* lwork, lapack_int* iwork, lapack_int* info
+void LAPACK_dgeevx_base(const char* balanc, const char* jobvl, const char* jobvr, const char* sense, const lapack_int* n, double* A,
+                        const lapack_int* lda, double* WR, double* WI, double* VL, const lapack_int* ldvl, double* VR,
+                        const lapack_int* ldvr, lapack_int* ilo, lapack_int* ihi, double* scale, double* abnrm, double* rconde,
+                        double* rcondv, double* work, const lapack_int* lwork, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t
@@ -1476,12 +1306,10 @@ void LAPACK_dgeevx_base(const char* balanc, const char* jobvl, const char* jobvr
 #endif
 
 #define LAPACK_sgeevx_base LAPACK_GLOBAL(sgeevx, SGEEVX)
-void LAPACK_sgeevx_base(const char* balanc, const char* jobvl, const char* jobvr, const char* sense,
-                        const lapack_int* n, float* A, const lapack_int* lda, float* WR, float* WI,
-                        float* VL, const lapack_int* ldvl, float* VR, const lapack_int* ldvr,
-                        lapack_int* ilo, lapack_int* ihi, float* scale, float* abnrm, float* rconde,
-                        float* rcondv, float* work, const lapack_int* lwork, lapack_int* iwork,
-                        lapack_int* info
+void LAPACK_sgeevx_base(const char* balanc, const char* jobvl, const char* jobvr, const char* sense, const lapack_int* n, float* A,
+                        const lapack_int* lda, float* WR, float* WI, float* VL, const lapack_int* ldvl, float* VR, const lapack_int* ldvr,
+                        lapack_int* ilo, lapack_int* ihi, float* scale, float* abnrm, float* rconde, float* rcondv, float* work,
+                        const lapack_int* lwork, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t
@@ -1494,12 +1322,10 @@ void LAPACK_sgeevx_base(const char* balanc, const char* jobvl, const char* jobvr
 #endif
 
 #define LAPACK_zgeevx_base LAPACK_GLOBAL(zgeevx, ZGEEVX)
-void LAPACK_zgeevx_base(const char* balanc, const char* jobvl, const char* jobvr, const char* sense,
-                        const lapack_int* n, lapack_complex_double* A, const lapack_int* lda,
-                        lapack_complex_double* W, lapack_complex_double* VL, const lapack_int* ldvl,
-                        lapack_complex_double* VR, const lapack_int* ldvr, lapack_int* ilo,
-                        lapack_int* ihi, double* scale, double* abnrm, double* rconde,
-                        double* rcondv, lapack_complex_double* work, const lapack_int* lwork,
+void LAPACK_zgeevx_base(const char* balanc, const char* jobvl, const char* jobvr, const char* sense, const lapack_int* n,
+                        lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* W, lapack_complex_double* VL,
+                        const lapack_int* ldvl, lapack_complex_double* VR, const lapack_int* ldvr, lapack_int* ilo, lapack_int* ihi,
+                        double* scale, double* abnrm, double* rconde, double* rcondv, lapack_complex_double* work, const lapack_int* lwork,
                         double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -1513,33 +1339,27 @@ void LAPACK_zgeevx_base(const char* balanc, const char* jobvl, const char* jobvr
 #endif
 
 #define LAPACK_cgehrd LAPACK_GLOBAL(cgehrd, CGEHRD)
-void LAPACK_cgehrd(const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi,
-                   lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* tau,
-                   lapack_complex_float* work, const lapack_int* lwork, lapack_int* info);
+void LAPACK_cgehrd(const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi, lapack_complex_float* A, const lapack_int* lda,
+                   lapack_complex_float* tau, lapack_complex_float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_dgehrd LAPACK_GLOBAL(dgehrd, DGEHRD)
-void LAPACK_dgehrd(const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi, double* A,
-                   const lapack_int* lda, double* tau, double* work, const lapack_int* lwork,
-                   lapack_int* info);
+void LAPACK_dgehrd(const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi, double* A, const lapack_int* lda, double* tau,
+                   double* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_sgehrd LAPACK_GLOBAL(sgehrd, SGEHRD)
-void LAPACK_sgehrd(const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi, float* A,
-                   const lapack_int* lda, float* tau, float* work, const lapack_int* lwork,
-                   lapack_int* info);
+void LAPACK_sgehrd(const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi, float* A, const lapack_int* lda, float* tau,
+                   float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_zgehrd LAPACK_GLOBAL(zgehrd, ZGEHRD)
-void LAPACK_zgehrd(const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi,
-                   lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* tau,
-                   lapack_complex_double* work, const lapack_int* lwork, lapack_int* info);
+void LAPACK_zgehrd(const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi, lapack_complex_double* A, const lapack_int* lda,
+                   lapack_complex_double* tau, lapack_complex_double* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_cgejsv_base LAPACK_GLOBAL(cgejsv, CGEJSV)
-void LAPACK_cgejsv_base(const char* joba, const char* jobu, const char* jobv, const char* jobr,
-                        const char* jobt, const char* jobp, const lapack_int* m,
-                        const lapack_int* n, lapack_complex_float* A, const lapack_int* lda,
-                        float* SVA, lapack_complex_float* U, const lapack_int* ldu,
-                        lapack_complex_float* V, const lapack_int* ldv, lapack_complex_float* cwork,
-                        const lapack_int* lwork, float* rwork, const lapack_int* lrwork,
-                        lapack_int* iwork, lapack_int* info
+void LAPACK_cgejsv_base(const char* joba, const char* jobu, const char* jobv, const char* jobr, const char* jobt, const char* jobp,
+                        const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, float* SVA,
+                        lapack_complex_float* U, const lapack_int* ldu, lapack_complex_float* V, const lapack_int* ldv,
+                        lapack_complex_float* cwork, const lapack_int* lwork, float* rwork, const lapack_int* lrwork, lapack_int* iwork,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t, size_t, size_t
@@ -1552,11 +1372,10 @@ void LAPACK_cgejsv_base(const char* joba, const char* jobu, const char* jobv, co
 #endif
 
 #define LAPACK_dgejsv_base LAPACK_GLOBAL(dgejsv, DGEJSV)
-void LAPACK_dgejsv_base(const char* joba, const char* jobu, const char* jobv, const char* jobr,
-                        const char* jobt, const char* jobp, const lapack_int* m,
-                        const lapack_int* n, double* A, const lapack_int* lda, double* SVA,
-                        double* U, const lapack_int* ldu, double* V, const lapack_int* ldv,
-                        double* work, const lapack_int* lwork, lapack_int* iwork, lapack_int* info
+void LAPACK_dgejsv_base(const char* joba, const char* jobu, const char* jobv, const char* jobr, const char* jobt, const char* jobp,
+                        const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, double* SVA, double* U,
+                        const lapack_int* ldu, double* V, const lapack_int* ldv, double* work, const lapack_int* lwork, lapack_int* iwork,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t, size_t, size_t
@@ -1569,11 +1388,10 @@ void LAPACK_dgejsv_base(const char* joba, const char* jobu, const char* jobv, co
 #endif
 
 #define LAPACK_sgejsv_base LAPACK_GLOBAL(sgejsv, SGEJSV)
-void LAPACK_sgejsv_base(const char* joba, const char* jobu, const char* jobv, const char* jobr,
-                        const char* jobt, const char* jobp, const lapack_int* m,
-                        const lapack_int* n, float* A, const lapack_int* lda, float* SVA, float* U,
-                        const lapack_int* ldu, float* V, const lapack_int* ldv, float* work,
-                        const lapack_int* lwork, lapack_int* iwork, lapack_int* info
+void LAPACK_sgejsv_base(const char* joba, const char* jobu, const char* jobv, const char* jobr, const char* jobt, const char* jobp,
+                        const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, float* SVA, float* U,
+                        const lapack_int* ldu, float* V, const lapack_int* ldv, float* work, const lapack_int* lwork, lapack_int* iwork,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t, size_t, size_t
@@ -1586,13 +1404,11 @@ void LAPACK_sgejsv_base(const char* joba, const char* jobu, const char* jobv, co
 #endif
 
 #define LAPACK_zgejsv_base LAPACK_GLOBAL(zgejsv, ZGEJSV)
-void LAPACK_zgejsv_base(const char* joba, const char* jobu, const char* jobv, const char* jobr,
-                        const char* jobt, const char* jobp, const lapack_int* m,
-                        const lapack_int* n, lapack_complex_double* A, const lapack_int* lda,
-                        double* SVA, lapack_complex_double* U, const lapack_int* ldu,
-                        lapack_complex_double* V, const lapack_int* ldv,
-                        lapack_complex_double* cwork, const lapack_int* lwork, double* rwork,
-                        const lapack_int* lrwork, lapack_int* iwork, lapack_int* info
+void LAPACK_zgejsv_base(const char* joba, const char* jobu, const char* jobv, const char* jobr, const char* jobt, const char* jobp,
+                        const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, double* SVA,
+                        lapack_complex_double* U, const lapack_int* ldu, lapack_complex_double* V, const lapack_int* ldv,
+                        lapack_complex_double* cwork, const lapack_int* lwork, double* rwork, const lapack_int* lrwork, lapack_int* iwork,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t, size_t, size_t
@@ -1605,65 +1421,54 @@ void LAPACK_zgejsv_base(const char* joba, const char* jobu, const char* jobv, co
 #endif
 
 #define LAPACK_cgelq LAPACK_GLOBAL(cgelq, CGELQ)
-void LAPACK_cgelq(const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                  const lapack_int* lda, lapack_complex_float* T, const lapack_int* tsize,
-                  lapack_complex_float* work, const lapack_int* lwork, lapack_int* info);
+void LAPACK_cgelq(const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* T,
+                  const lapack_int* tsize, lapack_complex_float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_dgelq LAPACK_GLOBAL(dgelq, DGELQ)
-void LAPACK_dgelq(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                  double* T, const lapack_int* tsize, double* work, const lapack_int* lwork,
-                  lapack_int* info);
+void LAPACK_dgelq(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, double* T, const lapack_int* tsize,
+                  double* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_sgelq LAPACK_GLOBAL(sgelq, SGELQ)
-void LAPACK_sgelq(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                  float* T, const lapack_int* tsize, float* work, const lapack_int* lwork,
-                  lapack_int* info);
+void LAPACK_sgelq(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, float* T, const lapack_int* tsize, float* work,
+                  const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_zgelq LAPACK_GLOBAL(zgelq, ZGELQ)
-void LAPACK_zgelq(const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                  const lapack_int* lda, lapack_complex_double* T, const lapack_int* tsize,
-                  lapack_complex_double* work, const lapack_int* lwork, lapack_int* info);
+void LAPACK_zgelq(const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* T,
+                  const lapack_int* tsize, lapack_complex_double* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_cgelq2 LAPACK_GLOBAL(cgelq2, CGELQ2)
-void LAPACK_cgelq2(const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                   const lapack_int* lda, lapack_complex_float* tau, lapack_complex_float* work,
-                   lapack_int* info);
+void LAPACK_cgelq2(const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* tau,
+                   lapack_complex_float* work, lapack_int* info);
 
 #define LAPACK_dgelq2 LAPACK_GLOBAL(dgelq2, DGELQ2)
-void LAPACK_dgelq2(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                   double* tau, double* work, lapack_int* info);
+void LAPACK_dgelq2(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, double* tau, double* work, lapack_int* info);
 
 #define LAPACK_sgelq2 LAPACK_GLOBAL(sgelq2, SGELQ2)
-void LAPACK_sgelq2(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                   float* tau, float* work, lapack_int* info);
+void LAPACK_sgelq2(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, float* tau, float* work, lapack_int* info);
 
 #define LAPACK_zgelq2 LAPACK_GLOBAL(zgelq2, ZGELQ2)
-void LAPACK_zgelq2(const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                   const lapack_int* lda, lapack_complex_double* tau, lapack_complex_double* work,
-                   lapack_int* info);
+void LAPACK_zgelq2(const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* tau,
+                   lapack_complex_double* work, lapack_int* info);
 
 #define LAPACK_cgelqf LAPACK_GLOBAL(cgelqf, CGELQF)
-void LAPACK_cgelqf(const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                   const lapack_int* lda, lapack_complex_float* tau, lapack_complex_float* work,
-                   const lapack_int* lwork, lapack_int* info);
+void LAPACK_cgelqf(const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* tau,
+                   lapack_complex_float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_dgelqf LAPACK_GLOBAL(dgelqf, DGELQF)
-void LAPACK_dgelqf(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                   double* tau, double* work, const lapack_int* lwork, lapack_int* info);
-
-#define LAPACK_sgelqf LAPACK_GLOBAL(sgelqf, SGELQF)
-void LAPACK_sgelqf(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                   float* tau, float* work, const lapack_int* lwork, lapack_int* info);
-
-#define LAPACK_zgelqf LAPACK_GLOBAL(zgelqf, ZGELQF)
-void LAPACK_zgelqf(const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                   const lapack_int* lda, lapack_complex_double* tau, lapack_complex_double* work,
+void LAPACK_dgelqf(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, double* tau, double* work,
                    const lapack_int* lwork, lapack_int* info);
 
+#define LAPACK_sgelqf LAPACK_GLOBAL(sgelqf, SGELQF)
+void LAPACK_sgelqf(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, float* tau, float* work,
+                   const lapack_int* lwork, lapack_int* info);
+
+#define LAPACK_zgelqf LAPACK_GLOBAL(zgelqf, ZGELQF)
+void LAPACK_zgelqf(const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* tau,
+                   lapack_complex_double* work, const lapack_int* lwork, lapack_int* info);
+
 #define LAPACK_cgels_base LAPACK_GLOBAL(cgels, CGELS)
-void LAPACK_cgels_base(const char* trans, const lapack_int* m, const lapack_int* n,
-                       const lapack_int* nrhs, lapack_complex_float* A, const lapack_int* lda,
-                       lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* work,
+void LAPACK_cgels_base(const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, lapack_complex_float* A,
+                       const lapack_int* lda, lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* work,
                        const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
@@ -1677,10 +1482,8 @@ void LAPACK_cgels_base(const char* trans, const lapack_int* m, const lapack_int*
 #endif
 
 #define LAPACK_dgels_base LAPACK_GLOBAL(dgels, DGELS)
-void LAPACK_dgels_base(const char* trans, const lapack_int* m, const lapack_int* n,
-                       const lapack_int* nrhs, double* A, const lapack_int* lda, double* B,
-                       const lapack_int* ldb, double* work, const lapack_int* lwork,
-                       lapack_int* info
+void LAPACK_dgels_base(const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, double* A,
+                       const lapack_int* lda, double* B, const lapack_int* ldb, double* work, const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t
@@ -1693,9 +1496,8 @@ void LAPACK_dgels_base(const char* trans, const lapack_int* m, const lapack_int*
 #endif
 
 #define LAPACK_sgels_base LAPACK_GLOBAL(sgels, SGELS)
-void LAPACK_sgels_base(const char* trans, const lapack_int* m, const lapack_int* n,
-                       const lapack_int* nrhs, float* A, const lapack_int* lda, float* B,
-                       const lapack_int* ldb, float* work, const lapack_int* lwork, lapack_int* info
+void LAPACK_sgels_base(const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, float* A, const lapack_int* lda,
+                       float* B, const lapack_int* ldb, float* work, const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t
@@ -1708,9 +1510,8 @@ void LAPACK_sgels_base(const char* trans, const lapack_int* m, const lapack_int*
 #endif
 
 #define LAPACK_zgels_base LAPACK_GLOBAL(zgels, ZGELS)
-void LAPACK_zgels_base(const char* trans, const lapack_int* m, const lapack_int* n,
-                       const lapack_int* nrhs, lapack_complex_double* A, const lapack_int* lda,
-                       lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* work,
+void LAPACK_zgels_base(const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, lapack_complex_double* A,
+                       const lapack_int* lda, lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* work,
                        const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
@@ -1724,89 +1525,70 @@ void LAPACK_zgels_base(const char* trans, const lapack_int* m, const lapack_int*
 #endif
 
 #define LAPACK_cgelsd LAPACK_GLOBAL(cgelsd, CGELSD)
-void LAPACK_cgelsd(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs,
-                   lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* B,
-                   const lapack_int* ldb, float* S, const float* rcond, lapack_int* rank,
-                   lapack_complex_float* work, const lapack_int* lwork, float* rwork,
-                   lapack_int* iwork, lapack_int* info);
+void LAPACK_cgelsd(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, lapack_complex_float* A, const lapack_int* lda,
+                   lapack_complex_float* B, const lapack_int* ldb, float* S, const float* rcond, lapack_int* rank,
+                   lapack_complex_float* work, const lapack_int* lwork, float* rwork, lapack_int* iwork, lapack_int* info);
 
 #define LAPACK_dgelsd LAPACK_GLOBAL(dgelsd, DGELSD)
-void LAPACK_dgelsd(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, double* A,
-                   const lapack_int* lda, double* B, const lapack_int* ldb, double* S,
-                   const double* rcond, lapack_int* rank, double* work, const lapack_int* lwork,
+void LAPACK_dgelsd(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, double* A, const lapack_int* lda, double* B,
+                   const lapack_int* ldb, double* S, const double* rcond, lapack_int* rank, double* work, const lapack_int* lwork,
                    lapack_int* iwork, lapack_int* info);
 
 #define LAPACK_sgelsd LAPACK_GLOBAL(sgelsd, SGELSD)
-void LAPACK_sgelsd(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, float* A,
-                   const lapack_int* lda, float* B, const lapack_int* ldb, float* S,
-                   const float* rcond, lapack_int* rank, float* work, const lapack_int* lwork,
+void LAPACK_sgelsd(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, float* A, const lapack_int* lda, float* B,
+                   const lapack_int* ldb, float* S, const float* rcond, lapack_int* rank, float* work, const lapack_int* lwork,
                    lapack_int* iwork, lapack_int* info);
 
 #define LAPACK_zgelsd LAPACK_GLOBAL(zgelsd, ZGELSD)
-void LAPACK_zgelsd(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs,
-                   lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* B,
-                   const lapack_int* ldb, double* S, const double* rcond, lapack_int* rank,
-                   lapack_complex_double* work, const lapack_int* lwork, double* rwork,
-                   lapack_int* iwork, lapack_int* info);
+void LAPACK_zgelsd(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, lapack_complex_double* A, const lapack_int* lda,
+                   lapack_complex_double* B, const lapack_int* ldb, double* S, const double* rcond, lapack_int* rank,
+                   lapack_complex_double* work, const lapack_int* lwork, double* rwork, lapack_int* iwork, lapack_int* info);
 
 #define LAPACK_cgelss LAPACK_GLOBAL(cgelss, CGELSS)
-void LAPACK_cgelss(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs,
-                   lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* B,
-                   const lapack_int* ldb, float* S, const float* rcond, lapack_int* rank,
-                   lapack_complex_float* work, const lapack_int* lwork, float* rwork,
-                   lapack_int* info);
+void LAPACK_cgelss(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, lapack_complex_float* A, const lapack_int* lda,
+                   lapack_complex_float* B, const lapack_int* ldb, float* S, const float* rcond, lapack_int* rank,
+                   lapack_complex_float* work, const lapack_int* lwork, float* rwork, lapack_int* info);
 
 #define LAPACK_dgelss LAPACK_GLOBAL(dgelss, DGELSS)
-void LAPACK_dgelss(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, double* A,
-                   const lapack_int* lda, double* B, const lapack_int* ldb, double* S,
-                   const double* rcond, lapack_int* rank, double* work, const lapack_int* lwork,
+void LAPACK_dgelss(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, double* A, const lapack_int* lda, double* B,
+                   const lapack_int* ldb, double* S, const double* rcond, lapack_int* rank, double* work, const lapack_int* lwork,
                    lapack_int* info);
 
 #define LAPACK_sgelss LAPACK_GLOBAL(sgelss, SGELSS)
-void LAPACK_sgelss(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, float* A,
-                   const lapack_int* lda, float* B, const lapack_int* ldb, float* S,
-                   const float* rcond, lapack_int* rank, float* work, const lapack_int* lwork,
+void LAPACK_sgelss(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, float* A, const lapack_int* lda, float* B,
+                   const lapack_int* ldb, float* S, const float* rcond, lapack_int* rank, float* work, const lapack_int* lwork,
                    lapack_int* info);
 
 #define LAPACK_zgelss LAPACK_GLOBAL(zgelss, ZGELSS)
-void LAPACK_zgelss(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs,
-                   lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* B,
-                   const lapack_int* ldb, double* S, const double* rcond, lapack_int* rank,
-                   lapack_complex_double* work, const lapack_int* lwork, double* rwork,
-                   lapack_int* info);
+void LAPACK_zgelss(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, lapack_complex_double* A, const lapack_int* lda,
+                   lapack_complex_double* B, const lapack_int* ldb, double* S, const double* rcond, lapack_int* rank,
+                   lapack_complex_double* work, const lapack_int* lwork, double* rwork, lapack_int* info);
 
 #define LAPACK_cgelsy LAPACK_GLOBAL(cgelsy, CGELSY)
-void LAPACK_cgelsy(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs,
-                   lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* B,
-                   const lapack_int* ldb, lapack_int* JPVT, const float* rcond, lapack_int* rank,
-                   lapack_complex_float* work, const lapack_int* lwork, float* rwork,
-                   lapack_int* info);
+void LAPACK_cgelsy(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, lapack_complex_float* A, const lapack_int* lda,
+                   lapack_complex_float* B, const lapack_int* ldb, lapack_int* JPVT, const float* rcond, lapack_int* rank,
+                   lapack_complex_float* work, const lapack_int* lwork, float* rwork, lapack_int* info);
 
 #define LAPACK_dgelsy LAPACK_GLOBAL(dgelsy, DGELSY)
-void LAPACK_dgelsy(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, double* A,
-                   const lapack_int* lda, double* B, const lapack_int* ldb, lapack_int* JPVT,
-                   const double* rcond, lapack_int* rank, double* work, const lapack_int* lwork,
+void LAPACK_dgelsy(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, double* A, const lapack_int* lda, double* B,
+                   const lapack_int* ldb, lapack_int* JPVT, const double* rcond, lapack_int* rank, double* work, const lapack_int* lwork,
                    lapack_int* info);
 
 #define LAPACK_sgelsy LAPACK_GLOBAL(sgelsy, SGELSY)
-void LAPACK_sgelsy(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, float* A,
-                   const lapack_int* lda, float* B, const lapack_int* ldb, lapack_int* JPVT,
-                   const float* rcond, lapack_int* rank, float* work, const lapack_int* lwork,
+void LAPACK_sgelsy(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, float* A, const lapack_int* lda, float* B,
+                   const lapack_int* ldb, lapack_int* JPVT, const float* rcond, lapack_int* rank, float* work, const lapack_int* lwork,
                    lapack_int* info);
 
 #define LAPACK_zgelsy LAPACK_GLOBAL(zgelsy, ZGELSY)
-void LAPACK_zgelsy(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs,
-                   lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* B,
-                   const lapack_int* ldb, lapack_int* JPVT, const double* rcond, lapack_int* rank,
-                   lapack_complex_double* work, const lapack_int* lwork, double* rwork,
-                   lapack_int* info);
+void LAPACK_zgelsy(const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, lapack_complex_double* A, const lapack_int* lda,
+                   lapack_complex_double* B, const lapack_int* ldb, lapack_int* JPVT, const double* rcond, lapack_int* rank,
+                   lapack_complex_double* work, const lapack_int* lwork, double* rwork, lapack_int* info);
 
 #define LAPACK_cgemlq_base LAPACK_GLOBAL(cgemlq, CGEMLQ)
-void LAPACK_cgemlq_base(const char* side, const char* trans, const lapack_int* m,
-                        const lapack_int* n, const lapack_int* k, const lapack_complex_float* A,
-                        const lapack_int* lda, const lapack_complex_float* T,
-                        const lapack_int* tsize, lapack_complex_float* C, const lapack_int* ldc,
-                        lapack_complex_float* work, const lapack_int* lwork, lapack_int* info
+void LAPACK_cgemlq_base(const char* side, const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* k,
+                        const lapack_complex_float* A, const lapack_int* lda, const lapack_complex_float* T, const lapack_int* tsize,
+                        lapack_complex_float* C, const lapack_int* ldc, lapack_complex_float* work, const lapack_int* lwork,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -1819,11 +1601,9 @@ void LAPACK_cgemlq_base(const char* side, const char* trans, const lapack_int* m
 #endif
 
 #define LAPACK_dgemlq_base LAPACK_GLOBAL(dgemlq, DGEMLQ)
-void LAPACK_dgemlq_base(const char* side, const char* trans, const lapack_int* m,
-                        const lapack_int* n, const lapack_int* k, const double* A,
-                        const lapack_int* lda, const double* T, const lapack_int* tsize, double* C,
-                        const lapack_int* ldc, double* work, const lapack_int* lwork,
-                        lapack_int* info
+void LAPACK_dgemlq_base(const char* side, const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* k, const double* A,
+                        const lapack_int* lda, const double* T, const lapack_int* tsize, double* C, const lapack_int* ldc, double* work,
+                        const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -1836,11 +1616,9 @@ void LAPACK_dgemlq_base(const char* side, const char* trans, const lapack_int* m
 #endif
 
 #define LAPACK_sgemlq_base LAPACK_GLOBAL(sgemlq, SGEMLQ)
-void LAPACK_sgemlq_base(const char* side, const char* trans, const lapack_int* m,
-                        const lapack_int* n, const lapack_int* k, const float* A,
-                        const lapack_int* lda, const float* T, const lapack_int* tsize, float* C,
-                        const lapack_int* ldc, float* work, const lapack_int* lwork,
-                        lapack_int* info
+void LAPACK_sgemlq_base(const char* side, const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* k, const float* A,
+                        const lapack_int* lda, const float* T, const lapack_int* tsize, float* C, const lapack_int* ldc, float* work,
+                        const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -1853,11 +1631,10 @@ void LAPACK_sgemlq_base(const char* side, const char* trans, const lapack_int* m
 #endif
 
 #define LAPACK_zgemlq_base LAPACK_GLOBAL(zgemlq, ZGEMLQ)
-void LAPACK_zgemlq_base(const char* side, const char* trans, const lapack_int* m,
-                        const lapack_int* n, const lapack_int* k, const lapack_complex_double* A,
-                        const lapack_int* lda, const lapack_complex_double* T,
-                        const lapack_int* tsize, lapack_complex_double* C, const lapack_int* ldc,
-                        lapack_complex_double* work, const lapack_int* lwork, lapack_int* info
+void LAPACK_zgemlq_base(const char* side, const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* k,
+                        const lapack_complex_double* A, const lapack_int* lda, const lapack_complex_double* T, const lapack_int* tsize,
+                        lapack_complex_double* C, const lapack_int* ldc, lapack_complex_double* work, const lapack_int* lwork,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -1870,11 +1647,10 @@ void LAPACK_zgemlq_base(const char* side, const char* trans, const lapack_int* m
 #endif
 
 #define LAPACK_cgemqr_base LAPACK_GLOBAL(cgemqr, CGEMQR)
-void LAPACK_cgemqr_base(const char* side, const char* trans, const lapack_int* m,
-                        const lapack_int* n, const lapack_int* k, const lapack_complex_float* A,
-                        const lapack_int* lda, const lapack_complex_float* T,
-                        const lapack_int* tsize, lapack_complex_float* C, const lapack_int* ldc,
-                        lapack_complex_float* work, const lapack_int* lwork, lapack_int* info
+void LAPACK_cgemqr_base(const char* side, const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* k,
+                        const lapack_complex_float* A, const lapack_int* lda, const lapack_complex_float* T, const lapack_int* tsize,
+                        lapack_complex_float* C, const lapack_int* ldc, lapack_complex_float* work, const lapack_int* lwork,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -1887,11 +1663,9 @@ void LAPACK_cgemqr_base(const char* side, const char* trans, const lapack_int* m
 #endif
 
 #define LAPACK_dgemqr_base LAPACK_GLOBAL(dgemqr, DGEMQR)
-void LAPACK_dgemqr_base(const char* side, const char* trans, const lapack_int* m,
-                        const lapack_int* n, const lapack_int* k, const double* A,
-                        const lapack_int* lda, const double* T, const lapack_int* tsize, double* C,
-                        const lapack_int* ldc, double* work, const lapack_int* lwork,
-                        lapack_int* info
+void LAPACK_dgemqr_base(const char* side, const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* k, const double* A,
+                        const lapack_int* lda, const double* T, const lapack_int* tsize, double* C, const lapack_int* ldc, double* work,
+                        const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -1904,11 +1678,9 @@ void LAPACK_dgemqr_base(const char* side, const char* trans, const lapack_int* m
 #endif
 
 #define LAPACK_sgemqr_base LAPACK_GLOBAL(sgemqr, SGEMQR)
-void LAPACK_sgemqr_base(const char* side, const char* trans, const lapack_int* m,
-                        const lapack_int* n, const lapack_int* k, const float* A,
-                        const lapack_int* lda, const float* T, const lapack_int* tsize, float* C,
-                        const lapack_int* ldc, float* work, const lapack_int* lwork,
-                        lapack_int* info
+void LAPACK_sgemqr_base(const char* side, const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* k, const float* A,
+                        const lapack_int* lda, const float* T, const lapack_int* tsize, float* C, const lapack_int* ldc, float* work,
+                        const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -1921,11 +1693,10 @@ void LAPACK_sgemqr_base(const char* side, const char* trans, const lapack_int* m
 #endif
 
 #define LAPACK_zgemqr_base LAPACK_GLOBAL(zgemqr, ZGEMQR)
-void LAPACK_zgemqr_base(const char* side, const char* trans, const lapack_int* m,
-                        const lapack_int* n, const lapack_int* k, const lapack_complex_double* A,
-                        const lapack_int* lda, const lapack_complex_double* T,
-                        const lapack_int* tsize, lapack_complex_double* C, const lapack_int* ldc,
-                        lapack_complex_double* work, const lapack_int* lwork, lapack_int* info
+void LAPACK_zgemqr_base(const char* side, const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* k,
+                        const lapack_complex_double* A, const lapack_int* lda, const lapack_complex_double* T, const lapack_int* tsize,
+                        lapack_complex_double* C, const lapack_int* ldc, lapack_complex_double* work, const lapack_int* lwork,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -1938,12 +1709,9 @@ void LAPACK_zgemqr_base(const char* side, const char* trans, const lapack_int* m
 #endif
 
 #define LAPACK_cgemqrt_base LAPACK_GLOBAL(cgemqrt, CGEMQRT)
-void LAPACK_cgemqrt_base(const char* side, const char* trans, const lapack_int* m,
-                         const lapack_int* n, const lapack_int* k, const lapack_int* nb,
-                         const lapack_complex_float* V, const lapack_int* ldv,
-                         const lapack_complex_float* T, const lapack_int* ldt,
-                         lapack_complex_float* C, const lapack_int* ldc, lapack_complex_float* work,
-                         lapack_int* info
+void LAPACK_cgemqrt_base(const char* side, const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* k,
+                         const lapack_int* nb, const lapack_complex_float* V, const lapack_int* ldv, const lapack_complex_float* T,
+                         const lapack_int* ldt, lapack_complex_float* C, const lapack_int* ldc, lapack_complex_float* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t
@@ -1956,11 +1724,9 @@ void LAPACK_cgemqrt_base(const char* side, const char* trans, const lapack_int* 
 #endif
 
 #define LAPACK_dgemqrt_base LAPACK_GLOBAL(dgemqrt, DGEMQRT)
-void LAPACK_dgemqrt_base(const char* side, const char* trans, const lapack_int* m,
-                         const lapack_int* n, const lapack_int* k, const lapack_int* nb,
-                         const double* V, const lapack_int* ldv, const double* T,
-                         const lapack_int* ldt, double* C, const lapack_int* ldc, double* work,
-                         lapack_int* info
+void LAPACK_dgemqrt_base(const char* side, const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* k,
+                         const lapack_int* nb, const double* V, const lapack_int* ldv, const double* T, const lapack_int* ldt, double* C,
+                         const lapack_int* ldc, double* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t
@@ -1973,11 +1739,9 @@ void LAPACK_dgemqrt_base(const char* side, const char* trans, const lapack_int* 
 #endif
 
 #define LAPACK_sgemqrt_base LAPACK_GLOBAL(sgemqrt, SGEMQRT)
-void LAPACK_sgemqrt_base(const char* side, const char* trans, const lapack_int* m,
-                         const lapack_int* n, const lapack_int* k, const lapack_int* nb,
-                         const float* V, const lapack_int* ldv, const float* T,
-                         const lapack_int* ldt, float* C, const lapack_int* ldc, float* work,
-                         lapack_int* info
+void LAPACK_sgemqrt_base(const char* side, const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* k,
+                         const lapack_int* nb, const float* V, const lapack_int* ldv, const float* T, const lapack_int* ldt, float* C,
+                         const lapack_int* ldc, float* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t
@@ -1990,12 +1754,10 @@ void LAPACK_sgemqrt_base(const char* side, const char* trans, const lapack_int* 
 #endif
 
 #define LAPACK_zgemqrt_base LAPACK_GLOBAL(zgemqrt, ZGEMQRT)
-void LAPACK_zgemqrt_base(const char* side, const char* trans, const lapack_int* m,
-                         const lapack_int* n, const lapack_int* k, const lapack_int* nb,
-                         const lapack_complex_double* V, const lapack_int* ldv,
-                         const lapack_complex_double* T, const lapack_int* ldt,
-                         lapack_complex_double* C, const lapack_int* ldc,
-                         lapack_complex_double* work, lapack_int* info
+void LAPACK_zgemqrt_base(const char* side, const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* k,
+                         const lapack_int* nb, const lapack_complex_double* V, const lapack_int* ldv, const lapack_complex_double* T,
+                         const lapack_int* ldt, lapack_complex_double* C, const lapack_int* ldc, lapack_complex_double* work,
+                         lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t
@@ -2008,219 +1770,180 @@ void LAPACK_zgemqrt_base(const char* side, const char* trans, const lapack_int* 
 #endif
 
 #define LAPACK_cgeql2 LAPACK_GLOBAL(cgeql2, CGEQL2)
-void LAPACK_cgeql2(const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                   const lapack_int* lda, lapack_complex_float* tau, lapack_complex_float* work,
-                   lapack_int* info);
+void LAPACK_cgeql2(const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* tau,
+                   lapack_complex_float* work, lapack_int* info);
 
 #define LAPACK_dgeql2 LAPACK_GLOBAL(dgeql2, DGEQL2)
-void LAPACK_dgeql2(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                   double* tau, double* work, lapack_int* info);
+void LAPACK_dgeql2(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, double* tau, double* work, lapack_int* info);
 
 #define LAPACK_sgeql2 LAPACK_GLOBAL(sgeql2, SGEQL2)
-void LAPACK_sgeql2(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                   float* tau, float* work, lapack_int* info);
+void LAPACK_sgeql2(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, float* tau, float* work, lapack_int* info);
 
 #define LAPACK_zgeql2 LAPACK_GLOBAL(zgeql2, ZGEQL2)
-void LAPACK_zgeql2(const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                   const lapack_int* lda, lapack_complex_double* tau, lapack_complex_double* work,
-                   lapack_int* info);
+void LAPACK_zgeql2(const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* tau,
+                   lapack_complex_double* work, lapack_int* info);
 
 #define LAPACK_cgeqlf LAPACK_GLOBAL(cgeqlf, CGEQLF)
-void LAPACK_cgeqlf(const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                   const lapack_int* lda, lapack_complex_float* tau, lapack_complex_float* work,
-                   const lapack_int* lwork, lapack_int* info);
+void LAPACK_cgeqlf(const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* tau,
+                   lapack_complex_float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_dgeqlf LAPACK_GLOBAL(dgeqlf, DGEQLF)
-void LAPACK_dgeqlf(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                   double* tau, double* work, const lapack_int* lwork, lapack_int* info);
+void LAPACK_dgeqlf(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, double* tau, double* work,
+                   const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_sgeqlf LAPACK_GLOBAL(sgeqlf, SGEQLF)
-void LAPACK_sgeqlf(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                   float* tau, float* work, const lapack_int* lwork, lapack_int* info);
+void LAPACK_sgeqlf(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, float* tau, float* work,
+                   const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_zgeqlf LAPACK_GLOBAL(zgeqlf, ZGEQLF)
-void LAPACK_zgeqlf(const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                   const lapack_int* lda, lapack_complex_double* tau, lapack_complex_double* work,
-                   const lapack_int* lwork, lapack_int* info);
+void LAPACK_zgeqlf(const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* tau,
+                   lapack_complex_double* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_sgeqpf LAPACK_GLOBAL(sgeqpf, SGEQPF)
-void LAPACK_sgeqpf(lapack_int* m, lapack_int* n, float* a, lapack_int* lda, lapack_int* jpvt,
-                   float* tau, float* work, lapack_int* info);
+void LAPACK_sgeqpf(lapack_int* m, lapack_int* n, float* a, lapack_int* lda, lapack_int* jpvt, float* tau, float* work, lapack_int* info);
 
 #define LAPACK_dgeqpf LAPACK_GLOBAL(dgeqpf, DGEQPF)
-void LAPACK_dgeqpf(lapack_int* m, lapack_int* n, double* a, lapack_int* lda, lapack_int* jpvt,
-                   double* tau, double* work, lapack_int* info);
+void LAPACK_dgeqpf(lapack_int* m, lapack_int* n, double* a, lapack_int* lda, lapack_int* jpvt, double* tau, double* work, lapack_int* info);
 
 #define LAPACK_cgeqpf LAPACK_GLOBAL(cgeqpf, CGEQPF)
-void LAPACK_cgeqpf(lapack_int* m, lapack_int* n, lapack_complex_float* a, lapack_int* lda,
-                   lapack_int* jpvt, lapack_complex_float* tau, lapack_complex_float* work,
-                   float* rwork, lapack_int* info);
+void LAPACK_cgeqpf(lapack_int* m, lapack_int* n, lapack_complex_float* a, lapack_int* lda, lapack_int* jpvt, lapack_complex_float* tau,
+                   lapack_complex_float* work, float* rwork, lapack_int* info);
 
 #define LAPACK_zgeqpf LAPACK_GLOBAL(zgeqpf, ZGEQPF)
-void LAPACK_zgeqpf(lapack_int* m, lapack_int* n, lapack_complex_double* a, lapack_int* lda,
-                   lapack_int* jpvt, lapack_complex_double* tau, lapack_complex_double* work,
-                   double* rwork, lapack_int* info);
+void LAPACK_zgeqpf(lapack_int* m, lapack_int* n, lapack_complex_double* a, lapack_int* lda, lapack_int* jpvt, lapack_complex_double* tau,
+                   lapack_complex_double* work, double* rwork, lapack_int* info);
 
 #define LAPACK_cgeqp3 LAPACK_GLOBAL(cgeqp3, CGEQP3)
-void LAPACK_cgeqp3(const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                   const lapack_int* lda, lapack_int* JPVT, lapack_complex_float* tau,
-                   lapack_complex_float* work, const lapack_int* lwork, float* rwork,
-                   lapack_int* info);
+void LAPACK_cgeqp3(const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_int* JPVT,
+                   lapack_complex_float* tau, lapack_complex_float* work, const lapack_int* lwork, float* rwork, lapack_int* info);
 
 #define LAPACK_dgeqp3 LAPACK_GLOBAL(dgeqp3, DGEQP3)
-void LAPACK_dgeqp3(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                   lapack_int* JPVT, double* tau, double* work, const lapack_int* lwork,
-                   lapack_int* info);
+void LAPACK_dgeqp3(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, lapack_int* JPVT, double* tau, double* work,
+                   const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_sgeqp3 LAPACK_GLOBAL(sgeqp3, SGEQP3)
-void LAPACK_sgeqp3(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                   lapack_int* JPVT, float* tau, float* work, const lapack_int* lwork,
-                   lapack_int* info);
+void LAPACK_sgeqp3(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, lapack_int* JPVT, float* tau, float* work,
+                   const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_zgeqp3 LAPACK_GLOBAL(zgeqp3, ZGEQP3)
-void LAPACK_zgeqp3(const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                   const lapack_int* lda, lapack_int* JPVT, lapack_complex_double* tau,
-                   lapack_complex_double* work, const lapack_int* lwork, double* rwork,
-                   lapack_int* info);
+void LAPACK_zgeqp3(const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_int* JPVT,
+                   lapack_complex_double* tau, lapack_complex_double* work, const lapack_int* lwork, double* rwork, lapack_int* info);
 
 #define LAPACK_cgeqr LAPACK_GLOBAL(cgeqr, CGEQR)
-void LAPACK_cgeqr(const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                  const lapack_int* lda, lapack_complex_float* T, const lapack_int* tsize,
-                  lapack_complex_float* work, const lapack_int* lwork, lapack_int* info);
+void LAPACK_cgeqr(const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* T,
+                  const lapack_int* tsize, lapack_complex_float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_dgeqr LAPACK_GLOBAL(dgeqr, DGEQR)
-void LAPACK_dgeqr(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                  double* T, const lapack_int* tsize, double* work, const lapack_int* lwork,
-                  lapack_int* info);
+void LAPACK_dgeqr(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, double* T, const lapack_int* tsize,
+                  double* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_sgeqr LAPACK_GLOBAL(sgeqr, SGEQR)
-void LAPACK_sgeqr(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                  float* T, const lapack_int* tsize, float* work, const lapack_int* lwork,
-                  lapack_int* info);
+void LAPACK_sgeqr(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, float* T, const lapack_int* tsize, float* work,
+                  const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_zgeqr LAPACK_GLOBAL(zgeqr, ZGEQR)
-void LAPACK_zgeqr(const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                  const lapack_int* lda, lapack_complex_double* T, const lapack_int* tsize,
-                  lapack_complex_double* work, const lapack_int* lwork, lapack_int* info);
+void LAPACK_zgeqr(const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* T,
+                  const lapack_int* tsize, lapack_complex_double* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_cgeqr2 LAPACK_GLOBAL(cgeqr2, CGEQR2)
-void LAPACK_cgeqr2(const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                   const lapack_int* lda, lapack_complex_float* tau, lapack_complex_float* work,
-                   lapack_int* info);
+void LAPACK_cgeqr2(const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* tau,
+                   lapack_complex_float* work, lapack_int* info);
 
 #define LAPACK_dgeqr2 LAPACK_GLOBAL(dgeqr2, DGEQR2)
-void LAPACK_dgeqr2(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                   double* tau, double* work, lapack_int* info);
+void LAPACK_dgeqr2(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, double* tau, double* work, lapack_int* info);
 
 #define LAPACK_sgeqr2 LAPACK_GLOBAL(sgeqr2, SGEQR2)
-void LAPACK_sgeqr2(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                   float* tau, float* work, lapack_int* info);
+void LAPACK_sgeqr2(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, float* tau, float* work, lapack_int* info);
 
 #define LAPACK_zgeqr2 LAPACK_GLOBAL(zgeqr2, ZGEQR2)
-void LAPACK_zgeqr2(const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                   const lapack_int* lda, lapack_complex_double* tau, lapack_complex_double* work,
-                   lapack_int* info);
+void LAPACK_zgeqr2(const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* tau,
+                   lapack_complex_double* work, lapack_int* info);
 
 #define LAPACK_cgeqrf LAPACK_GLOBAL(cgeqrf, CGEQRF)
-void LAPACK_cgeqrf(const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                   const lapack_int* lda, lapack_complex_float* tau, lapack_complex_float* work,
-                   const lapack_int* lwork, lapack_int* info);
+void LAPACK_cgeqrf(const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* tau,
+                   lapack_complex_float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_dgeqrf LAPACK_GLOBAL(dgeqrf, DGEQRF)
-void LAPACK_dgeqrf(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                   double* tau, double* work, const lapack_int* lwork, lapack_int* info);
-
-#define LAPACK_sgeqrf LAPACK_GLOBAL(sgeqrf, SGEQRF)
-void LAPACK_sgeqrf(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                   float* tau, float* work, const lapack_int* lwork, lapack_int* info);
-
-#define LAPACK_zgeqrf LAPACK_GLOBAL(zgeqrf, ZGEQRF)
-void LAPACK_zgeqrf(const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                   const lapack_int* lda, lapack_complex_double* tau, lapack_complex_double* work,
+void LAPACK_dgeqrf(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, double* tau, double* work,
                    const lapack_int* lwork, lapack_int* info);
 
+#define LAPACK_sgeqrf LAPACK_GLOBAL(sgeqrf, SGEQRF)
+void LAPACK_sgeqrf(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, float* tau, float* work,
+                   const lapack_int* lwork, lapack_int* info);
+
+#define LAPACK_zgeqrf LAPACK_GLOBAL(zgeqrf, ZGEQRF)
+void LAPACK_zgeqrf(const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* tau,
+                   lapack_complex_double* work, const lapack_int* lwork, lapack_int* info);
+
 #define LAPACK_cgeqrfp LAPACK_GLOBAL(cgeqrfp, CGEQRFP)
-void LAPACK_cgeqrfp(const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                    const lapack_int* lda, lapack_complex_float* tau, lapack_complex_float* work,
-                    const lapack_int* lwork, lapack_int* info);
+void LAPACK_cgeqrfp(const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* tau,
+                    lapack_complex_float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_dgeqrfp LAPACK_GLOBAL(dgeqrfp, DGEQRFP)
-void LAPACK_dgeqrfp(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                    double* tau, double* work, const lapack_int* lwork, lapack_int* info);
-
-#define LAPACK_sgeqrfp LAPACK_GLOBAL(sgeqrfp, SGEQRFP)
-void LAPACK_sgeqrfp(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                    float* tau, float* work, const lapack_int* lwork, lapack_int* info);
-
-#define LAPACK_zgeqrfp LAPACK_GLOBAL(zgeqrfp, ZGEQRFP)
-void LAPACK_zgeqrfp(const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                    const lapack_int* lda, lapack_complex_double* tau, lapack_complex_double* work,
+void LAPACK_dgeqrfp(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, double* tau, double* work,
                     const lapack_int* lwork, lapack_int* info);
 
+#define LAPACK_sgeqrfp LAPACK_GLOBAL(sgeqrfp, SGEQRFP)
+void LAPACK_sgeqrfp(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, float* tau, float* work,
+                    const lapack_int* lwork, lapack_int* info);
+
+#define LAPACK_zgeqrfp LAPACK_GLOBAL(zgeqrfp, ZGEQRFP)
+void LAPACK_zgeqrfp(const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* tau,
+                    lapack_complex_double* work, const lapack_int* lwork, lapack_int* info);
+
 #define LAPACK_cgeqrt LAPACK_GLOBAL(cgeqrt, CGEQRT)
-void LAPACK_cgeqrt(const lapack_int* m, const lapack_int* n, const lapack_int* nb,
-                   lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* T,
-                   const lapack_int* ldt, lapack_complex_float* work, lapack_int* info);
+void LAPACK_cgeqrt(const lapack_int* m, const lapack_int* n, const lapack_int* nb, lapack_complex_float* A, const lapack_int* lda,
+                   lapack_complex_float* T, const lapack_int* ldt, lapack_complex_float* work, lapack_int* info);
 
 #define LAPACK_dgeqrt LAPACK_GLOBAL(dgeqrt, DGEQRT)
-void LAPACK_dgeqrt(const lapack_int* m, const lapack_int* n, const lapack_int* nb, double* A,
-                   const lapack_int* lda, double* T, const lapack_int* ldt, double* work,
-                   lapack_int* info);
+void LAPACK_dgeqrt(const lapack_int* m, const lapack_int* n, const lapack_int* nb, double* A, const lapack_int* lda, double* T,
+                   const lapack_int* ldt, double* work, lapack_int* info);
 
 #define LAPACK_sgeqrt LAPACK_GLOBAL(sgeqrt, SGEQRT)
-void LAPACK_sgeqrt(const lapack_int* m, const lapack_int* n, const lapack_int* nb, float* A,
-                   const lapack_int* lda, float* T, const lapack_int* ldt, float* work,
-                   lapack_int* info);
+void LAPACK_sgeqrt(const lapack_int* m, const lapack_int* n, const lapack_int* nb, float* A, const lapack_int* lda, float* T,
+                   const lapack_int* ldt, float* work, lapack_int* info);
 
 #define LAPACK_zgeqrt LAPACK_GLOBAL(zgeqrt, ZGEQRT)
-void LAPACK_zgeqrt(const lapack_int* m, const lapack_int* n, const lapack_int* nb,
-                   lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* T,
-                   const lapack_int* ldt, lapack_complex_double* work, lapack_int* info);
+void LAPACK_zgeqrt(const lapack_int* m, const lapack_int* n, const lapack_int* nb, lapack_complex_double* A, const lapack_int* lda,
+                   lapack_complex_double* T, const lapack_int* ldt, lapack_complex_double* work, lapack_int* info);
 
 #define LAPACK_cgeqrt2 LAPACK_GLOBAL(cgeqrt2, CGEQRT2)
-void LAPACK_cgeqrt2(const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                    const lapack_int* lda, lapack_complex_float* T, const lapack_int* ldt,
-                    lapack_int* info);
+void LAPACK_cgeqrt2(const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* T,
+                    const lapack_int* ldt, lapack_int* info);
 
 #define LAPACK_dgeqrt2 LAPACK_GLOBAL(dgeqrt2, DGEQRT2)
-void LAPACK_dgeqrt2(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                    double* T, const lapack_int* ldt, lapack_int* info);
+void LAPACK_dgeqrt2(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, double* T, const lapack_int* ldt,
+                    lapack_int* info);
 
 #define LAPACK_sgeqrt2 LAPACK_GLOBAL(sgeqrt2, SGEQRT2)
-void LAPACK_sgeqrt2(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                    float* T, const lapack_int* ldt, lapack_int* info);
+void LAPACK_sgeqrt2(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, float* T, const lapack_int* ldt,
+                    lapack_int* info);
 
 #define LAPACK_zgeqrt2 LAPACK_GLOBAL(zgeqrt2, ZGEQRT2)
-void LAPACK_zgeqrt2(const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                    const lapack_int* lda, lapack_complex_double* T, const lapack_int* ldt,
-                    lapack_int* info);
+void LAPACK_zgeqrt2(const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* T,
+                    const lapack_int* ldt, lapack_int* info);
 
 #define LAPACK_cgeqrt3 LAPACK_GLOBAL(cgeqrt3, CGEQRT3)
-void LAPACK_cgeqrt3(const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                    const lapack_int* lda, lapack_complex_float* T, const lapack_int* ldt,
-                    lapack_int* info);
+void LAPACK_cgeqrt3(const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* T,
+                    const lapack_int* ldt, lapack_int* info);
 
 #define LAPACK_dgeqrt3 LAPACK_GLOBAL(dgeqrt3, DGEQRT3)
-void LAPACK_dgeqrt3(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                    double* T, const lapack_int* ldt, lapack_int* info);
-
-#define LAPACK_sgeqrt3 LAPACK_GLOBAL(sgeqrt3, SGEQRT3)
-void LAPACK_sgeqrt3(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                    float* T, const lapack_int* ldt, lapack_int* info);
-
-#define LAPACK_zgeqrt3 LAPACK_GLOBAL(zgeqrt3, ZGEQRT3)
-void LAPACK_zgeqrt3(const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                    const lapack_int* lda, lapack_complex_double* T, const lapack_int* ldt,
+void LAPACK_dgeqrt3(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, double* T, const lapack_int* ldt,
                     lapack_int* info);
 
+#define LAPACK_sgeqrt3 LAPACK_GLOBAL(sgeqrt3, SGEQRT3)
+void LAPACK_sgeqrt3(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, float* T, const lapack_int* ldt,
+                    lapack_int* info);
+
+#define LAPACK_zgeqrt3 LAPACK_GLOBAL(zgeqrt3, ZGEQRT3)
+void LAPACK_zgeqrt3(const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* T,
+                    const lapack_int* ldt, lapack_int* info);
+
 #define LAPACK_cgerfs_base LAPACK_GLOBAL(cgerfs, CGERFS)
-void LAPACK_cgerfs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs,
-                        const lapack_complex_float* A, const lapack_int* lda,
-                        const lapack_complex_float* AF, const lapack_int* ldaf,
-                        const lapack_int* ipiv, const lapack_complex_float* B,
-                        const lapack_int* ldb, lapack_complex_float* X, const lapack_int* ldx,
-                        float* ferr, float* berr, lapack_complex_float* work, float* rwork,
-                        lapack_int* info
+void LAPACK_cgerfs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs, const lapack_complex_float* A,
+                        const lapack_int* lda, const lapack_complex_float* AF, const lapack_int* ldaf, const lapack_int* ipiv,
+                        const lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* X, const lapack_int* ldx, float* ferr,
+                        float* berr, lapack_complex_float* work, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -2233,11 +1956,9 @@ void LAPACK_cgerfs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_dgerfs_base LAPACK_GLOBAL(dgerfs, DGERFS)
-void LAPACK_dgerfs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs,
-                        const double* A, const lapack_int* lda, const double* AF,
-                        const lapack_int* ldaf, const lapack_int* ipiv, const double* B,
-                        const lapack_int* ldb, double* X, const lapack_int* ldx, double* ferr,
-                        double* berr, double* work, lapack_int* iwork, lapack_int* info
+void LAPACK_dgerfs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs, const double* A, const lapack_int* lda,
+                        const double* AF, const lapack_int* ldaf, const lapack_int* ipiv, const double* B, const lapack_int* ldb, double* X,
+                        const lapack_int* ldx, double* ferr, double* berr, double* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -2250,11 +1971,9 @@ void LAPACK_dgerfs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_sgerfs_base LAPACK_GLOBAL(sgerfs, SGERFS)
-void LAPACK_sgerfs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs,
-                        const float* A, const lapack_int* lda, const float* AF,
-                        const lapack_int* ldaf, const lapack_int* ipiv, const float* B,
-                        const lapack_int* ldb, float* X, const lapack_int* ldx, float* ferr,
-                        float* berr, float* work, lapack_int* iwork, lapack_int* info
+void LAPACK_sgerfs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs, const float* A, const lapack_int* lda,
+                        const float* AF, const lapack_int* ldaf, const lapack_int* ipiv, const float* B, const lapack_int* ldb, float* X,
+                        const lapack_int* ldx, float* ferr, float* berr, float* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -2267,13 +1986,10 @@ void LAPACK_sgerfs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_zgerfs_base LAPACK_GLOBAL(zgerfs, ZGERFS)
-void LAPACK_zgerfs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs,
-                        const lapack_complex_double* A, const lapack_int* lda,
-                        const lapack_complex_double* AF, const lapack_int* ldaf,
-                        const lapack_int* ipiv, const lapack_complex_double* B,
-                        const lapack_int* ldb, lapack_complex_double* X, const lapack_int* ldx,
-                        double* ferr, double* berr, lapack_complex_double* work, double* rwork,
-                        lapack_int* info
+void LAPACK_zgerfs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs, const lapack_complex_double* A,
+                        const lapack_int* lda, const lapack_complex_double* AF, const lapack_int* ldaf, const lapack_int* ipiv,
+                        const lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* X, const lapack_int* ldx,
+                        double* ferr, double* berr, lapack_complex_double* work, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -2286,15 +2002,12 @@ void LAPACK_zgerfs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_cgerfsx_base LAPACK_GLOBAL(cgerfsx, CGERFSX)
-void LAPACK_cgerfsx_base(const char* trans, const char* equed, const lapack_int* n,
-                         const lapack_int* nrhs, const lapack_complex_float* A,
-                         const lapack_int* lda, const lapack_complex_float* AF,
-                         const lapack_int* ldaf, const lapack_int* ipiv, const float* R,
-                         const float* C, const lapack_complex_float* B, const lapack_int* ldb,
-                         lapack_complex_float* X, const lapack_int* ldx, float* rcond, float* berr,
-                         const lapack_int* n_err_bnds, float* err_bnds_norm, float* err_bnds_comp,
-                         const lapack_int* nparams, float* params, lapack_complex_float* work,
-                         float* rwork, lapack_int* info
+void LAPACK_cgerfsx_base(const char* trans, const char* equed, const lapack_int* n, const lapack_int* nrhs, const lapack_complex_float* A,
+                         const lapack_int* lda, const lapack_complex_float* AF, const lapack_int* ldaf, const lapack_int* ipiv,
+                         const float* R, const float* C, const lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* X,
+                         const lapack_int* ldx, float* rcond, float* berr, const lapack_int* n_err_bnds, float* err_bnds_norm,
+                         float* err_bnds_comp, const lapack_int* nparams, float* params, lapack_complex_float* work, float* rwork,
+                         lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t
@@ -2307,14 +2020,11 @@ void LAPACK_cgerfsx_base(const char* trans, const char* equed, const lapack_int*
 #endif
 
 #define LAPACK_dgerfsx_base LAPACK_GLOBAL(dgerfsx, DGERFSX)
-void LAPACK_dgerfsx_base(const char* trans, const char* equed, const lapack_int* n,
-                         const lapack_int* nrhs, const double* A, const lapack_int* lda,
-                         const double* AF, const lapack_int* ldaf, const lapack_int* ipiv,
-                         const double* R, const double* C, const double* B, const lapack_int* ldb,
-                         double* X, const lapack_int* ldx, double* rcond, double* berr,
-                         const lapack_int* n_err_bnds, double* err_bnds_norm, double* err_bnds_comp,
-                         const lapack_int* nparams, double* params, double* work, lapack_int* iwork,
-                         lapack_int* info
+void LAPACK_dgerfsx_base(const char* trans, const char* equed, const lapack_int* n, const lapack_int* nrhs, const double* A,
+                         const lapack_int* lda, const double* AF, const lapack_int* ldaf, const lapack_int* ipiv, const double* R,
+                         const double* C, const double* B, const lapack_int* ldb, double* X, const lapack_int* ldx, double* rcond,
+                         double* berr, const lapack_int* n_err_bnds, double* err_bnds_norm, double* err_bnds_comp,
+                         const lapack_int* nparams, double* params, double* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t
@@ -2327,14 +2037,11 @@ void LAPACK_dgerfsx_base(const char* trans, const char* equed, const lapack_int*
 #endif
 
 #define LAPACK_sgerfsx_base LAPACK_GLOBAL(sgerfsx, SGERFSX)
-void LAPACK_sgerfsx_base(const char* trans, const char* equed, const lapack_int* n,
-                         const lapack_int* nrhs, const float* A, const lapack_int* lda,
-                         const float* AF, const lapack_int* ldaf, const lapack_int* ipiv,
-                         const float* R, const float* C, const float* B, const lapack_int* ldb,
-                         float* X, const lapack_int* ldx, float* rcond, float* berr,
-                         const lapack_int* n_err_bnds, float* err_bnds_norm, float* err_bnds_comp,
-                         const lapack_int* nparams, float* params, float* work, lapack_int* iwork,
-                         lapack_int* info
+void LAPACK_sgerfsx_base(const char* trans, const char* equed, const lapack_int* n, const lapack_int* nrhs, const float* A,
+                         const lapack_int* lda, const float* AF, const lapack_int* ldaf, const lapack_int* ipiv, const float* R,
+                         const float* C, const float* B, const lapack_int* ldb, float* X, const lapack_int* ldx, float* rcond, float* berr,
+                         const lapack_int* n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, const lapack_int* nparams, float* params,
+                         float* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t
@@ -2347,15 +2054,12 @@ void LAPACK_sgerfsx_base(const char* trans, const char* equed, const lapack_int*
 #endif
 
 #define LAPACK_zgerfsx_base LAPACK_GLOBAL(zgerfsx, ZGERFSX)
-void LAPACK_zgerfsx_base(const char* trans, const char* equed, const lapack_int* n,
-                         const lapack_int* nrhs, const lapack_complex_double* A,
-                         const lapack_int* lda, const lapack_complex_double* AF,
-                         const lapack_int* ldaf, const lapack_int* ipiv, const double* R,
-                         const double* C, const lapack_complex_double* B, const lapack_int* ldb,
-                         lapack_complex_double* X, const lapack_int* ldx, double* rcond,
-                         double* berr, const lapack_int* n_err_bnds, double* err_bnds_norm,
-                         double* err_bnds_comp, const lapack_int* nparams, double* params,
-                         lapack_complex_double* work, double* rwork, lapack_int* info
+void LAPACK_zgerfsx_base(const char* trans, const char* equed, const lapack_int* n, const lapack_int* nrhs, const lapack_complex_double* A,
+                         const lapack_int* lda, const lapack_complex_double* AF, const lapack_int* ldaf, const lapack_int* ipiv,
+                         const double* R, const double* C, const lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* X,
+                         const lapack_int* ldx, double* rcond, double* berr, const lapack_int* n_err_bnds, double* err_bnds_norm,
+                         double* err_bnds_comp, const lapack_int* nparams, double* params, lapack_complex_double* work, double* rwork,
+                         lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t
@@ -2368,47 +2072,39 @@ void LAPACK_zgerfsx_base(const char* trans, const char* equed, const lapack_int*
 #endif
 
 #define LAPACK_cgerq2 LAPACK_GLOBAL(cgerq2, CGERQ2)
-void LAPACK_cgerq2(const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                   const lapack_int* lda, lapack_complex_float* tau, lapack_complex_float* work,
-                   lapack_int* info);
+void LAPACK_cgerq2(const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* tau,
+                   lapack_complex_float* work, lapack_int* info);
 
 #define LAPACK_dgerq2 LAPACK_GLOBAL(dgerq2, DGERQ2)
-void LAPACK_dgerq2(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                   double* tau, double* work, lapack_int* info);
+void LAPACK_dgerq2(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, double* tau, double* work, lapack_int* info);
 
 #define LAPACK_sgerq2 LAPACK_GLOBAL(sgerq2, SGERQ2)
-void LAPACK_sgerq2(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                   float* tau, float* work, lapack_int* info);
+void LAPACK_sgerq2(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, float* tau, float* work, lapack_int* info);
 
 #define LAPACK_zgerq2 LAPACK_GLOBAL(zgerq2, ZGERQ2)
-void LAPACK_zgerq2(const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                   const lapack_int* lda, lapack_complex_double* tau, lapack_complex_double* work,
-                   lapack_int* info);
+void LAPACK_zgerq2(const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* tau,
+                   lapack_complex_double* work, lapack_int* info);
 
 #define LAPACK_cgerqf LAPACK_GLOBAL(cgerqf, CGERQF)
-void LAPACK_cgerqf(const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                   const lapack_int* lda, lapack_complex_float* tau, lapack_complex_float* work,
-                   const lapack_int* lwork, lapack_int* info);
+void LAPACK_cgerqf(const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* tau,
+                   lapack_complex_float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_dgerqf LAPACK_GLOBAL(dgerqf, DGERQF)
-void LAPACK_dgerqf(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                   double* tau, double* work, const lapack_int* lwork, lapack_int* info);
-
-#define LAPACK_sgerqf LAPACK_GLOBAL(sgerqf, SGERQF)
-void LAPACK_sgerqf(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                   float* tau, float* work, const lapack_int* lwork, lapack_int* info);
-
-#define LAPACK_zgerqf LAPACK_GLOBAL(zgerqf, ZGERQF)
-void LAPACK_zgerqf(const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                   const lapack_int* lda, lapack_complex_double* tau, lapack_complex_double* work,
+void LAPACK_dgerqf(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, double* tau, double* work,
                    const lapack_int* lwork, lapack_int* info);
 
+#define LAPACK_sgerqf LAPACK_GLOBAL(sgerqf, SGERQF)
+void LAPACK_sgerqf(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, float* tau, float* work,
+                   const lapack_int* lwork, lapack_int* info);
+
+#define LAPACK_zgerqf LAPACK_GLOBAL(zgerqf, ZGERQF)
+void LAPACK_zgerqf(const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* tau,
+                   lapack_complex_double* work, const lapack_int* lwork, lapack_int* info);
+
 #define LAPACK_cgesdd_base LAPACK_GLOBAL(cgesdd, CGESDD)
-void LAPACK_cgesdd_base(const char* jobz, const lapack_int* m, const lapack_int* n,
-                        lapack_complex_float* A, const lapack_int* lda, float* S,
-                        lapack_complex_float* U, const lapack_int* ldu, lapack_complex_float* VT,
-                        const lapack_int* ldvt, lapack_complex_float* work, const lapack_int* lwork,
-                        float* rwork, lapack_int* iwork, lapack_int* info
+void LAPACK_cgesdd_base(const char* jobz, const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda,
+                        float* S, lapack_complex_float* U, const lapack_int* ldu, lapack_complex_float* VT, const lapack_int* ldvt,
+                        lapack_complex_float* work, const lapack_int* lwork, float* rwork, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -2421,10 +2117,9 @@ void LAPACK_cgesdd_base(const char* jobz, const lapack_int* m, const lapack_int*
 #endif
 
 #define LAPACK_dgesdd_base LAPACK_GLOBAL(dgesdd, DGESDD)
-void LAPACK_dgesdd_base(const char* jobz, const lapack_int* m, const lapack_int* n, double* A,
-                        const lapack_int* lda, double* S, double* U, const lapack_int* ldu,
-                        double* VT, const lapack_int* ldvt, double* work, const lapack_int* lwork,
-                        lapack_int* iwork, lapack_int* info
+void LAPACK_dgesdd_base(const char* jobz, const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, double* S, double* U,
+                        const lapack_int* ldu, double* VT, const lapack_int* ldvt, double* work, const lapack_int* lwork, lapack_int* iwork,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -2437,10 +2132,9 @@ void LAPACK_dgesdd_base(const char* jobz, const lapack_int* m, const lapack_int*
 #endif
 
 #define LAPACK_sgesdd_base LAPACK_GLOBAL(sgesdd, SGESDD)
-void LAPACK_sgesdd_base(const char* jobz, const lapack_int* m, const lapack_int* n, float* A,
-                        const lapack_int* lda, float* S, float* U, const lapack_int* ldu, float* VT,
-                        const lapack_int* ldvt, float* work, const lapack_int* lwork,
-                        lapack_int* iwork, lapack_int* info
+void LAPACK_sgesdd_base(const char* jobz, const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, float* S, float* U,
+                        const lapack_int* ldu, float* VT, const lapack_int* ldvt, float* work, const lapack_int* lwork, lapack_int* iwork,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -2453,11 +2147,9 @@ void LAPACK_sgesdd_base(const char* jobz, const lapack_int* m, const lapack_int*
 #endif
 
 #define LAPACK_zgesdd_base LAPACK_GLOBAL(zgesdd, ZGESDD)
-void LAPACK_zgesdd_base(const char* jobz, const lapack_int* m, const lapack_int* n,
-                        lapack_complex_double* A, const lapack_int* lda, double* S,
-                        lapack_complex_double* U, const lapack_int* ldu, lapack_complex_double* VT,
-                        const lapack_int* ldvt, lapack_complex_double* work,
-                        const lapack_int* lwork, double* rwork, lapack_int* iwork, lapack_int* info
+void LAPACK_zgesdd_base(const char* jobz, const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda,
+                        double* S, lapack_complex_double* U, const lapack_int* ldu, lapack_complex_double* VT, const lapack_int* ldvt,
+                        lapack_complex_double* work, const lapack_int* lwork, double* rwork, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -2470,16 +2162,13 @@ void LAPACK_zgesdd_base(const char* jobz, const lapack_int* m, const lapack_int*
 #endif
 
 #define LAPACK_cgedmd_base LAPACK_GLOBAL(cgedmd, CGEDMD)
-void LAPACK_cgedmd_base(const char* jobs, const char* jobz, const char* jobr, const char* jobf,
-                        const lapack_int* whtsvd, const lapack_int* m, const lapack_int* n,
-                        lapack_complex_float* x, const lapack_int* ldx, lapack_complex_float* y,
-                        const lapack_int* ldy, const lapack_int* nrnk, const float* tol,
-                        lapack_int* k, lapack_complex_float* eigs, lapack_complex_float* z,
-                        const lapack_int* ldz, float* res, lapack_complex_float* b,
-                        const lapack_int* ldb, lapack_complex_float* w, const lapack_int* ldw,
-                        lapack_complex_float* s, const lapack_int* lds, lapack_complex_float* zwork,
-                        const lapack_int* lzwork, float* work, const lapack_int* lwork,
-                        lapack_int* iwork, const lapack_int* liwork, lapack_int* info
+void LAPACK_cgedmd_base(const char* jobs, const char* jobz, const char* jobr, const char* jobf, const lapack_int* whtsvd,
+                        const lapack_int* m, const lapack_int* n, lapack_complex_float* x, const lapack_int* ldx, lapack_complex_float* y,
+                        const lapack_int* ldy, const lapack_int* nrnk, const float* tol, lapack_int* k, lapack_complex_float* eigs,
+                        lapack_complex_float* z, const lapack_int* ldz, float* res, lapack_complex_float* b, const lapack_int* ldb,
+                        lapack_complex_float* w, const lapack_int* ldw, lapack_complex_float* s, const lapack_int* lds,
+                        lapack_complex_float* zwork, const lapack_int* lzwork, float* work, const lapack_int* lwork, lapack_int* iwork,
+                        const lapack_int* liwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t
@@ -2492,14 +2181,12 @@ void LAPACK_cgedmd_base(const char* jobs, const char* jobz, const char* jobr, co
 #endif
 
 #define LAPACK_dgedmd_base LAPACK_GLOBAL(dgedmd, DGEDMD)
-void LAPACK_dgedmd_base(const char* jobs, const char* jobz, const char* jobr, const char* jobf,
-                        const lapack_int* whtsvd, const lapack_int* m, const lapack_int* n,
-                        double* x, const lapack_int* ldx, double* y, const lapack_int* ldy,
-                        const lapack_int* nrnk, const double* tol, lapack_int* k, double* reig,
-                        double* imeig, double* z, const lapack_int* ldz, double* res, double* b,
-                        const lapack_int* ldb, double* w, const lapack_int* ldw, double* s,
-                        const lapack_int* lds, double* work, const lapack_int* lwork,
-                        lapack_int* iwork, const lapack_int* liwork, lapack_int* info
+void LAPACK_dgedmd_base(const char* jobs, const char* jobz, const char* jobr, const char* jobf, const lapack_int* whtsvd,
+                        const lapack_int* m, const lapack_int* n, double* x, const lapack_int* ldx, double* y, const lapack_int* ldy,
+                        const lapack_int* nrnk, const double* tol, lapack_int* k, double* reig, double* imeig, double* z,
+                        const lapack_int* ldz, double* res, double* b, const lapack_int* ldb, double* w, const lapack_int* ldw, double* s,
+                        const lapack_int* lds, double* work, const lapack_int* lwork, lapack_int* iwork, const lapack_int* liwork,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t
@@ -2512,14 +2199,11 @@ void LAPACK_dgedmd_base(const char* jobs, const char* jobz, const char* jobr, co
 #endif
 
 #define LAPACK_sgedmd_base LAPACK_GLOBAL(sgedmd, SGEDMD)
-void LAPACK_sgedmd_base(const char* jobs, const char* jobz, const char* jobr, const char* jobf,
-                        const lapack_int* whtsvd, const lapack_int* m, const lapack_int* n,
-                        float* x, const lapack_int* ldx, float* y, const lapack_int* ldy,
-                        const lapack_int* nrnk, const float* tol, lapack_int* k, float* reig,
-                        float* imeig, float* z, const lapack_int* ldz, float* res, float* b,
-                        const lapack_int* ldb, float* w, const lapack_int* ldw, float* s,
-                        const lapack_int* lds, float* work, const lapack_int* lwork,
-                        lapack_int* iwork, const lapack_int* liwork, lapack_int* info
+void LAPACK_sgedmd_base(const char* jobs, const char* jobz, const char* jobr, const char* jobf, const lapack_int* whtsvd,
+                        const lapack_int* m, const lapack_int* n, float* x, const lapack_int* ldx, float* y, const lapack_int* ldy,
+                        const lapack_int* nrnk, const float* tol, lapack_int* k, float* reig, float* imeig, float* z, const lapack_int* ldz,
+                        float* res, float* b, const lapack_int* ldb, float* w, const lapack_int* ldw, float* s, const lapack_int* lds,
+                        float* work, const lapack_int* lwork, lapack_int* iwork, const lapack_int* liwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t
@@ -2532,17 +2216,13 @@ void LAPACK_sgedmd_base(const char* jobs, const char* jobz, const char* jobr, co
 #endif
 
 #define LAPACK_zgedmd_base LAPACK_GLOBAL(zgedmd, ZGEDMD)
-void LAPACK_zgedmd_base(const char* jobs, const char* jobz, const char* jobr, const char* jobf,
-                        const lapack_int* whtsvd, const lapack_int* m, const lapack_int* n,
-                        lapack_complex_double* x, const lapack_int* ldx, lapack_complex_double* y,
-                        const lapack_int* ldy, const lapack_int* nrnk, const double* tol,
-                        lapack_int* k, lapack_complex_double* eigs, lapack_complex_double* z,
-                        const lapack_int* ldz, double* res, lapack_complex_double* b,
-                        const lapack_int* ldb, lapack_complex_double* w, const lapack_int* ldw,
-                        lapack_complex_double* s, const lapack_int* lds,
-                        lapack_complex_double* zwork, const lapack_int* lzwork, double* rwork,
-                        const lapack_int* lrwork, lapack_int* iwork, const lapack_int* liwork,
-                        lapack_int* info
+void LAPACK_zgedmd_base(const char* jobs, const char* jobz, const char* jobr, const char* jobf, const lapack_int* whtsvd,
+                        const lapack_int* m, const lapack_int* n, lapack_complex_double* x, const lapack_int* ldx, lapack_complex_double* y,
+                        const lapack_int* ldy, const lapack_int* nrnk, const double* tol, lapack_int* k, lapack_complex_double* eigs,
+                        lapack_complex_double* z, const lapack_int* ldz, double* res, lapack_complex_double* b, const lapack_int* ldb,
+                        lapack_complex_double* w, const lapack_int* ldw, lapack_complex_double* s, const lapack_int* lds,
+                        lapack_complex_double* zwork, const lapack_int* lzwork, double* rwork, const lapack_int* lrwork, lapack_int* iwork,
+                        const lapack_int* liwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t
@@ -2555,17 +2235,13 @@ void LAPACK_zgedmd_base(const char* jobs, const char* jobz, const char* jobr, co
 #endif
 
 #define LAPACK_cgedmdq_base LAPACK_GLOBAL(cgedmdq, CGEDMDQ)
-void LAPACK_cgedmdq_base(const char* jobs, const char* jobz, const char* jobr, const char* jobq,
-                         const char* jobt, const char* jobf, const lapack_int* whtsvd,
-                         const lapack_int* m, const lapack_int* n, lapack_complex_float* f,
-                         const lapack_int* ldf, lapack_complex_float* x, const lapack_int* ldx,
-                         lapack_complex_float* y, const lapack_int* ldy, const lapack_int* nrnk,
-                         const float* tol, const lapack_int* k, lapack_complex_float* eigs,
-                         lapack_complex_float* z, const lapack_int* ldz, float* res,
-                         lapack_complex_float* b, const lapack_int* ldb, lapack_complex_float* v,
-                         const lapack_int* ldv, lapack_complex_float* s, const lapack_int* lds,
-                         lapack_complex_float* zwork, const lapack_int* lzwork, float* work,
-                         const lapack_int* lwork, lapack_int* iwork, const lapack_int* liwork,
+void LAPACK_cgedmdq_base(const char* jobs, const char* jobz, const char* jobr, const char* jobq, const char* jobt, const char* jobf,
+                         const lapack_int* whtsvd, const lapack_int* m, const lapack_int* n, lapack_complex_float* f, const lapack_int* ldf,
+                         lapack_complex_float* x, const lapack_int* ldx, lapack_complex_float* y, const lapack_int* ldy,
+                         const lapack_int* nrnk, const float* tol, const lapack_int* k, lapack_complex_float* eigs, lapack_complex_float* z,
+                         const lapack_int* ldz, float* res, lapack_complex_float* b, const lapack_int* ldb, lapack_complex_float* v,
+                         const lapack_int* ldv, lapack_complex_float* s, const lapack_int* lds, lapack_complex_float* zwork,
+                         const lapack_int* lzwork, float* work, const lapack_int* lwork, lapack_int* iwork, const lapack_int* liwork,
                          lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
@@ -2579,14 +2255,11 @@ void LAPACK_cgedmdq_base(const char* jobs, const char* jobz, const char* jobr, c
 #endif
 
 #define LAPACK_dgedmdq_base LAPACK_GLOBAL(dgedmdq, DGEDMDQ)
-void LAPACK_dgedmdq_base(const char* jobs, const char* jobz, const char* jobr, const char* jobq,
-                         const char* jobt, const char* jobf, const lapack_int* whtsvd,
-                         const lapack_int* m, const lapack_int* n, double* f, const lapack_int* ldf,
-                         double* x, const lapack_int* ldx, double* y, const lapack_int* ldy,
-                         const lapack_int* nrnk, const double* tol, lapack_int* k, double* reig,
-                         double* imeig, double* z, const lapack_int* ldz, double* res, double* b,
-                         const lapack_int* ldb, double* v, const lapack_int* ldv, double* s,
-                         const lapack_int* lds, double* work, const lapack_int* lwork,
+void LAPACK_dgedmdq_base(const char* jobs, const char* jobz, const char* jobr, const char* jobq, const char* jobt, const char* jobf,
+                         const lapack_int* whtsvd, const lapack_int* m, const lapack_int* n, double* f, const lapack_int* ldf, double* x,
+                         const lapack_int* ldx, double* y, const lapack_int* ldy, const lapack_int* nrnk, const double* tol, lapack_int* k,
+                         double* reig, double* imeig, double* z, const lapack_int* ldz, double* res, double* b, const lapack_int* ldb,
+                         double* v, const lapack_int* ldv, double* s, const lapack_int* lds, double* work, const lapack_int* lwork,
                          lapack_int* iwork, const lapack_int* liwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
@@ -2600,15 +2273,12 @@ void LAPACK_dgedmdq_base(const char* jobs, const char* jobz, const char* jobr, c
 #endif
 
 #define LAPACK_sgedmdq_base LAPACK_GLOBAL(sgedmdq, SGEDMDQ)
-void LAPACK_sgedmdq_base(const char* jobs, const char* jobz, const char* jobr, const char* jobq,
-                         const char* jobt, const char* jobf, const lapack_int* whtsvd,
-                         const lapack_int* m, const lapack_int* n, float* f, const lapack_int* ldf,
-                         float* x, const lapack_int* ldx, float* y, const lapack_int* ldy,
-                         const lapack_int* nrnk, const float* tol, const lapack_int* k, float* reig,
-                         float* imeig, float* z, const lapack_int* ldz, float* res, float* b,
-                         const lapack_int* ldb, float* v, const lapack_int* ldv, float* s,
-                         const lapack_int* lds, float* work, const lapack_int* lwork,
-                         lapack_int* iwork, const lapack_int* liwork, lapack_int* info
+void LAPACK_sgedmdq_base(const char* jobs, const char* jobz, const char* jobr, const char* jobq, const char* jobt, const char* jobf,
+                         const lapack_int* whtsvd, const lapack_int* m, const lapack_int* n, float* f, const lapack_int* ldf, float* x,
+                         const lapack_int* ldx, float* y, const lapack_int* ldy, const lapack_int* nrnk, const float* tol,
+                         const lapack_int* k, float* reig, float* imeig, float* z, const lapack_int* ldz, float* res, float* b,
+                         const lapack_int* ldb, float* v, const lapack_int* ldv, float* s, const lapack_int* lds, float* work,
+                         const lapack_int* lwork, lapack_int* iwork, const lapack_int* liwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t, size_t, size_t, size_t
@@ -2621,18 +2291,14 @@ void LAPACK_sgedmdq_base(const char* jobs, const char* jobz, const char* jobr, c
 #endif
 
 #define LAPACK_zgedmdq_base LAPACK_GLOBAL(zgedmdq, ZGEDMDQ)
-void LAPACK_zgedmdq_base(const char* jobs, const char* jobz, const char* jobr, const char* jobq,
-                         const char* jobt, const char* jobf, const lapack_int* whtsvd,
-                         const lapack_int* m, const lapack_int* n, lapack_complex_double* f,
-                         const lapack_int* ldf, lapack_complex_double* x, const lapack_int* ldx,
-                         lapack_complex_double* y, const lapack_int* ldy, const lapack_int* nrnk,
-                         const double* tol, const lapack_int* k, lapack_complex_double* eigs,
-                         lapack_complex_double* z, const lapack_int* ldz, double* res,
-                         lapack_complex_double* b, const lapack_int* ldb, lapack_complex_double* v,
-                         const lapack_int* ldv, lapack_complex_double* s, const lapack_int* lds,
-                         lapack_complex_double* zwork, const lapack_int* lzwork, double* work,
-                         const lapack_int* lwork, lapack_int* iwork, const lapack_int* liwork,
-                         lapack_int* info
+void LAPACK_zgedmdq_base(const char* jobs, const char* jobz, const char* jobr, const char* jobq, const char* jobt, const char* jobf,
+                         const lapack_int* whtsvd, const lapack_int* m, const lapack_int* n, lapack_complex_double* f,
+                         const lapack_int* ldf, lapack_complex_double* x, const lapack_int* ldx, lapack_complex_double* y,
+                         const lapack_int* ldy, const lapack_int* nrnk, const double* tol, const lapack_int* k, lapack_complex_double* eigs,
+                         lapack_complex_double* z, const lapack_int* ldz, double* res, lapack_complex_double* b, const lapack_int* ldb,
+                         lapack_complex_double* v, const lapack_int* ldv, lapack_complex_double* s, const lapack_int* lds,
+                         lapack_complex_double* zwork, const lapack_int* lzwork, double* work, const lapack_int* lwork, lapack_int* iwork,
+                         const lapack_int* liwork, lapack_int* info
 
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
@@ -2646,43 +2312,34 @@ void LAPACK_zgedmdq_base(const char* jobs, const char* jobz, const char* jobr, c
 #endif
 
 #define LAPACK_cgesv LAPACK_GLOBAL(cgesv, CGESV)
-void LAPACK_cgesv(const lapack_int* n, const lapack_int* nrhs, lapack_complex_float* A,
-                  const lapack_int* lda, lapack_int* ipiv, lapack_complex_float* B,
-                  const lapack_int* ldb, lapack_int* info);
+void LAPACK_cgesv(const lapack_int* n, const lapack_int* nrhs, lapack_complex_float* A, const lapack_int* lda, lapack_int* ipiv,
+                  lapack_complex_float* B, const lapack_int* ldb, lapack_int* info);
 
 #define LAPACK_dgesv LAPACK_GLOBAL(dgesv, DGESV)
-void LAPACK_dgesv(const lapack_int* n, const lapack_int* nrhs, double* A, const lapack_int* lda,
-                  lapack_int* ipiv, double* B, const lapack_int* ldb, lapack_int* info);
-
-#define LAPACK_sgesv LAPACK_GLOBAL(sgesv, SGESV)
-void LAPACK_sgesv(const lapack_int* n, const lapack_int* nrhs, float* A, const lapack_int* lda,
-                  lapack_int* ipiv, float* B, const lapack_int* ldb, lapack_int* info);
-
-#define LAPACK_zgesv LAPACK_GLOBAL(zgesv, ZGESV)
-void LAPACK_zgesv(const lapack_int* n, const lapack_int* nrhs, lapack_complex_double* A,
-                  const lapack_int* lda, lapack_int* ipiv, lapack_complex_double* B,
+void LAPACK_dgesv(const lapack_int* n, const lapack_int* nrhs, double* A, const lapack_int* lda, lapack_int* ipiv, double* B,
                   const lapack_int* ldb, lapack_int* info);
 
+#define LAPACK_sgesv LAPACK_GLOBAL(sgesv, SGESV)
+void LAPACK_sgesv(const lapack_int* n, const lapack_int* nrhs, float* A, const lapack_int* lda, lapack_int* ipiv, float* B,
+                  const lapack_int* ldb, lapack_int* info);
+
+#define LAPACK_zgesv LAPACK_GLOBAL(zgesv, ZGESV)
+void LAPACK_zgesv(const lapack_int* n, const lapack_int* nrhs, lapack_complex_double* A, const lapack_int* lda, lapack_int* ipiv,
+                  lapack_complex_double* B, const lapack_int* ldb, lapack_int* info);
+
 #define LAPACK_dsgesv LAPACK_GLOBAL(dsgesv, DSGESV)
-void LAPACK_dsgesv(const lapack_int* n, const lapack_int* nrhs, double* A, const lapack_int* lda,
-                   lapack_int* ipiv, const double* B, const lapack_int* ldb, double* X,
-                   const lapack_int* ldx, double* work, float* swork, lapack_int* iter,
-                   lapack_int* info);
+void LAPACK_dsgesv(const lapack_int* n, const lapack_int* nrhs, double* A, const lapack_int* lda, lapack_int* ipiv, const double* B,
+                   const lapack_int* ldb, double* X, const lapack_int* ldx, double* work, float* swork, lapack_int* iter, lapack_int* info);
 
 #define LAPACK_zcgesv LAPACK_GLOBAL(zcgesv, ZCGESV)
-void LAPACK_zcgesv(const lapack_int* n, const lapack_int* nrhs, lapack_complex_double* A,
-                   const lapack_int* lda, lapack_int* ipiv, const lapack_complex_double* B,
-                   const lapack_int* ldb, lapack_complex_double* X, const lapack_int* ldx,
-                   lapack_complex_double* work, lapack_complex_float* swork, double* rwork,
-                   lapack_int* iter, lapack_int* info);
+void LAPACK_zcgesv(const lapack_int* n, const lapack_int* nrhs, lapack_complex_double* A, const lapack_int* lda, lapack_int* ipiv,
+                   const lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* X, const lapack_int* ldx,
+                   lapack_complex_double* work, lapack_complex_float* swork, double* rwork, lapack_int* iter, lapack_int* info);
 
 #define LAPACK_cgesvd_base LAPACK_GLOBAL(cgesvd, CGESVD)
-void LAPACK_cgesvd_base(const char* jobu, const char* jobvt, const lapack_int* m,
-                        const lapack_int* n, lapack_complex_float* A, const lapack_int* lda,
-                        float* S, lapack_complex_float* U, const lapack_int* ldu,
-                        lapack_complex_float* VT, const lapack_int* ldvt,
-                        lapack_complex_float* work, const lapack_int* lwork, float* rwork,
-                        lapack_int* info
+void LAPACK_cgesvd_base(const char* jobu, const char* jobvt, const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
+                        const lapack_int* lda, float* S, lapack_complex_float* U, const lapack_int* ldu, lapack_complex_float* VT,
+                        const lapack_int* ldvt, lapack_complex_float* work, const lapack_int* lwork, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -2695,9 +2352,8 @@ void LAPACK_cgesvd_base(const char* jobu, const char* jobvt, const lapack_int* m
 #endif
 
 #define LAPACK_dgesvd_base LAPACK_GLOBAL(dgesvd, DGESVD)
-void LAPACK_dgesvd_base(const char* jobu, const char* jobvt, const lapack_int* m,
-                        const lapack_int* n, double* A, const lapack_int* lda, double* S, double* U,
-                        const lapack_int* ldu, double* VT, const lapack_int* ldvt, double* work,
+void LAPACK_dgesvd_base(const char* jobu, const char* jobvt, const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
+                        double* S, double* U, const lapack_int* ldu, double* VT, const lapack_int* ldvt, double* work,
                         const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -2711,10 +2367,9 @@ void LAPACK_dgesvd_base(const char* jobu, const char* jobvt, const lapack_int* m
 #endif
 
 #define LAPACK_sgesvd_base LAPACK_GLOBAL(sgesvd, SGESVD)
-void LAPACK_sgesvd_base(const char* jobu, const char* jobvt, const lapack_int* m,
-                        const lapack_int* n, float* A, const lapack_int* lda, float* S, float* U,
-                        const lapack_int* ldu, float* VT, const lapack_int* ldvt, float* work,
-                        const lapack_int* lwork, lapack_int* info
+void LAPACK_sgesvd_base(const char* jobu, const char* jobvt, const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
+                        float* S, float* U, const lapack_int* ldu, float* VT, const lapack_int* ldvt, float* work, const lapack_int* lwork,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -2727,12 +2382,9 @@ void LAPACK_sgesvd_base(const char* jobu, const char* jobvt, const lapack_int* m
 #endif
 
 #define LAPACK_zgesvd_base LAPACK_GLOBAL(zgesvd, ZGESVD)
-void LAPACK_zgesvd_base(const char* jobu, const char* jobvt, const lapack_int* m,
-                        const lapack_int* n, lapack_complex_double* A, const lapack_int* lda,
-                        double* S, lapack_complex_double* U, const lapack_int* ldu,
-                        lapack_complex_double* VT, const lapack_int* ldvt,
-                        lapack_complex_double* work, const lapack_int* lwork, double* rwork,
-                        lapack_int* info
+void LAPACK_zgesvd_base(const char* jobu, const char* jobvt, const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
+                        const lapack_int* lda, double* S, lapack_complex_double* U, const lapack_int* ldu, lapack_complex_double* VT,
+                        const lapack_int* ldvt, lapack_complex_double* work, const lapack_int* lwork, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -2745,13 +2397,11 @@ void LAPACK_zgesvd_base(const char* jobu, const char* jobvt, const lapack_int* m
 #endif
 
 #define LAPACK_cgesvdq_base LAPACK_GLOBAL(cgesvdq, CGESVDQ)
-void LAPACK_cgesvdq_base(const char* joba, const char* jobp, const char* jobr, const char* jobu,
-                         const char* jobv, const lapack_int* m, const lapack_int* n,
-                         lapack_complex_float* A, const lapack_int* lda, float* S,
-                         lapack_complex_float* U, const lapack_int* ldu, lapack_complex_float* V,
-                         const lapack_int* ldv, lapack_int* numrank, lapack_int* iwork,
-                         const lapack_int* liwork, lapack_complex_float* cwork, lapack_int* lcwork,
-                         float* rwork, const lapack_int* lrwork, lapack_int* info
+void LAPACK_cgesvdq_base(const char* joba, const char* jobp, const char* jobr, const char* jobu, const char* jobv, const lapack_int* m,
+                         const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, float* S, lapack_complex_float* U,
+                         const lapack_int* ldu, lapack_complex_float* V, const lapack_int* ldv, lapack_int* numrank, lapack_int* iwork,
+                         const lapack_int* liwork, lapack_complex_float* cwork, lapack_int* lcwork, float* rwork, const lapack_int* lrwork,
+                         lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t, size_t, size_t
@@ -2764,12 +2414,10 @@ void LAPACK_cgesvdq_base(const char* joba, const char* jobp, const char* jobr, c
 #endif
 
 #define LAPACK_dgesvdq_base LAPACK_GLOBAL(dgesvdq, DGESVDQ)
-void LAPACK_dgesvdq_base(const char* joba, const char* jobp, const char* jobr, const char* jobu,
-                         const char* jobv, const lapack_int* m, const lapack_int* n, double* A,
-                         const lapack_int* lda, double* S, double* U, const lapack_int* ldu,
-                         double* V, const lapack_int* ldv, lapack_int* numrank, lapack_int* iwork,
-                         const lapack_int* liwork, double* work, lapack_int* lwork, double* rwork,
-                         const lapack_int* lrwork, lapack_int* info
+void LAPACK_dgesvdq_base(const char* joba, const char* jobp, const char* jobr, const char* jobu, const char* jobv, const lapack_int* m,
+                         const lapack_int* n, double* A, const lapack_int* lda, double* S, double* U, const lapack_int* ldu, double* V,
+                         const lapack_int* ldv, lapack_int* numrank, lapack_int* iwork, const lapack_int* liwork, double* work,
+                         lapack_int* lwork, double* rwork, const lapack_int* lrwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t, size_t, size_t
@@ -2782,12 +2430,10 @@ void LAPACK_dgesvdq_base(const char* joba, const char* jobp, const char* jobr, c
 #endif
 
 #define LAPACK_sgesvdq_base LAPACK_GLOBAL(sgesvdq, SGESVDQ)
-void LAPACK_sgesvdq_base(const char* joba, const char* jobp, const char* jobr, const char* jobu,
-                         const char* jobv, const lapack_int* m, const lapack_int* n, float* A,
-                         const lapack_int* lda, float* S, float* U, const lapack_int* ldu, float* V,
-                         const lapack_int* ldv, lapack_int* numrank, lapack_int* iwork,
-                         const lapack_int* liwork, float* work, lapack_int* lwork, float* rwork,
-                         const lapack_int* lrwork, lapack_int* info
+void LAPACK_sgesvdq_base(const char* joba, const char* jobp, const char* jobr, const char* jobu, const char* jobv, const lapack_int* m,
+                         const lapack_int* n, float* A, const lapack_int* lda, float* S, float* U, const lapack_int* ldu, float* V,
+                         const lapack_int* ldv, lapack_int* numrank, lapack_int* iwork, const lapack_int* liwork, float* work,
+                         lapack_int* lwork, float* rwork, const lapack_int* lrwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t, size_t, size_t
@@ -2800,13 +2446,11 @@ void LAPACK_sgesvdq_base(const char* joba, const char* jobp, const char* jobr, c
 #endif
 
 #define LAPACK_zgesvdq_base LAPACK_GLOBAL(zgesvdq, ZGESVDQ)
-void LAPACK_zgesvdq_base(const char* joba, const char* jobp, const char* jobr, const char* jobu,
-                         const char* jobv, const lapack_int* m, const lapack_int* n,
-                         lapack_complex_double* A, const lapack_int* lda, double* S,
-                         lapack_complex_double* U, const lapack_int* ldu, lapack_complex_double* V,
-                         const lapack_int* ldv, lapack_int* numrank, lapack_int* iwork,
-                         const lapack_int* liwork, lapack_complex_double* cwork, lapack_int* lcwork,
-                         double* rwork, const lapack_int* lrwork, lapack_int* info
+void LAPACK_zgesvdq_base(const char* joba, const char* jobp, const char* jobr, const char* jobu, const char* jobv, const lapack_int* m,
+                         const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, double* S, lapack_complex_double* U,
+                         const lapack_int* ldu, lapack_complex_double* V, const lapack_int* ldv, lapack_int* numrank, lapack_int* iwork,
+                         const lapack_int* liwork, lapack_complex_double* cwork, lapack_int* lcwork, double* rwork,
+                         const lapack_int* lrwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t, size_t, size_t
@@ -2819,13 +2463,11 @@ void LAPACK_zgesvdq_base(const char* joba, const char* jobp, const char* jobr, c
 #endif
 
 #define LAPACK_cgesvdx_base LAPACK_GLOBAL(cgesvdx, CGESVDX)
-void LAPACK_cgesvdx_base(const char* jobu, const char* jobvt, const char* range,
-                         const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                         const lapack_int* lda, const float* vl, const float* vu,
-                         const lapack_int* il, const lapack_int* iu, lapack_int* ns, float* S,
-                         lapack_complex_float* U, const lapack_int* ldu, lapack_complex_float* VT,
-                         const lapack_int* ldvt, lapack_complex_float* work,
-                         const lapack_int* lwork, float* rwork, lapack_int* iwork, lapack_int* info
+void LAPACK_cgesvdx_base(const char* jobu, const char* jobvt, const char* range, const lapack_int* m, const lapack_int* n,
+                         lapack_complex_float* A, const lapack_int* lda, const float* vl, const float* vu, const lapack_int* il,
+                         const lapack_int* iu, lapack_int* ns, float* S, lapack_complex_float* U, const lapack_int* ldu,
+                         lapack_complex_float* VT, const lapack_int* ldvt, lapack_complex_float* work, const lapack_int* lwork,
+                         float* rwork, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t
@@ -2838,11 +2480,9 @@ void LAPACK_cgesvdx_base(const char* jobu, const char* jobvt, const char* range,
 #endif
 
 #define LAPACK_dgesvdx_base LAPACK_GLOBAL(dgesvdx, DGESVDX)
-void LAPACK_dgesvdx_base(const char* jobu, const char* jobvt, const char* range,
-                         const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                         const double* vl, const double* vu, const lapack_int* il,
-                         const lapack_int* iu, lapack_int* ns, double* S, double* U,
-                         const lapack_int* ldu, double* VT, const lapack_int* ldvt, double* work,
+void LAPACK_dgesvdx_base(const char* jobu, const char* jobvt, const char* range, const lapack_int* m, const lapack_int* n, double* A,
+                         const lapack_int* lda, const double* vl, const double* vu, const lapack_int* il, const lapack_int* iu,
+                         lapack_int* ns, double* S, double* U, const lapack_int* ldu, double* VT, const lapack_int* ldvt, double* work,
                          const lapack_int* lwork, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
@@ -2856,11 +2496,9 @@ void LAPACK_dgesvdx_base(const char* jobu, const char* jobvt, const char* range,
 #endif
 
 #define LAPACK_sgesvdx_base LAPACK_GLOBAL(sgesvdx, SGESVDX)
-void LAPACK_sgesvdx_base(const char* jobu, const char* jobvt, const char* range,
-                         const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                         const float* vl, const float* vu, const lapack_int* il,
-                         const lapack_int* iu, lapack_int* ns, float* S, float* U,
-                         const lapack_int* ldu, float* VT, const lapack_int* ldvt, float* work,
+void LAPACK_sgesvdx_base(const char* jobu, const char* jobvt, const char* range, const lapack_int* m, const lapack_int* n, float* A,
+                         const lapack_int* lda, const float* vl, const float* vu, const lapack_int* il, const lapack_int* iu,
+                         lapack_int* ns, float* S, float* U, const lapack_int* ldu, float* VT, const lapack_int* ldvt, float* work,
                          const lapack_int* lwork, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
@@ -2874,13 +2512,11 @@ void LAPACK_sgesvdx_base(const char* jobu, const char* jobvt, const char* range,
 #endif
 
 #define LAPACK_zgesvdx_base LAPACK_GLOBAL(zgesvdx, ZGESVDX)
-void LAPACK_zgesvdx_base(const char* jobu, const char* jobvt, const char* range,
-                         const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                         const lapack_int* lda, const double* vl, const double* vu,
-                         const lapack_int* il, const lapack_int* iu, lapack_int* ns, double* S,
-                         lapack_complex_double* U, const lapack_int* ldu, lapack_complex_double* VT,
-                         const lapack_int* ldvt, lapack_complex_double* work,
-                         const lapack_int* lwork, double* rwork, lapack_int* iwork, lapack_int* info
+void LAPACK_zgesvdx_base(const char* jobu, const char* jobvt, const char* range, const lapack_int* m, const lapack_int* n,
+                         lapack_complex_double* A, const lapack_int* lda, const double* vl, const double* vu, const lapack_int* il,
+                         const lapack_int* iu, lapack_int* ns, double* S, lapack_complex_double* U, const lapack_int* ldu,
+                         lapack_complex_double* VT, const lapack_int* ldvt, lapack_complex_double* work, const lapack_int* lwork,
+                         double* rwork, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t
@@ -2893,11 +2529,10 @@ void LAPACK_zgesvdx_base(const char* jobu, const char* jobvt, const char* range,
 #endif
 
 #define LAPACK_cgesvj_base LAPACK_GLOBAL(cgesvj, CGESVJ)
-void LAPACK_cgesvj_base(const char* joba, const char* jobu, const char* jobv, const lapack_int* m,
-                        const lapack_int* n, lapack_complex_float* A, const lapack_int* lda,
-                        float* SVA, const lapack_int* mv, lapack_complex_float* V,
-                        const lapack_int* ldv, lapack_complex_float* cwork, const lapack_int* lwork,
-                        float* rwork, const lapack_int* lrwork, lapack_int* info
+void LAPACK_cgesvj_base(const char* joba, const char* jobu, const char* jobv, const lapack_int* m, const lapack_int* n,
+                        lapack_complex_float* A, const lapack_int* lda, float* SVA, const lapack_int* mv, lapack_complex_float* V,
+                        const lapack_int* ldv, lapack_complex_float* cwork, const lapack_int* lwork, float* rwork, const lapack_int* lrwork,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -2910,9 +2545,8 @@ void LAPACK_cgesvj_base(const char* joba, const char* jobu, const char* jobv, co
 #endif
 
 #define LAPACK_dgesvj_base LAPACK_GLOBAL(dgesvj, DGESVJ)
-void LAPACK_dgesvj_base(const char* joba, const char* jobu, const char* jobv, const lapack_int* m,
-                        const lapack_int* n, double* A, const lapack_int* lda, double* SVA,
-                        const lapack_int* mv, double* V, const lapack_int* ldv, double* work,
+void LAPACK_dgesvj_base(const char* joba, const char* jobu, const char* jobv, const lapack_int* m, const lapack_int* n, double* A,
+                        const lapack_int* lda, double* SVA, const lapack_int* mv, double* V, const lapack_int* ldv, double* work,
                         const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -2926,9 +2560,8 @@ void LAPACK_dgesvj_base(const char* joba, const char* jobu, const char* jobv, co
 #endif
 
 #define LAPACK_sgesvj_base LAPACK_GLOBAL(sgesvj, SGESVJ)
-void LAPACK_sgesvj_base(const char* joba, const char* jobu, const char* jobv, const lapack_int* m,
-                        const lapack_int* n, float* A, const lapack_int* lda, float* SVA,
-                        const lapack_int* mv, float* V, const lapack_int* ldv, float* work,
+void LAPACK_sgesvj_base(const char* joba, const char* jobu, const char* jobv, const lapack_int* m, const lapack_int* n, float* A,
+                        const lapack_int* lda, float* SVA, const lapack_int* mv, float* V, const lapack_int* ldv, float* work,
                         const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -2942,12 +2575,10 @@ void LAPACK_sgesvj_base(const char* joba, const char* jobu, const char* jobv, co
 #endif
 
 #define LAPACK_zgesvj_base LAPACK_GLOBAL(zgesvj, ZGESVJ)
-void LAPACK_zgesvj_base(const char* joba, const char* jobu, const char* jobv, const lapack_int* m,
-                        const lapack_int* n, lapack_complex_double* A, const lapack_int* lda,
-                        double* SVA, const lapack_int* mv, lapack_complex_double* V,
-                        const lapack_int* ldv, lapack_complex_double* cwork,
-                        const lapack_int* lwork, double* rwork, const lapack_int* lrwork,
-                        lapack_int* info
+void LAPACK_zgesvj_base(const char* joba, const char* jobu, const char* jobv, const lapack_int* m, const lapack_int* n,
+                        lapack_complex_double* A, const lapack_int* lda, double* SVA, const lapack_int* mv, lapack_complex_double* V,
+                        const lapack_int* ldv, lapack_complex_double* cwork, const lapack_int* lwork, double* rwork,
+                        const lapack_int* lrwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -2960,13 +2591,10 @@ void LAPACK_zgesvj_base(const char* joba, const char* jobu, const char* jobv, co
 #endif
 
 #define LAPACK_cgesvx_base LAPACK_GLOBAL(cgesvx, CGESVX)
-void LAPACK_cgesvx_base(const char* fact, const char* trans, const lapack_int* n,
-                        const lapack_int* nrhs, lapack_complex_float* A, const lapack_int* lda,
-                        lapack_complex_float* AF, const lapack_int* ldaf, lapack_int* ipiv,
-                        char* equed, float* R, float* C, lapack_complex_float* B,
-                        const lapack_int* ldb, lapack_complex_float* X, const lapack_int* ldx,
-                        float* rcond, float* ferr, float* berr, lapack_complex_float* work,
-                        float* rwork, lapack_int* info
+void LAPACK_cgesvx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* nrhs, lapack_complex_float* A,
+                        const lapack_int* lda, lapack_complex_float* AF, const lapack_int* ldaf, lapack_int* ipiv, char* equed, float* R,
+                        float* C, lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* X, const lapack_int* ldx,
+                        float* rcond, float* ferr, float* berr, lapack_complex_float* work, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -2979,12 +2607,10 @@ void LAPACK_cgesvx_base(const char* fact, const char* trans, const lapack_int* n
 #endif
 
 #define LAPACK_dgesvx_base LAPACK_GLOBAL(dgesvx, DGESVX)
-void LAPACK_dgesvx_base(const char* fact, const char* trans, const lapack_int* n,
-                        const lapack_int* nrhs, double* A, const lapack_int* lda, double* AF,
-                        const lapack_int* ldaf, lapack_int* ipiv, char* equed, double* R, double* C,
-                        double* B, const lapack_int* ldb, double* X, const lapack_int* ldx,
-                        double* rcond, double* ferr, double* berr, double* work, lapack_int* iwork,
-                        lapack_int* info
+void LAPACK_dgesvx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* nrhs, double* A, const lapack_int* lda,
+                        double* AF, const lapack_int* ldaf, lapack_int* ipiv, char* equed, double* R, double* C, double* B,
+                        const lapack_int* ldb, double* X, const lapack_int* ldx, double* rcond, double* ferr, double* berr, double* work,
+                        lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -2997,12 +2623,10 @@ void LAPACK_dgesvx_base(const char* fact, const char* trans, const lapack_int* n
 #endif
 
 #define LAPACK_sgesvx_base LAPACK_GLOBAL(sgesvx, SGESVX)
-void LAPACK_sgesvx_base(const char* fact, const char* trans, const lapack_int* n,
-                        const lapack_int* nrhs, float* A, const lapack_int* lda, float* AF,
-                        const lapack_int* ldaf, lapack_int* ipiv, char* equed, float* R, float* C,
-                        float* B, const lapack_int* ldb, float* X, const lapack_int* ldx,
-                        float* rcond, float* ferr, float* berr, float* work, lapack_int* iwork,
-                        lapack_int* info
+void LAPACK_sgesvx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* nrhs, float* A, const lapack_int* lda,
+                        float* AF, const lapack_int* ldaf, lapack_int* ipiv, char* equed, float* R, float* C, float* B,
+                        const lapack_int* ldb, float* X, const lapack_int* ldx, float* rcond, float* ferr, float* berr, float* work,
+                        lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -3015,13 +2639,10 @@ void LAPACK_sgesvx_base(const char* fact, const char* trans, const lapack_int* n
 #endif
 
 #define LAPACK_zgesvx_base LAPACK_GLOBAL(zgesvx, ZGESVX)
-void LAPACK_zgesvx_base(const char* fact, const char* trans, const lapack_int* n,
-                        const lapack_int* nrhs, lapack_complex_double* A, const lapack_int* lda,
-                        lapack_complex_double* AF, const lapack_int* ldaf, lapack_int* ipiv,
-                        char* equed, double* R, double* C, lapack_complex_double* B,
-                        const lapack_int* ldb, lapack_complex_double* X, const lapack_int* ldx,
-                        double* rcond, double* ferr, double* berr, lapack_complex_double* work,
-                        double* rwork, lapack_int* info
+void LAPACK_zgesvx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* nrhs, lapack_complex_double* A,
+                        const lapack_int* lda, lapack_complex_double* AF, const lapack_int* ldaf, lapack_int* ipiv, char* equed, double* R,
+                        double* C, lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* X, const lapack_int* ldx,
+                        double* rcond, double* ferr, double* berr, lapack_complex_double* work, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -3034,14 +2655,11 @@ void LAPACK_zgesvx_base(const char* fact, const char* trans, const lapack_int* n
 #endif
 
 #define LAPACK_cgesvxx_base LAPACK_GLOBAL(cgesvxx, CGESVXX)
-void LAPACK_cgesvxx_base(const char* fact, const char* trans, const lapack_int* n,
-                         const lapack_int* nrhs, lapack_complex_float* A, const lapack_int* lda,
-                         lapack_complex_float* AF, const lapack_int* ldaf, lapack_int* ipiv,
-                         char* equed, float* R, float* C, lapack_complex_float* B,
-                         const lapack_int* ldb, lapack_complex_float* X, const lapack_int* ldx,
-                         float* rcond, float* rpvgrw, float* berr, const lapack_int* n_err_bnds,
-                         float* err_bnds_norm, float* err_bnds_comp, const lapack_int* nparams,
-                         float* params, lapack_complex_float* work, float* rwork, lapack_int* info
+void LAPACK_cgesvxx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* nrhs, lapack_complex_float* A,
+                         const lapack_int* lda, lapack_complex_float* AF, const lapack_int* ldaf, lapack_int* ipiv, char* equed, float* R,
+                         float* C, lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* X, const lapack_int* ldx,
+                         float* rcond, float* rpvgrw, float* berr, const lapack_int* n_err_bnds, float* err_bnds_norm, float* err_bnds_comp,
+                         const lapack_int* nparams, float* params, lapack_complex_float* work, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t
@@ -3054,14 +2672,11 @@ void LAPACK_cgesvxx_base(const char* fact, const char* trans, const lapack_int* 
 #endif
 
 #define LAPACK_dgesvxx_base LAPACK_GLOBAL(dgesvxx, DGESVXX)
-void LAPACK_dgesvxx_base(const char* fact, const char* trans, const lapack_int* n,
-                         const lapack_int* nrhs, double* A, const lapack_int* lda, double* AF,
-                         const lapack_int* ldaf, lapack_int* ipiv, char* equed, double* R,
-                         double* C, double* B, const lapack_int* ldb, double* X,
-                         const lapack_int* ldx, double* rcond, double* rpvgrw, double* berr,
-                         const lapack_int* n_err_bnds, double* err_bnds_norm, double* err_bnds_comp,
-                         const lapack_int* nparams, double* params, double* work, lapack_int* iwork,
-                         lapack_int* info
+void LAPACK_dgesvxx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* nrhs, double* A, const lapack_int* lda,
+                         double* AF, const lapack_int* ldaf, lapack_int* ipiv, char* equed, double* R, double* C, double* B,
+                         const lapack_int* ldb, double* X, const lapack_int* ldx, double* rcond, double* rpvgrw, double* berr,
+                         const lapack_int* n_err_bnds, double* err_bnds_norm, double* err_bnds_comp, const lapack_int* nparams,
+                         double* params, double* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t
@@ -3074,13 +2689,11 @@ void LAPACK_dgesvxx_base(const char* fact, const char* trans, const lapack_int* 
 #endif
 
 #define LAPACK_sgesvxx_base LAPACK_GLOBAL(sgesvxx, SGESVXX)
-void LAPACK_sgesvxx_base(const char* fact, const char* trans, const lapack_int* n,
-                         const lapack_int* nrhs, float* A, const lapack_int* lda, float* AF,
-                         const lapack_int* ldaf, lapack_int* ipiv, char* equed, float* R, float* C,
-                         float* B, const lapack_int* ldb, float* X, const lapack_int* ldx,
-                         float* rcond, float* rpvgrw, float* berr, const lapack_int* n_err_bnds,
-                         float* err_bnds_norm, float* err_bnds_comp, const lapack_int* nparams,
-                         float* params, float* work, lapack_int* iwork, lapack_int* info
+void LAPACK_sgesvxx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* nrhs, float* A, const lapack_int* lda,
+                         float* AF, const lapack_int* ldaf, lapack_int* ipiv, char* equed, float* R, float* C, float* B,
+                         const lapack_int* ldb, float* X, const lapack_int* ldx, float* rcond, float* rpvgrw, float* berr,
+                         const lapack_int* n_err_bnds, float* err_bnds_norm, float* err_bnds_comp, const lapack_int* nparams, float* params,
+                         float* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t
@@ -3093,14 +2706,11 @@ void LAPACK_sgesvxx_base(const char* fact, const char* trans, const lapack_int* 
 #endif
 
 #define LAPACK_zgesvxx_base LAPACK_GLOBAL(zgesvxx, ZGESVXX)
-void LAPACK_zgesvxx_base(const char* fact, const char* trans, const lapack_int* n,
-                         const lapack_int* nrhs, lapack_complex_double* A, const lapack_int* lda,
-                         lapack_complex_double* AF, const lapack_int* ldaf, lapack_int* ipiv,
-                         char* equed, double* R, double* C, lapack_complex_double* B,
-                         const lapack_int* ldb, lapack_complex_double* X, const lapack_int* ldx,
-                         double* rcond, double* rpvgrw, double* berr, const lapack_int* n_err_bnds,
-                         double* err_bnds_norm, double* err_bnds_comp, const lapack_int* nparams,
-                         double* params, lapack_complex_double* work, double* rwork,
+void LAPACK_zgesvxx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* nrhs, lapack_complex_double* A,
+                         const lapack_int* lda, lapack_complex_double* AF, const lapack_int* ldaf, lapack_int* ipiv, char* equed, double* R,
+                         double* C, lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* X, const lapack_int* ldx,
+                         double* rcond, double* rpvgrw, double* berr, const lapack_int* n_err_bnds, double* err_bnds_norm,
+                         double* err_bnds_comp, const lapack_int* nparams, double* params, lapack_complex_double* work, double* rwork,
                          lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
@@ -3114,76 +2724,66 @@ void LAPACK_zgesvxx_base(const char* fact, const char* trans, const lapack_int* 
 #endif
 
 #define LAPACK_cgetf2 LAPACK_GLOBAL(cgetf2, CGETF2)
-void LAPACK_cgetf2(const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                   const lapack_int* lda, lapack_int* ipiv, lapack_int* info);
+void LAPACK_cgetf2(const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_int* ipiv,
+                   lapack_int* info);
 
 #define LAPACK_dgetf2 LAPACK_GLOBAL(dgetf2, DGETF2)
-void LAPACK_dgetf2(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                   lapack_int* ipiv, lapack_int* info);
+void LAPACK_dgetf2(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, lapack_int* ipiv, lapack_int* info);
 
 #define LAPACK_sgetf2 LAPACK_GLOBAL(sgetf2, SGETF2)
-void LAPACK_sgetf2(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                   lapack_int* ipiv, lapack_int* info);
+void LAPACK_sgetf2(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, lapack_int* ipiv, lapack_int* info);
 
 #define LAPACK_zgetf2 LAPACK_GLOBAL(zgetf2, ZGETF2)
-void LAPACK_zgetf2(const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                   const lapack_int* lda, lapack_int* ipiv, lapack_int* info);
+void LAPACK_zgetf2(const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_int* ipiv,
+                   lapack_int* info);
 
 #define LAPACK_cgetrf LAPACK_GLOBAL(cgetrf, CGETRF)
-void LAPACK_cgetrf(const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                   const lapack_int* lda, lapack_int* ipiv, lapack_int* info);
+void LAPACK_cgetrf(const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_int* ipiv,
+                   lapack_int* info);
 
 #define LAPACK_dgetrf LAPACK_GLOBAL(dgetrf, DGETRF)
-void LAPACK_dgetrf(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                   lapack_int* ipiv, lapack_int* info);
+void LAPACK_dgetrf(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, lapack_int* ipiv, lapack_int* info);
 
 #define LAPACK_sgetrf LAPACK_GLOBAL(sgetrf, SGETRF)
-void LAPACK_sgetrf(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                   lapack_int* ipiv, lapack_int* info);
+void LAPACK_sgetrf(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, lapack_int* ipiv, lapack_int* info);
 
 #define LAPACK_zgetrf LAPACK_GLOBAL(zgetrf, ZGETRF)
-void LAPACK_zgetrf(const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                   const lapack_int* lda, lapack_int* ipiv, lapack_int* info);
+void LAPACK_zgetrf(const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_int* ipiv,
+                   lapack_int* info);
 
 #define LAPACK_cgetrf2 LAPACK_GLOBAL(cgetrf2, CGETRF2)
-void LAPACK_cgetrf2(const lapack_int* m, const lapack_int* n, lapack_complex_float* A,
-                    const lapack_int* lda, lapack_int* ipiv, lapack_int* info);
+void LAPACK_cgetrf2(const lapack_int* m, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_int* ipiv,
+                    lapack_int* info);
 
 #define LAPACK_dgetrf2 LAPACK_GLOBAL(dgetrf2, DGETRF2)
-void LAPACK_dgetrf2(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda,
-                    lapack_int* ipiv, lapack_int* info);
+void LAPACK_dgetrf2(const lapack_int* m, const lapack_int* n, double* A, const lapack_int* lda, lapack_int* ipiv, lapack_int* info);
 
 #define LAPACK_sgetrf2 LAPACK_GLOBAL(sgetrf2, SGETRF2)
-void LAPACK_sgetrf2(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda,
-                    lapack_int* ipiv, lapack_int* info);
+void LAPACK_sgetrf2(const lapack_int* m, const lapack_int* n, float* A, const lapack_int* lda, lapack_int* ipiv, lapack_int* info);
 
 #define LAPACK_zgetrf2 LAPACK_GLOBAL(zgetrf2, ZGETRF2)
-void LAPACK_zgetrf2(const lapack_int* m, const lapack_int* n, lapack_complex_double* A,
-                    const lapack_int* lda, lapack_int* ipiv, lapack_int* info);
+void LAPACK_zgetrf2(const lapack_int* m, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_int* ipiv,
+                    lapack_int* info);
 
 #define LAPACK_cgetri LAPACK_GLOBAL(cgetri, CGETRI)
-void LAPACK_cgetri(const lapack_int* n, lapack_complex_float* A, const lapack_int* lda,
-                   const lapack_int* ipiv, lapack_complex_float* work, const lapack_int* lwork,
-                   lapack_int* info);
+void LAPACK_cgetri(const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, const lapack_int* ipiv, lapack_complex_float* work,
+                   const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_dgetri LAPACK_GLOBAL(dgetri, DGETRI)
-void LAPACK_dgetri(const lapack_int* n, double* A, const lapack_int* lda, const lapack_int* ipiv,
-                   double* work, const lapack_int* lwork, lapack_int* info);
-
-#define LAPACK_sgetri LAPACK_GLOBAL(sgetri, SGETRI)
-void LAPACK_sgetri(const lapack_int* n, float* A, const lapack_int* lda, const lapack_int* ipiv,
-                   float* work, const lapack_int* lwork, lapack_int* info);
-
-#define LAPACK_zgetri LAPACK_GLOBAL(zgetri, ZGETRI)
-void LAPACK_zgetri(const lapack_int* n, lapack_complex_double* A, const lapack_int* lda,
-                   const lapack_int* ipiv, lapack_complex_double* work, const lapack_int* lwork,
+void LAPACK_dgetri(const lapack_int* n, double* A, const lapack_int* lda, const lapack_int* ipiv, double* work, const lapack_int* lwork,
                    lapack_int* info);
 
+#define LAPACK_sgetri LAPACK_GLOBAL(sgetri, SGETRI)
+void LAPACK_sgetri(const lapack_int* n, float* A, const lapack_int* lda, const lapack_int* ipiv, float* work, const lapack_int* lwork,
+                   lapack_int* info);
+
+#define LAPACK_zgetri LAPACK_GLOBAL(zgetri, ZGETRI)
+void LAPACK_zgetri(const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, const lapack_int* ipiv,
+                   lapack_complex_double* work, const lapack_int* lwork, lapack_int* info);
+
 #define LAPACK_cgetrs_base LAPACK_GLOBAL(cgetrs, CGETRS)
-void LAPACK_cgetrs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs,
-                        const lapack_complex_float* A, const lapack_int* lda,
-                        const lapack_int* ipiv, lapack_complex_float* B, const lapack_int* ldb,
-                        lapack_int* info
+void LAPACK_cgetrs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs, const lapack_complex_float* A,
+                        const lapack_int* lda, const lapack_int* ipiv, lapack_complex_float* B, const lapack_int* ldb, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -3196,9 +2796,8 @@ void LAPACK_cgetrs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_dgetrs_base LAPACK_GLOBAL(dgetrs, DGETRS)
-void LAPACK_dgetrs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs,
-                        const double* A, const lapack_int* lda, const lapack_int* ipiv, double* B,
-                        const lapack_int* ldb, lapack_int* info
+void LAPACK_dgetrs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs, const double* A, const lapack_int* lda,
+                        const lapack_int* ipiv, double* B, const lapack_int* ldb, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -3211,9 +2810,8 @@ void LAPACK_dgetrs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_sgetrs_base LAPACK_GLOBAL(sgetrs, SGETRS)
-void LAPACK_sgetrs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs,
-                        const float* A, const lapack_int* lda, const lapack_int* ipiv, float* B,
-                        const lapack_int* ldb, lapack_int* info
+void LAPACK_sgetrs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs, const float* A, const lapack_int* lda,
+                        const lapack_int* ipiv, float* B, const lapack_int* ldb, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -3226,10 +2824,8 @@ void LAPACK_sgetrs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_zgetrs_base LAPACK_GLOBAL(zgetrs, ZGETRS)
-void LAPACK_zgetrs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs,
-                        const lapack_complex_double* A, const lapack_int* lda,
-                        const lapack_int* ipiv, lapack_complex_double* B, const lapack_int* ldb,
-                        lapack_int* info
+void LAPACK_zgetrs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs, const lapack_complex_double* A,
+                        const lapack_int* lda, const lapack_int* ipiv, lapack_complex_double* B, const lapack_int* ldb, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -3242,9 +2838,8 @@ void LAPACK_zgetrs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_cgetsls_base LAPACK_GLOBAL(cgetsls, CGETSLS)
-void LAPACK_cgetsls_base(const char* trans, const lapack_int* m, const lapack_int* n,
-                         const lapack_int* nrhs, lapack_complex_float* A, const lapack_int* lda,
-                         lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* work,
+void LAPACK_cgetsls_base(const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, lapack_complex_float* A,
+                         const lapack_int* lda, lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* work,
                          const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
@@ -3258,10 +2853,8 @@ void LAPACK_cgetsls_base(const char* trans, const lapack_int* m, const lapack_in
 #endif
 
 #define LAPACK_dgetsls_base LAPACK_GLOBAL(dgetsls, DGETSLS)
-void LAPACK_dgetsls_base(const char* trans, const lapack_int* m, const lapack_int* n,
-                         const lapack_int* nrhs, double* A, const lapack_int* lda, double* B,
-                         const lapack_int* ldb, double* work, const lapack_int* lwork,
-                         lapack_int* info
+void LAPACK_dgetsls_base(const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, double* A,
+                         const lapack_int* lda, double* B, const lapack_int* ldb, double* work, const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t
@@ -3274,10 +2867,8 @@ void LAPACK_dgetsls_base(const char* trans, const lapack_int* m, const lapack_in
 #endif
 
 #define LAPACK_sgetsls_base LAPACK_GLOBAL(sgetsls, SGETSLS)
-void LAPACK_sgetsls_base(const char* trans, const lapack_int* m, const lapack_int* n,
-                         const lapack_int* nrhs, float* A, const lapack_int* lda, float* B,
-                         const lapack_int* ldb, float* work, const lapack_int* lwork,
-                         lapack_int* info
+void LAPACK_sgetsls_base(const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, float* A,
+                         const lapack_int* lda, float* B, const lapack_int* ldb, float* work, const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t
@@ -3290,10 +2881,9 @@ void LAPACK_sgetsls_base(const char* trans, const lapack_int* m, const lapack_in
 #endif
 
 #define LAPACK_zgetsls_base LAPACK_GLOBAL(zgetsls, ZGETSLS)
-void LAPACK_zgetsls_base(const char* trans, const lapack_int* m, const lapack_int* n,
-                         const lapack_int* nrhs, lapack_complex_double* A, const lapack_int* lda,
-                         lapack_complex_double* B, const lapack_int* ldb,
-                         lapack_complex_double* work, const lapack_int* lwork, lapack_int* info
+void LAPACK_zgetsls_base(const char* trans, const lapack_int* m, const lapack_int* n, const lapack_int* nrhs, lapack_complex_double* A,
+                         const lapack_int* lda, lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* work,
+                         const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t
@@ -3306,34 +2896,29 @@ void LAPACK_zgetsls_base(const char* trans, const lapack_int* m, const lapack_in
 #endif
 
 #define LAPACK_cgetsqrhrt LAPACK_GLOBAL(cgetsqrhrt, CGETSQRHRT)
-void LAPACK_cgetsqrhrt(const lapack_int* m, const lapack_int* n, const lapack_int* mb1,
-                       const lapack_int* nb1, const lapack_int* nb2, lapack_complex_float* A,
-                       const lapack_int* lda, lapack_complex_float* T, const lapack_int* ldt,
+void LAPACK_cgetsqrhrt(const lapack_int* m, const lapack_int* n, const lapack_int* mb1, const lapack_int* nb1, const lapack_int* nb2,
+                       lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* T, const lapack_int* ldt,
                        lapack_complex_float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_dgetsqrhrt LAPACK_GLOBAL(dgetsqrhrt, DGETSQRHRT)
-void LAPACK_dgetsqrhrt(const lapack_int* m, const lapack_int* n, const lapack_int* mb1,
-                       const lapack_int* nb1, const lapack_int* nb2, double* A,
-                       const lapack_int* lda, double* T, const lapack_int* ldt, double* work,
-                       const lapack_int* lwork, lapack_int* info);
+void LAPACK_dgetsqrhrt(const lapack_int* m, const lapack_int* n, const lapack_int* mb1, const lapack_int* nb1, const lapack_int* nb2,
+                       double* A, const lapack_int* lda, double* T, const lapack_int* ldt, double* work, const lapack_int* lwork,
+                       lapack_int* info);
 
 #define LAPACK_sgetsqrhrt LAPACK_GLOBAL(sgetsqrhrt, SGETSQRHRT)
-void LAPACK_sgetsqrhrt(const lapack_int* m, const lapack_int* n, const lapack_int* mb1,
-                       const lapack_int* nb1, const lapack_int* nb2, float* A,
-                       const lapack_int* lda, float* T, const lapack_int* ldt, float* work,
-                       const lapack_int* lwork, lapack_int* info);
+void LAPACK_sgetsqrhrt(const lapack_int* m, const lapack_int* n, const lapack_int* mb1, const lapack_int* nb1, const lapack_int* nb2,
+                       float* A, const lapack_int* lda, float* T, const lapack_int* ldt, float* work, const lapack_int* lwork,
+                       lapack_int* info);
 
 #define LAPACK_zgetsqrhrt LAPACK_GLOBAL(zgetsqrhrt, ZGETSQRHRT)
-void LAPACK_zgetsqrhrt(const lapack_int* m, const lapack_int* n, const lapack_int* mb1,
-                       const lapack_int* nb1, const lapack_int* nb2, lapack_complex_double* A,
-                       const lapack_int* lda, lapack_complex_double* T, const lapack_int* ldt,
+void LAPACK_zgetsqrhrt(const lapack_int* m, const lapack_int* n, const lapack_int* mb1, const lapack_int* nb1, const lapack_int* nb2,
+                       lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* T, const lapack_int* ldt,
                        lapack_complex_double* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_cggbak_base LAPACK_GLOBAL(cggbak, CGGBAK)
-void LAPACK_cggbak_base(const char* job, const char* side, const lapack_int* n,
-                        const lapack_int* ilo, const lapack_int* ihi, const float* lscale,
-                        const float* rscale, const lapack_int* m, lapack_complex_float* V,
-                        const lapack_int* ldv, lapack_int* info
+void LAPACK_cggbak_base(const char* job, const char* side, const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi,
+                        const float* lscale, const float* rscale, const lapack_int* m, lapack_complex_float* V, const lapack_int* ldv,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -3346,10 +2931,8 @@ void LAPACK_cggbak_base(const char* job, const char* side, const lapack_int* n,
 #endif
 
 #define LAPACK_dggbak_base LAPACK_GLOBAL(dggbak, DGGBAK)
-void LAPACK_dggbak_base(const char* job, const char* side, const lapack_int* n,
-                        const lapack_int* ilo, const lapack_int* ihi, const double* lscale,
-                        const double* rscale, const lapack_int* m, double* V, const lapack_int* ldv,
-                        lapack_int* info
+void LAPACK_dggbak_base(const char* job, const char* side, const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi,
+                        const double* lscale, const double* rscale, const lapack_int* m, double* V, const lapack_int* ldv, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -3362,10 +2945,8 @@ void LAPACK_dggbak_base(const char* job, const char* side, const lapack_int* n,
 #endif
 
 #define LAPACK_sggbak_base LAPACK_GLOBAL(sggbak, SGGBAK)
-void LAPACK_sggbak_base(const char* job, const char* side, const lapack_int* n,
-                        const lapack_int* ilo, const lapack_int* ihi, const float* lscale,
-                        const float* rscale, const lapack_int* m, float* V, const lapack_int* ldv,
-                        lapack_int* info
+void LAPACK_sggbak_base(const char* job, const char* side, const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi,
+                        const float* lscale, const float* rscale, const lapack_int* m, float* V, const lapack_int* ldv, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -3378,10 +2959,9 @@ void LAPACK_sggbak_base(const char* job, const char* side, const lapack_int* n,
 #endif
 
 #define LAPACK_zggbak_base LAPACK_GLOBAL(zggbak, ZGGBAK)
-void LAPACK_zggbak_base(const char* job, const char* side, const lapack_int* n,
-                        const lapack_int* ilo, const lapack_int* ihi, const double* lscale,
-                        const double* rscale, const lapack_int* m, lapack_complex_double* V,
-                        const lapack_int* ldv, lapack_int* info
+void LAPACK_zggbak_base(const char* job, const char* side, const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi,
+                        const double* lscale, const double* rscale, const lapack_int* m, lapack_complex_double* V, const lapack_int* ldv,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -3394,10 +2974,8 @@ void LAPACK_zggbak_base(const char* job, const char* side, const lapack_int* n,
 #endif
 
 #define LAPACK_cggbal_base LAPACK_GLOBAL(cggbal, CGGBAL)
-void LAPACK_cggbal_base(const char* job, const lapack_int* n, lapack_complex_float* A,
-                        const lapack_int* lda, lapack_complex_float* B, const lapack_int* ldb,
-                        lapack_int* ilo, lapack_int* ihi, float* lscale, float* rscale, float* work,
-                        lapack_int* info
+void LAPACK_cggbal_base(const char* job, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* B,
+                        const lapack_int* ldb, lapack_int* ilo, lapack_int* ihi, float* lscale, float* rscale, float* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -3410,9 +2988,8 @@ void LAPACK_cggbal_base(const char* job, const lapack_int* n, lapack_complex_flo
 #endif
 
 #define LAPACK_dggbal_base LAPACK_GLOBAL(dggbal, DGGBAL)
-void LAPACK_dggbal_base(const char* job, const lapack_int* n, double* A, const lapack_int* lda,
-                        double* B, const lapack_int* ldb, lapack_int* ilo, lapack_int* ihi,
-                        double* lscale, double* rscale, double* work, lapack_int* info
+void LAPACK_dggbal_base(const char* job, const lapack_int* n, double* A, const lapack_int* lda, double* B, const lapack_int* ldb,
+                        lapack_int* ilo, lapack_int* ihi, double* lscale, double* rscale, double* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -3425,9 +3002,8 @@ void LAPACK_dggbal_base(const char* job, const lapack_int* n, double* A, const l
 #endif
 
 #define LAPACK_sggbal_base LAPACK_GLOBAL(sggbal, SGGBAL)
-void LAPACK_sggbal_base(const char* job, const lapack_int* n, float* A, const lapack_int* lda,
-                        float* B, const lapack_int* ldb, lapack_int* ilo, lapack_int* ihi,
-                        float* lscale, float* rscale, float* work, lapack_int* info
+void LAPACK_sggbal_base(const char* job, const lapack_int* n, float* A, const lapack_int* lda, float* B, const lapack_int* ldb,
+                        lapack_int* ilo, lapack_int* ihi, float* lscale, float* rscale, float* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -3440,10 +3016,9 @@ void LAPACK_sggbal_base(const char* job, const lapack_int* n, float* A, const la
 #endif
 
 #define LAPACK_zggbal_base LAPACK_GLOBAL(zggbal, ZGGBAL)
-void LAPACK_zggbal_base(const char* job, const lapack_int* n, lapack_complex_double* A,
-                        const lapack_int* lda, lapack_complex_double* B, const lapack_int* ldb,
-                        lapack_int* ilo, lapack_int* ihi, double* lscale, double* rscale,
-                        double* work, lapack_int* info
+void LAPACK_zggbal_base(const char* job, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* B,
+                        const lapack_int* ldb, lapack_int* ilo, lapack_int* ihi, double* lscale, double* rscale, double* work,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -3456,14 +3031,11 @@ void LAPACK_zggbal_base(const char* job, const lapack_int* n, lapack_complex_dou
 #endif
 
 #define LAPACK_cgges_base LAPACK_GLOBAL(cgges, CGGES)
-void LAPACK_cgges_base(const char* jobvsl, const char* jobvsr, const char* sort,
-                       LAPACK_C_SELECT2 selctg, const lapack_int* n, lapack_complex_float* A,
-                       const lapack_int* lda, lapack_complex_float* B, const lapack_int* ldb,
-                       lapack_int* sdim, lapack_complex_float* alpha, lapack_complex_float* beta,
-                       lapack_complex_float* VSL, const lapack_int* ldvsl,
-                       lapack_complex_float* VSR, const lapack_int* ldvsr,
-                       lapack_complex_float* work, const lapack_int* lwork, float* rwork,
-                       lapack_logical* BWORK, lapack_int* info
+void LAPACK_cgges_base(const char* jobvsl, const char* jobvsr, const char* sort, LAPACK_C_SELECT2 selctg, const lapack_int* n,
+                       lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* B, const lapack_int* ldb, lapack_int* sdim,
+                       lapack_complex_float* alpha, lapack_complex_float* beta, lapack_complex_float* VSL, const lapack_int* ldvsl,
+                       lapack_complex_float* VSR, const lapack_int* ldvsr, lapack_complex_float* work, const lapack_int* lwork,
+                       float* rwork, lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t, size_t
@@ -3476,11 +3048,9 @@ void LAPACK_cgges_base(const char* jobvsl, const char* jobvsr, const char* sort,
 #endif
 
 #define LAPACK_dgges_base LAPACK_GLOBAL(dgges, DGGES)
-void LAPACK_dgges_base(const char* jobvsl, const char* jobvsr, const char* sort,
-                       LAPACK_D_SELECT3 selctg, const lapack_int* n, double* A,
-                       const lapack_int* lda, double* B, const lapack_int* ldb, lapack_int* sdim,
-                       double* alphar, double* alphai, double* beta, double* VSL,
-                       const lapack_int* ldvsl, double* VSR, const lapack_int* ldvsr, double* work,
+void LAPACK_dgges_base(const char* jobvsl, const char* jobvsr, const char* sort, LAPACK_D_SELECT3 selctg, const lapack_int* n, double* A,
+                       const lapack_int* lda, double* B, const lapack_int* ldb, lapack_int* sdim, double* alphar, double* alphai,
+                       double* beta, double* VSL, const lapack_int* ldvsl, double* VSR, const lapack_int* ldvsr, double* work,
                        const lapack_int* lwork, lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
@@ -3494,12 +3064,10 @@ void LAPACK_dgges_base(const char* jobvsl, const char* jobvsr, const char* sort,
 #endif
 
 #define LAPACK_sgges_base LAPACK_GLOBAL(sgges, SGGES)
-void LAPACK_sgges_base(const char* jobvsl, const char* jobvsr, const char* sort,
-                       LAPACK_S_SELECT3 selctg, const lapack_int* n, float* A,
-                       const lapack_int* lda, float* B, const lapack_int* ldb, lapack_int* sdim,
-                       float* alphar, float* alphai, float* beta, float* VSL,
-                       const lapack_int* ldvsl, float* VSR, const lapack_int* ldvsr, float* work,
-                       const lapack_int* lwork, lapack_logical* BWORK, lapack_int* info
+void LAPACK_sgges_base(const char* jobvsl, const char* jobvsr, const char* sort, LAPACK_S_SELECT3 selctg, const lapack_int* n, float* A,
+                       const lapack_int* lda, float* B, const lapack_int* ldb, lapack_int* sdim, float* alphar, float* alphai, float* beta,
+                       float* VSL, const lapack_int* ldvsl, float* VSR, const lapack_int* ldvsr, float* work, const lapack_int* lwork,
+                       lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t, size_t
@@ -3512,14 +3080,11 @@ void LAPACK_sgges_base(const char* jobvsl, const char* jobvsr, const char* sort,
 #endif
 
 #define LAPACK_zgges_base LAPACK_GLOBAL(zgges, ZGGES)
-void LAPACK_zgges_base(const char* jobvsl, const char* jobvsr, const char* sort,
-                       LAPACK_Z_SELECT2 selctg, const lapack_int* n, lapack_complex_double* A,
-                       const lapack_int* lda, lapack_complex_double* B, const lapack_int* ldb,
-                       lapack_int* sdim, lapack_complex_double* alpha, lapack_complex_double* beta,
-                       lapack_complex_double* VSL, const lapack_int* ldvsl,
-                       lapack_complex_double* VSR, const lapack_int* ldvsr,
-                       lapack_complex_double* work, const lapack_int* lwork, double* rwork,
-                       lapack_logical* BWORK, lapack_int* info
+void LAPACK_zgges_base(const char* jobvsl, const char* jobvsr, const char* sort, LAPACK_Z_SELECT2 selctg, const lapack_int* n,
+                       lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* B, const lapack_int* ldb, lapack_int* sdim,
+                       lapack_complex_double* alpha, lapack_complex_double* beta, lapack_complex_double* VSL, const lapack_int* ldvsl,
+                       lapack_complex_double* VSR, const lapack_int* ldvsr, lapack_complex_double* work, const lapack_int* lwork,
+                       double* rwork, lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t, size_t
@@ -3532,14 +3097,11 @@ void LAPACK_zgges_base(const char* jobvsl, const char* jobvsr, const char* sort,
 #endif
 
 #define LAPACK_cgges3_base LAPACK_GLOBAL(cgges3, CGGES3)
-void LAPACK_cgges3_base(const char* jobvsl, const char* jobvsr, const char* sort,
-                        LAPACK_C_SELECT2 selctg, const lapack_int* n, lapack_complex_float* A,
-                        const lapack_int* lda, lapack_complex_float* B, const lapack_int* ldb,
-                        lapack_int* sdim, lapack_complex_float* alpha, lapack_complex_float* beta,
-                        lapack_complex_float* VSL, const lapack_int* ldvsl,
-                        lapack_complex_float* VSR, const lapack_int* ldvsr,
-                        lapack_complex_float* work, const lapack_int* lwork, float* rwork,
-                        lapack_logical* BWORK, lapack_int* info
+void LAPACK_cgges3_base(const char* jobvsl, const char* jobvsr, const char* sort, LAPACK_C_SELECT2 selctg, const lapack_int* n,
+                        lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* B, const lapack_int* ldb, lapack_int* sdim,
+                        lapack_complex_float* alpha, lapack_complex_float* beta, lapack_complex_float* VSL, const lapack_int* ldvsl,
+                        lapack_complex_float* VSR, const lapack_int* ldvsr, lapack_complex_float* work, const lapack_int* lwork,
+                        float* rwork, lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -3552,11 +3114,9 @@ void LAPACK_cgges3_base(const char* jobvsl, const char* jobvsr, const char* sort
 #endif
 
 #define LAPACK_dgges3_base LAPACK_GLOBAL(dgges3, DGGES3)
-void LAPACK_dgges3_base(const char* jobvsl, const char* jobvsr, const char* sort,
-                        LAPACK_D_SELECT3 selctg, const lapack_int* n, double* A,
-                        const lapack_int* lda, double* B, const lapack_int* ldb, lapack_int* sdim,
-                        double* alphar, double* alphai, double* beta, double* VSL,
-                        const lapack_int* ldvsl, double* VSR, const lapack_int* ldvsr, double* work,
+void LAPACK_dgges3_base(const char* jobvsl, const char* jobvsr, const char* sort, LAPACK_D_SELECT3 selctg, const lapack_int* n, double* A,
+                        const lapack_int* lda, double* B, const lapack_int* ldb, lapack_int* sdim, double* alphar, double* alphai,
+                        double* beta, double* VSL, const lapack_int* ldvsl, double* VSR, const lapack_int* ldvsr, double* work,
                         const lapack_int* lwork, lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -3570,12 +3130,10 @@ void LAPACK_dgges3_base(const char* jobvsl, const char* jobvsr, const char* sort
 #endif
 
 #define LAPACK_sgges3_base LAPACK_GLOBAL(sgges3, SGGES3)
-void LAPACK_sgges3_base(const char* jobvsl, const char* jobvsr, const char* sort,
-                        LAPACK_S_SELECT3 selctg, const lapack_int* n, float* A,
-                        const lapack_int* lda, float* B, const lapack_int* ldb, lapack_int* sdim,
-                        float* alphar, float* alphai, float* beta, float* VSL,
-                        const lapack_int* ldvsl, float* VSR, const lapack_int* ldvsr, float* work,
-                        const lapack_int* lwork, lapack_logical* BWORK, lapack_int* info
+void LAPACK_sgges3_base(const char* jobvsl, const char* jobvsr, const char* sort, LAPACK_S_SELECT3 selctg, const lapack_int* n, float* A,
+                        const lapack_int* lda, float* B, const lapack_int* ldb, lapack_int* sdim, float* alphar, float* alphai, float* beta,
+                        float* VSL, const lapack_int* ldvsl, float* VSR, const lapack_int* ldvsr, float* work, const lapack_int* lwork,
+                        lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -3588,14 +3146,11 @@ void LAPACK_sgges3_base(const char* jobvsl, const char* jobvsr, const char* sort
 #endif
 
 #define LAPACK_zgges3_base LAPACK_GLOBAL(zgges3, ZGGES3)
-void LAPACK_zgges3_base(const char* jobvsl, const char* jobvsr, const char* sort,
-                        LAPACK_Z_SELECT2 selctg, const lapack_int* n, lapack_complex_double* A,
-                        const lapack_int* lda, lapack_complex_double* B, const lapack_int* ldb,
-                        lapack_int* sdim, lapack_complex_double* alpha, lapack_complex_double* beta,
-                        lapack_complex_double* VSL, const lapack_int* ldvsl,
-                        lapack_complex_double* VSR, const lapack_int* ldvsr,
-                        lapack_complex_double* work, const lapack_int* lwork, double* rwork,
-                        lapack_logical* BWORK, lapack_int* info
+void LAPACK_zgges3_base(const char* jobvsl, const char* jobvsr, const char* sort, LAPACK_Z_SELECT2 selctg, const lapack_int* n,
+                        lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* B, const lapack_int* ldb, lapack_int* sdim,
+                        lapack_complex_double* alpha, lapack_complex_double* beta, lapack_complex_double* VSL, const lapack_int* ldvsl,
+                        lapack_complex_double* VSR, const lapack_int* ldvsr, lapack_complex_double* work, const lapack_int* lwork,
+                        double* rwork, lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -3608,15 +3163,12 @@ void LAPACK_zgges3_base(const char* jobvsl, const char* jobvsr, const char* sort
 #endif
 
 #define LAPACK_cggesx_base LAPACK_GLOBAL(cggesx, CGGESX)
-void LAPACK_cggesx_base(const char* jobvsl, const char* jobvsr, const char* sort,
-                        LAPACK_C_SELECT2 selctg, const char* sense, const lapack_int* n,
-                        lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* B,
-                        const lapack_int* ldb, lapack_int* sdim, lapack_complex_float* alpha,
-                        lapack_complex_float* beta, lapack_complex_float* VSL,
-                        const lapack_int* ldvsl, lapack_complex_float* VSR, const lapack_int* ldvsr,
-                        float* rconde, float* rcondv, lapack_complex_float* work,
-                        const lapack_int* lwork, float* rwork, lapack_int* iwork,
-                        const lapack_int* liwork, lapack_logical* BWORK, lapack_int* info
+void LAPACK_cggesx_base(const char* jobvsl, const char* jobvsr, const char* sort, LAPACK_C_SELECT2 selctg, const char* sense,
+                        const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* B, const lapack_int* ldb,
+                        lapack_int* sdim, lapack_complex_float* alpha, lapack_complex_float* beta, lapack_complex_float* VSL,
+                        const lapack_int* ldvsl, lapack_complex_float* VSR, const lapack_int* ldvsr, float* rconde, float* rcondv,
+                        lapack_complex_float* work, const lapack_int* lwork, float* rwork, lapack_int* iwork, const lapack_int* liwork,
+                        lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t
@@ -3629,14 +3181,11 @@ void LAPACK_cggesx_base(const char* jobvsl, const char* jobvsr, const char* sort
 #endif
 
 #define LAPACK_dggesx_base LAPACK_GLOBAL(dggesx, DGGESX)
-void LAPACK_dggesx_base(const char* jobvsl, const char* jobvsr, const char* sort,
-                        LAPACK_D_SELECT3 selctg, const char* sense, const lapack_int* n, double* A,
-                        const lapack_int* lda, double* B, const lapack_int* ldb, lapack_int* sdim,
-                        double* alphar, double* alphai, double* beta, double* VSL,
-                        const lapack_int* ldvsl, double* VSR, const lapack_int* ldvsr,
-                        double* rconde, double* rcondv, double* work, const lapack_int* lwork,
-                        lapack_int* iwork, const lapack_int* liwork, lapack_logical* BWORK,
-                        lapack_int* info
+void LAPACK_dggesx_base(const char* jobvsl, const char* jobvsr, const char* sort, LAPACK_D_SELECT3 selctg, const char* sense,
+                        const lapack_int* n, double* A, const lapack_int* lda, double* B, const lapack_int* ldb, lapack_int* sdim,
+                        double* alphar, double* alphai, double* beta, double* VSL, const lapack_int* ldvsl, double* VSR,
+                        const lapack_int* ldvsr, double* rconde, double* rcondv, double* work, const lapack_int* lwork, lapack_int* iwork,
+                        const lapack_int* liwork, lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t
@@ -3649,13 +3198,11 @@ void LAPACK_dggesx_base(const char* jobvsl, const char* jobvsr, const char* sort
 #endif
 
 #define LAPACK_sggesx_base LAPACK_GLOBAL(sggesx, SGGESX)
-void LAPACK_sggesx_base(const char* jobvsl, const char* jobvsr, const char* sort,
-                        LAPACK_S_SELECT3 selctg, const char* sense, const lapack_int* n, float* A,
-                        const lapack_int* lda, float* B, const lapack_int* ldb, lapack_int* sdim,
-                        float* alphar, float* alphai, float* beta, float* VSL,
-                        const lapack_int* ldvsl, float* VSR, const lapack_int* ldvsr, float* rconde,
-                        float* rcondv, float* work, const lapack_int* lwork, lapack_int* iwork,
-                        const lapack_int* liwork, lapack_logical* BWORK, lapack_int* info
+void LAPACK_sggesx_base(const char* jobvsl, const char* jobvsr, const char* sort, LAPACK_S_SELECT3 selctg, const char* sense,
+                        const lapack_int* n, float* A, const lapack_int* lda, float* B, const lapack_int* ldb, lapack_int* sdim,
+                        float* alphar, float* alphai, float* beta, float* VSL, const lapack_int* ldvsl, float* VSR, const lapack_int* ldvsr,
+                        float* rconde, float* rcondv, float* work, const lapack_int* lwork, lapack_int* iwork, const lapack_int* liwork,
+                        lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t
@@ -3668,16 +3215,12 @@ void LAPACK_sggesx_base(const char* jobvsl, const char* jobvsr, const char* sort
 #endif
 
 #define LAPACK_zggesx_base LAPACK_GLOBAL(zggesx, ZGGESX)
-void LAPACK_zggesx_base(const char* jobvsl, const char* jobvsr, const char* sort,
-                        LAPACK_Z_SELECT2 selctg, const char* sense, const lapack_int* n,
-                        lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* B,
-                        const lapack_int* ldb, lapack_int* sdim, lapack_complex_double* alpha,
-                        lapack_complex_double* beta, lapack_complex_double* VSL,
-                        const lapack_int* ldvsl, lapack_complex_double* VSR,
-                        const lapack_int* ldvsr, double* rconde, double* rcondv,
-                        lapack_complex_double* work, const lapack_int* lwork, double* rwork,
-                        lapack_int* iwork, const lapack_int* liwork, lapack_logical* BWORK,
-                        lapack_int* info
+void LAPACK_zggesx_base(const char* jobvsl, const char* jobvsr, const char* sort, LAPACK_Z_SELECT2 selctg, const char* sense,
+                        const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* B,
+                        const lapack_int* ldb, lapack_int* sdim, lapack_complex_double* alpha, lapack_complex_double* beta,
+                        lapack_complex_double* VSL, const lapack_int* ldvsl, lapack_complex_double* VSR, const lapack_int* ldvsr,
+                        double* rconde, double* rcondv, lapack_complex_double* work, const lapack_int* lwork, double* rwork,
+                        lapack_int* iwork, const lapack_int* liwork, lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t
@@ -3690,12 +3233,10 @@ void LAPACK_zggesx_base(const char* jobvsl, const char* jobvsr, const char* sort
 #endif
 
 #define LAPACK_cggev_base LAPACK_GLOBAL(cggev, CGGEV)
-void LAPACK_cggev_base(const char* jobvl, const char* jobvr, const lapack_int* n,
-                       lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* B,
-                       const lapack_int* ldb, lapack_complex_float* alpha,
-                       lapack_complex_float* beta, lapack_complex_float* VL, const lapack_int* ldvl,
-                       lapack_complex_float* VR, const lapack_int* ldvr, lapack_complex_float* work,
-                       const lapack_int* lwork, float* rwork, lapack_int* info
+void LAPACK_cggev_base(const char* jobvl, const char* jobvr, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda,
+                       lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* alpha, lapack_complex_float* beta,
+                       lapack_complex_float* VL, const lapack_int* ldvl, lapack_complex_float* VR, const lapack_int* ldvr,
+                       lapack_complex_float* work, const lapack_int* lwork, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t
@@ -3708,11 +3249,9 @@ void LAPACK_cggev_base(const char* jobvl, const char* jobvr, const lapack_int* n
 #endif
 
 #define LAPACK_dggev_base LAPACK_GLOBAL(dggev, DGGEV)
-void LAPACK_dggev_base(const char* jobvl, const char* jobvr, const lapack_int* n, double* A,
-                       const lapack_int* lda, double* B, const lapack_int* ldb, double* alphar,
-                       double* alphai, double* beta, double* VL, const lapack_int* ldvl, double* VR,
-                       const lapack_int* ldvr, double* work, const lapack_int* lwork,
-                       lapack_int* info
+void LAPACK_dggev_base(const char* jobvl, const char* jobvr, const lapack_int* n, double* A, const lapack_int* lda, double* B,
+                       const lapack_int* ldb, double* alphar, double* alphai, double* beta, double* VL, const lapack_int* ldvl, double* VR,
+                       const lapack_int* ldvr, double* work, const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t
@@ -3725,11 +3264,9 @@ void LAPACK_dggev_base(const char* jobvl, const char* jobvr, const lapack_int* n
 #endif
 
 #define LAPACK_sggev_base LAPACK_GLOBAL(sggev, SGGEV)
-void LAPACK_sggev_base(const char* jobvl, const char* jobvr, const lapack_int* n, float* A,
-                       const lapack_int* lda, float* B, const lapack_int* ldb, float* alphar,
-                       float* alphai, float* beta, float* VL, const lapack_int* ldvl, float* VR,
-                       const lapack_int* ldvr, float* work, const lapack_int* lwork,
-                       lapack_int* info
+void LAPACK_sggev_base(const char* jobvl, const char* jobvr, const lapack_int* n, float* A, const lapack_int* lda, float* B,
+                       const lapack_int* ldb, float* alphar, float* alphai, float* beta, float* VL, const lapack_int* ldvl, float* VR,
+                       const lapack_int* ldvr, float* work, const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t
@@ -3742,13 +3279,10 @@ void LAPACK_sggev_base(const char* jobvl, const char* jobvr, const lapack_int* n
 #endif
 
 #define LAPACK_zggev_base LAPACK_GLOBAL(zggev, ZGGEV)
-void LAPACK_zggev_base(const char* jobvl, const char* jobvr, const lapack_int* n,
-                       lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* B,
-                       const lapack_int* ldb, lapack_complex_double* alpha,
-                       lapack_complex_double* beta, lapack_complex_double* VL,
-                       const lapack_int* ldvl, lapack_complex_double* VR, const lapack_int* ldvr,
-                       lapack_complex_double* work, const lapack_int* lwork, double* rwork,
-                       lapack_int* info
+void LAPACK_zggev_base(const char* jobvl, const char* jobvr, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda,
+                       lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* alpha, lapack_complex_double* beta,
+                       lapack_complex_double* VL, const lapack_int* ldvl, lapack_complex_double* VR, const lapack_int* ldvr,
+                       lapack_complex_double* work, const lapack_int* lwork, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t
@@ -3761,13 +3295,10 @@ void LAPACK_zggev_base(const char* jobvl, const char* jobvr, const lapack_int* n
 #endif
 
 #define LAPACK_cggev3_base LAPACK_GLOBAL(cggev3, CGGEV3)
-void LAPACK_cggev3_base(const char* jobvl, const char* jobvr, const lapack_int* n,
-                        lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* B,
-                        const lapack_int* ldb, lapack_complex_float* alpha,
-                        lapack_complex_float* beta, lapack_complex_float* VL,
-                        const lapack_int* ldvl, lapack_complex_float* VR, const lapack_int* ldvr,
-                        lapack_complex_float* work, const lapack_int* lwork, float* rwork,
-                        lapack_int* info
+void LAPACK_cggev3_base(const char* jobvl, const char* jobvr, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda,
+                        lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* alpha, lapack_complex_float* beta,
+                        lapack_complex_float* VL, const lapack_int* ldvl, lapack_complex_float* VR, const lapack_int* ldvr,
+                        lapack_complex_float* work, const lapack_int* lwork, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -3780,11 +3311,9 @@ void LAPACK_cggev3_base(const char* jobvl, const char* jobvr, const lapack_int* 
 #endif
 
 #define LAPACK_dggev3_base LAPACK_GLOBAL(dggev3, DGGEV3)
-void LAPACK_dggev3_base(const char* jobvl, const char* jobvr, const lapack_int* n, double* A,
-                        const lapack_int* lda, double* B, const lapack_int* ldb, double* alphar,
-                        double* alphai, double* beta, double* VL, const lapack_int* ldvl,
-                        double* VR, const lapack_int* ldvr, double* work, const lapack_int* lwork,
-                        lapack_int* info
+void LAPACK_dggev3_base(const char* jobvl, const char* jobvr, const lapack_int* n, double* A, const lapack_int* lda, double* B,
+                        const lapack_int* ldb, double* alphar, double* alphai, double* beta, double* VL, const lapack_int* ldvl, double* VR,
+                        const lapack_int* ldvr, double* work, const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -3797,11 +3326,9 @@ void LAPACK_dggev3_base(const char* jobvl, const char* jobvr, const lapack_int* 
 #endif
 
 #define LAPACK_sggev3_base LAPACK_GLOBAL(sggev3, SGGEV3)
-void LAPACK_sggev3_base(const char* jobvl, const char* jobvr, const lapack_int* n, float* A,
-                        const lapack_int* lda, float* B, const lapack_int* ldb, float* alphar,
-                        float* alphai, float* beta, float* VL, const lapack_int* ldvl, float* VR,
-                        const lapack_int* ldvr, float* work, const lapack_int* lwork,
-                        lapack_int* info
+void LAPACK_sggev3_base(const char* jobvl, const char* jobvr, const lapack_int* n, float* A, const lapack_int* lda, float* B,
+                        const lapack_int* ldb, float* alphar, float* alphai, float* beta, float* VL, const lapack_int* ldvl, float* VR,
+                        const lapack_int* ldvr, float* work, const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -3814,13 +3341,10 @@ void LAPACK_sggev3_base(const char* jobvl, const char* jobvr, const lapack_int* 
 #endif
 
 #define LAPACK_zggev3_base LAPACK_GLOBAL(zggev3, ZGGEV3)
-void LAPACK_zggev3_base(const char* jobvl, const char* jobvr, const lapack_int* n,
-                        lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* B,
-                        const lapack_int* ldb, lapack_complex_double* alpha,
-                        lapack_complex_double* beta, lapack_complex_double* VL,
-                        const lapack_int* ldvl, lapack_complex_double* VR, const lapack_int* ldvr,
-                        lapack_complex_double* work, const lapack_int* lwork, double* rwork,
-                        lapack_int* info
+void LAPACK_zggev3_base(const char* jobvl, const char* jobvr, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda,
+                        lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* alpha, lapack_complex_double* beta,
+                        lapack_complex_double* VL, const lapack_int* ldvl, lapack_complex_double* VR, const lapack_int* ldvr,
+                        lapack_complex_double* work, const lapack_int* lwork, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -3833,15 +3357,12 @@ void LAPACK_zggev3_base(const char* jobvl, const char* jobvr, const lapack_int* 
 #endif
 
 #define LAPACK_cggevx_base LAPACK_GLOBAL(cggevx, CGGEVX)
-void LAPACK_cggevx_base(const char* balanc, const char* jobvl, const char* jobvr, const char* sense,
-                        const lapack_int* n, lapack_complex_float* A, const lapack_int* lda,
-                        lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* alpha,
-                        lapack_complex_float* beta, lapack_complex_float* VL,
-                        const lapack_int* ldvl, lapack_complex_float* VR, const lapack_int* ldvr,
-                        lapack_int* ilo, lapack_int* ihi, float* lscale, float* rscale,
-                        float* abnrm, float* bbnrm, float* rconde, float* rcondv,
-                        lapack_complex_float* work, const lapack_int* lwork, float* rwork,
-                        lapack_int* iwork, lapack_logical* BWORK, lapack_int* info
+void LAPACK_cggevx_base(const char* balanc, const char* jobvl, const char* jobvr, const char* sense, const lapack_int* n,
+                        lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* B, const lapack_int* ldb,
+                        lapack_complex_float* alpha, lapack_complex_float* beta, lapack_complex_float* VL, const lapack_int* ldvl,
+                        lapack_complex_float* VR, const lapack_int* ldvr, lapack_int* ilo, lapack_int* ihi, float* lscale, float* rscale,
+                        float* abnrm, float* bbnrm, float* rconde, float* rcondv, lapack_complex_float* work, const lapack_int* lwork,
+                        float* rwork, lapack_int* iwork, lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t
@@ -3854,14 +3375,11 @@ void LAPACK_cggevx_base(const char* balanc, const char* jobvl, const char* jobvr
 #endif
 
 #define LAPACK_dggevx_base LAPACK_GLOBAL(dggevx, DGGEVX)
-void LAPACK_dggevx_base(const char* balanc, const char* jobvl, const char* jobvr, const char* sense,
-                        const lapack_int* n, double* A, const lapack_int* lda, double* B,
-                        const lapack_int* ldb, double* alphar, double* alphai, double* beta,
-                        double* VL, const lapack_int* ldvl, double* VR, const lapack_int* ldvr,
-                        lapack_int* ilo, lapack_int* ihi, double* lscale, double* rscale,
-                        double* abnrm, double* bbnrm, double* rconde, double* rcondv, double* work,
-                        const lapack_int* lwork, lapack_int* iwork, lapack_logical* BWORK,
-                        lapack_int* info
+void LAPACK_dggevx_base(const char* balanc, const char* jobvl, const char* jobvr, const char* sense, const lapack_int* n, double* A,
+                        const lapack_int* lda, double* B, const lapack_int* ldb, double* alphar, double* alphai, double* beta, double* VL,
+                        const lapack_int* ldvl, double* VR, const lapack_int* ldvr, lapack_int* ilo, lapack_int* ihi, double* lscale,
+                        double* rscale, double* abnrm, double* bbnrm, double* rconde, double* rcondv, double* work, const lapack_int* lwork,
+                        lapack_int* iwork, lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t
@@ -3874,12 +3392,10 @@ void LAPACK_dggevx_base(const char* balanc, const char* jobvl, const char* jobvr
 #endif
 
 #define LAPACK_sggevx_base LAPACK_GLOBAL(sggevx, SGGEVX)
-void LAPACK_sggevx_base(const char* balanc, const char* jobvl, const char* jobvr, const char* sense,
-                        const lapack_int* n, float* A, const lapack_int* lda, float* B,
-                        const lapack_int* ldb, float* alphar, float* alphai, float* beta, float* VL,
-                        const lapack_int* ldvl, float* VR, const lapack_int* ldvr, lapack_int* ilo,
-                        lapack_int* ihi, float* lscale, float* rscale, float* abnrm, float* bbnrm,
-                        float* rconde, float* rcondv, float* work, const lapack_int* lwork,
+void LAPACK_sggevx_base(const char* balanc, const char* jobvl, const char* jobvr, const char* sense, const lapack_int* n, float* A,
+                        const lapack_int* lda, float* B, const lapack_int* ldb, float* alphar, float* alphai, float* beta, float* VL,
+                        const lapack_int* ldvl, float* VR, const lapack_int* ldvr, lapack_int* ilo, lapack_int* ihi, float* lscale,
+                        float* rscale, float* abnrm, float* bbnrm, float* rconde, float* rcondv, float* work, const lapack_int* lwork,
                         lapack_int* iwork, lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -3893,16 +3409,12 @@ void LAPACK_sggevx_base(const char* balanc, const char* jobvl, const char* jobvr
 #endif
 
 #define LAPACK_zggevx_base LAPACK_GLOBAL(zggevx, ZGGEVX)
-void LAPACK_zggevx_base(const char* balanc, const char* jobvl, const char* jobvr, const char* sense,
-                        const lapack_int* n, lapack_complex_double* A, const lapack_int* lda,
-                        lapack_complex_double* B, const lapack_int* ldb,
-                        lapack_complex_double* alpha, lapack_complex_double* beta,
-                        lapack_complex_double* VL, const lapack_int* ldvl,
-                        lapack_complex_double* VR, const lapack_int* ldvr, lapack_int* ilo,
-                        lapack_int* ihi, double* lscale, double* rscale, double* abnrm,
-                        double* bbnrm, double* rconde, double* rcondv, lapack_complex_double* work,
-                        const lapack_int* lwork, double* rwork, lapack_int* iwork,
-                        lapack_logical* BWORK, lapack_int* info
+void LAPACK_zggevx_base(const char* balanc, const char* jobvl, const char* jobvr, const char* sense, const lapack_int* n,
+                        lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* B, const lapack_int* ldb,
+                        lapack_complex_double* alpha, lapack_complex_double* beta, lapack_complex_double* VL, const lapack_int* ldvl,
+                        lapack_complex_double* VR, const lapack_int* ldvr, lapack_int* ilo, lapack_int* ihi, double* lscale, double* rscale,
+                        double* abnrm, double* bbnrm, double* rconde, double* rcondv, lapack_complex_double* work, const lapack_int* lwork,
+                        double* rwork, lapack_int* iwork, lapack_logical* BWORK, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t, size_t
@@ -3915,36 +3427,28 @@ void LAPACK_zggevx_base(const char* balanc, const char* jobvl, const char* jobvr
 #endif
 
 #define LAPACK_cggglm LAPACK_GLOBAL(cggglm, CGGGLM)
-void LAPACK_cggglm(const lapack_int* n, const lapack_int* m, const lapack_int* p,
-                   lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* B,
-                   const lapack_int* ldb, lapack_complex_float* D, lapack_complex_float* X,
-                   lapack_complex_float* Y, lapack_complex_float* work, const lapack_int* lwork,
-                   lapack_int* info);
+void LAPACK_cggglm(const lapack_int* n, const lapack_int* m, const lapack_int* p, lapack_complex_float* A, const lapack_int* lda,
+                   lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* D, lapack_complex_float* X,
+                   lapack_complex_float* Y, lapack_complex_float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_dggglm LAPACK_GLOBAL(dggglm, DGGGLM)
-void LAPACK_dggglm(const lapack_int* n, const lapack_int* m, const lapack_int* p, double* A,
-                   const lapack_int* lda, double* B, const lapack_int* ldb, double* D, double* X,
-                   double* Y, double* work, const lapack_int* lwork, lapack_int* info);
+void LAPACK_dggglm(const lapack_int* n, const lapack_int* m, const lapack_int* p, double* A, const lapack_int* lda, double* B,
+                   const lapack_int* ldb, double* D, double* X, double* Y, double* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_sggglm LAPACK_GLOBAL(sggglm, SGGGLM)
-void LAPACK_sggglm(const lapack_int* n, const lapack_int* m, const lapack_int* p, float* A,
-                   const lapack_int* lda, float* B, const lapack_int* ldb, float* D, float* X,
-                   float* Y, float* work, const lapack_int* lwork, lapack_int* info);
+void LAPACK_sggglm(const lapack_int* n, const lapack_int* m, const lapack_int* p, float* A, const lapack_int* lda, float* B,
+                   const lapack_int* ldb, float* D, float* X, float* Y, float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_zggglm LAPACK_GLOBAL(zggglm, ZGGGLM)
-void LAPACK_zggglm(const lapack_int* n, const lapack_int* m, const lapack_int* p,
-                   lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* B,
-                   const lapack_int* ldb, lapack_complex_double* D, lapack_complex_double* X,
-                   lapack_complex_double* Y, lapack_complex_double* work, const lapack_int* lwork,
-                   lapack_int* info);
+void LAPACK_zggglm(const lapack_int* n, const lapack_int* m, const lapack_int* p, lapack_complex_double* A, const lapack_int* lda,
+                   lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* D, lapack_complex_double* X,
+                   lapack_complex_double* Y, lapack_complex_double* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_cgghd3_base LAPACK_GLOBAL(cgghd3, CGGHD3)
-void LAPACK_cgghd3_base(const char* compq, const char* compz, const lapack_int* n,
-                        const lapack_int* ilo, const lapack_int* ihi, lapack_complex_float* A,
-                        const lapack_int* lda, lapack_complex_float* B, const lapack_int* ldb,
-                        lapack_complex_float* Q, const lapack_int* ldq, lapack_complex_float* Z,
-                        const lapack_int* ldz, lapack_complex_float* work, const lapack_int* lwork,
-                        lapack_int* info
+void LAPACK_cgghd3_base(const char* compq, const char* compz, const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi,
+                        lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* B, const lapack_int* ldb,
+                        lapack_complex_float* Q, const lapack_int* ldq, lapack_complex_float* Z, const lapack_int* ldz,
+                        lapack_complex_float* work, const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -3957,11 +3461,9 @@ void LAPACK_cgghd3_base(const char* compq, const char* compz, const lapack_int* 
 #endif
 
 #define LAPACK_dgghd3_base LAPACK_GLOBAL(dgghd3, DGGHD3)
-void LAPACK_dgghd3_base(const char* compq, const char* compz, const lapack_int* n,
-                        const lapack_int* ilo, const lapack_int* ihi, double* A,
-                        const lapack_int* lda, double* B, const lapack_int* ldb, double* Q,
-                        const lapack_int* ldq, double* Z, const lapack_int* ldz, double* work,
-                        const lapack_int* lwork, lapack_int* info
+void LAPACK_dgghd3_base(const char* compq, const char* compz, const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi, double* A,
+                        const lapack_int* lda, double* B, const lapack_int* ldb, double* Q, const lapack_int* ldq, double* Z,
+                        const lapack_int* ldz, double* work, const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -3974,11 +3476,9 @@ void LAPACK_dgghd3_base(const char* compq, const char* compz, const lapack_int* 
 #endif
 
 #define LAPACK_sgghd3_base LAPACK_GLOBAL(sgghd3, SGGHD3)
-void LAPACK_sgghd3_base(const char* compq, const char* compz, const lapack_int* n,
-                        const lapack_int* ilo, const lapack_int* ihi, float* A,
-                        const lapack_int* lda, float* B, const lapack_int* ldb, float* Q,
-                        const lapack_int* ldq, float* Z, const lapack_int* ldz, float* work,
-                        const lapack_int* lwork, lapack_int* info
+void LAPACK_sgghd3_base(const char* compq, const char* compz, const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi, float* A,
+                        const lapack_int* lda, float* B, const lapack_int* ldb, float* Q, const lapack_int* ldq, float* Z,
+                        const lapack_int* ldz, float* work, const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -3991,12 +3491,10 @@ void LAPACK_sgghd3_base(const char* compq, const char* compz, const lapack_int* 
 #endif
 
 #define LAPACK_zgghd3_base LAPACK_GLOBAL(zgghd3, ZGGHD3)
-void LAPACK_zgghd3_base(const char* compq, const char* compz, const lapack_int* n,
-                        const lapack_int* ilo, const lapack_int* ihi, lapack_complex_double* A,
-                        const lapack_int* lda, lapack_complex_double* B, const lapack_int* ldb,
-                        lapack_complex_double* Q, const lapack_int* ldq, lapack_complex_double* Z,
-                        const lapack_int* ldz, lapack_complex_double* work, const lapack_int* lwork,
-                        lapack_int* info
+void LAPACK_zgghd3_base(const char* compq, const char* compz, const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi,
+                        lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* B, const lapack_int* ldb,
+                        lapack_complex_double* Q, const lapack_int* ldq, lapack_complex_double* Z, const lapack_int* ldz,
+                        lapack_complex_double* work, const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -4009,11 +3507,9 @@ void LAPACK_zgghd3_base(const char* compq, const char* compz, const lapack_int* 
 #endif
 
 #define LAPACK_cgghrd_base LAPACK_GLOBAL(cgghrd, CGGHRD)
-void LAPACK_cgghrd_base(const char* compq, const char* compz, const lapack_int* n,
-                        const lapack_int* ilo, const lapack_int* ihi, lapack_complex_float* A,
-                        const lapack_int* lda, lapack_complex_float* B, const lapack_int* ldb,
-                        lapack_complex_float* Q, const lapack_int* ldq, lapack_complex_float* Z,
-                        const lapack_int* ldz, lapack_int* info
+void LAPACK_cgghrd_base(const char* compq, const char* compz, const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi,
+                        lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* B, const lapack_int* ldb,
+                        lapack_complex_float* Q, const lapack_int* ldq, lapack_complex_float* Z, const lapack_int* ldz, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -4026,10 +3522,9 @@ void LAPACK_cgghrd_base(const char* compq, const char* compz, const lapack_int* 
 #endif
 
 #define LAPACK_dgghrd_base LAPACK_GLOBAL(dgghrd, DGGHRD)
-void LAPACK_dgghrd_base(const char* compq, const char* compz, const lapack_int* n,
-                        const lapack_int* ilo, const lapack_int* ihi, double* A,
-                        const lapack_int* lda, double* B, const lapack_int* ldb, double* Q,
-                        const lapack_int* ldq, double* Z, const lapack_int* ldz, lapack_int* info
+void LAPACK_dgghrd_base(const char* compq, const char* compz, const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi, double* A,
+                        const lapack_int* lda, double* B, const lapack_int* ldb, double* Q, const lapack_int* ldq, double* Z,
+                        const lapack_int* ldz, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -4042,10 +3537,9 @@ void LAPACK_dgghrd_base(const char* compq, const char* compz, const lapack_int* 
 #endif
 
 #define LAPACK_sgghrd_base LAPACK_GLOBAL(sgghrd, SGGHRD)
-void LAPACK_sgghrd_base(const char* compq, const char* compz, const lapack_int* n,
-                        const lapack_int* ilo, const lapack_int* ihi, float* A,
-                        const lapack_int* lda, float* B, const lapack_int* ldb, float* Q,
-                        const lapack_int* ldq, float* Z, const lapack_int* ldz, lapack_int* info
+void LAPACK_sgghrd_base(const char* compq, const char* compz, const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi, float* A,
+                        const lapack_int* lda, float* B, const lapack_int* ldb, float* Q, const lapack_int* ldq, float* Z,
+                        const lapack_int* ldz, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -4058,11 +3552,9 @@ void LAPACK_sgghrd_base(const char* compq, const char* compz, const lapack_int* 
 #endif
 
 #define LAPACK_zgghrd_base LAPACK_GLOBAL(zgghrd, ZGGHRD)
-void LAPACK_zgghrd_base(const char* compq, const char* compz, const lapack_int* n,
-                        const lapack_int* ilo, const lapack_int* ihi, lapack_complex_double* A,
-                        const lapack_int* lda, lapack_complex_double* B, const lapack_int* ldb,
-                        lapack_complex_double* Q, const lapack_int* ldq, lapack_complex_double* Z,
-                        const lapack_int* ldz, lapack_int* info
+void LAPACK_zgghrd_base(const char* compq, const char* compz, const lapack_int* n, const lapack_int* ilo, const lapack_int* ihi,
+                        lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* B, const lapack_int* ldb,
+                        lapack_complex_double* Q, const lapack_int* ldq, lapack_complex_double* Z, const lapack_int* ldz, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -4075,83 +3567,65 @@ void LAPACK_zgghrd_base(const char* compq, const char* compz, const lapack_int* 
 #endif
 
 #define LAPACK_cgglse LAPACK_GLOBAL(cgglse, CGGLSE)
-void LAPACK_cgglse(const lapack_int* m, const lapack_int* n, const lapack_int* p,
-                   lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* B,
-                   const lapack_int* ldb, lapack_complex_float* C, lapack_complex_float* D,
-                   lapack_complex_float* X, lapack_complex_float* work, const lapack_int* lwork,
-                   lapack_int* info);
+void LAPACK_cgglse(const lapack_int* m, const lapack_int* n, const lapack_int* p, lapack_complex_float* A, const lapack_int* lda,
+                   lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* C, lapack_complex_float* D,
+                   lapack_complex_float* X, lapack_complex_float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_dgglse LAPACK_GLOBAL(dgglse, DGGLSE)
-void LAPACK_dgglse(const lapack_int* m, const lapack_int* n, const lapack_int* p, double* A,
-                   const lapack_int* lda, double* B, const lapack_int* ldb, double* C, double* D,
-                   double* X, double* work, const lapack_int* lwork, lapack_int* info);
+void LAPACK_dgglse(const lapack_int* m, const lapack_int* n, const lapack_int* p, double* A, const lapack_int* lda, double* B,
+                   const lapack_int* ldb, double* C, double* D, double* X, double* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_sgglse LAPACK_GLOBAL(sgglse, SGGLSE)
-void LAPACK_sgglse(const lapack_int* m, const lapack_int* n, const lapack_int* p, float* A,
-                   const lapack_int* lda, float* B, const lapack_int* ldb, float* C, float* D,
-                   float* X, float* work, const lapack_int* lwork, lapack_int* info);
+void LAPACK_sgglse(const lapack_int* m, const lapack_int* n, const lapack_int* p, float* A, const lapack_int* lda, float* B,
+                   const lapack_int* ldb, float* C, float* D, float* X, float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_zgglse LAPACK_GLOBAL(zgglse, ZGGLSE)
-void LAPACK_zgglse(const lapack_int* m, const lapack_int* n, const lapack_int* p,
-                   lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* B,
-                   const lapack_int* ldb, lapack_complex_double* C, lapack_complex_double* D,
-                   lapack_complex_double* X, lapack_complex_double* work, const lapack_int* lwork,
-                   lapack_int* info);
+void LAPACK_zgglse(const lapack_int* m, const lapack_int* n, const lapack_int* p, lapack_complex_double* A, const lapack_int* lda,
+                   lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* C, lapack_complex_double* D,
+                   lapack_complex_double* X, lapack_complex_double* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_cggqrf LAPACK_GLOBAL(cggqrf, CGGQRF)
-void LAPACK_cggqrf(const lapack_int* n, const lapack_int* m, const lapack_int* p,
-                   lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* taua,
-                   lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* taub,
+void LAPACK_cggqrf(const lapack_int* n, const lapack_int* m, const lapack_int* p, lapack_complex_float* A, const lapack_int* lda,
+                   lapack_complex_float* taua, lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* taub,
                    lapack_complex_float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_dggqrf LAPACK_GLOBAL(dggqrf, DGGQRF)
-void LAPACK_dggqrf(const lapack_int* n, const lapack_int* m, const lapack_int* p, double* A,
-                   const lapack_int* lda, double* taua, double* B, const lapack_int* ldb,
-                   double* taub, double* work, const lapack_int* lwork, lapack_int* info);
+void LAPACK_dggqrf(const lapack_int* n, const lapack_int* m, const lapack_int* p, double* A, const lapack_int* lda, double* taua, double* B,
+                   const lapack_int* ldb, double* taub, double* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_sggqrf LAPACK_GLOBAL(sggqrf, SGGQRF)
-void LAPACK_sggqrf(const lapack_int* n, const lapack_int* m, const lapack_int* p, float* A,
-                   const lapack_int* lda, float* taua, float* B, const lapack_int* ldb, float* taub,
-                   float* work, const lapack_int* lwork, lapack_int* info);
+void LAPACK_sggqrf(const lapack_int* n, const lapack_int* m, const lapack_int* p, float* A, const lapack_int* lda, float* taua, float* B,
+                   const lapack_int* ldb, float* taub, float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_zggqrf LAPACK_GLOBAL(zggqrf, ZGGQRF)
-void LAPACK_zggqrf(const lapack_int* n, const lapack_int* m, const lapack_int* p,
-                   lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* taua,
-                   lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* taub,
+void LAPACK_zggqrf(const lapack_int* n, const lapack_int* m, const lapack_int* p, lapack_complex_double* A, const lapack_int* lda,
+                   lapack_complex_double* taua, lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* taub,
                    lapack_complex_double* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_cggrqf LAPACK_GLOBAL(cggrqf, CGGRQF)
-void LAPACK_cggrqf(const lapack_int* m, const lapack_int* p, const lapack_int* n,
-                   lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* taua,
-                   lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* taub,
+void LAPACK_cggrqf(const lapack_int* m, const lapack_int* p, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda,
+                   lapack_complex_float* taua, lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* taub,
                    lapack_complex_float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_dggrqf LAPACK_GLOBAL(dggrqf, DGGRQF)
-void LAPACK_dggrqf(const lapack_int* m, const lapack_int* p, const lapack_int* n, double* A,
-                   const lapack_int* lda, double* taua, double* B, const lapack_int* ldb,
-                   double* taub, double* work, const lapack_int* lwork, lapack_int* info);
+void LAPACK_dggrqf(const lapack_int* m, const lapack_int* p, const lapack_int* n, double* A, const lapack_int* lda, double* taua, double* B,
+                   const lapack_int* ldb, double* taub, double* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_sggrqf LAPACK_GLOBAL(sggrqf, SGGRQF)
-void LAPACK_sggrqf(const lapack_int* m, const lapack_int* p, const lapack_int* n, float* A,
-                   const lapack_int* lda, float* taua, float* B, const lapack_int* ldb, float* taub,
-                   float* work, const lapack_int* lwork, lapack_int* info);
+void LAPACK_sggrqf(const lapack_int* m, const lapack_int* p, const lapack_int* n, float* A, const lapack_int* lda, float* taua, float* B,
+                   const lapack_int* ldb, float* taub, float* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_zggrqf LAPACK_GLOBAL(zggrqf, ZGGRQF)
-void LAPACK_zggrqf(const lapack_int* m, const lapack_int* p, const lapack_int* n,
-                   lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* taua,
-                   lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* taub,
+void LAPACK_zggrqf(const lapack_int* m, const lapack_int* p, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda,
+                   lapack_complex_double* taua, lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* taub,
                    lapack_complex_double* work, const lapack_int* lwork, lapack_int* info);
 
 #define LAPACK_cggsvd_base LAPACK_GLOBAL(cggsvd, CGGSVD)
-lapack_int LAPACK_cggsvd_base(const char* jobu, const char* jobv, const char* jobq,
-                              const lapack_int* m, const lapack_int* n, const lapack_int* p,
-                              lapack_int* k, lapack_int* l, lapack_complex_float* a,
-                              const lapack_int* lda, lapack_complex_float* b, const lapack_int* ldb,
-                              float* alpha, float* beta, lapack_complex_float* u,
-                              const lapack_int* ldu, lapack_complex_float* v, const lapack_int* ldv,
-                              lapack_complex_float* q, const lapack_int* ldq,
-                              lapack_complex_float* work, float* rwork, lapack_int* iwork,
-                              lapack_int* info
+lapack_int LAPACK_cggsvd_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m, const lapack_int* n,
+                              const lapack_int* p, lapack_int* k, lapack_int* l, lapack_complex_float* a, const lapack_int* lda,
+                              lapack_complex_float* b, const lapack_int* ldb, float* alpha, float* beta, lapack_complex_float* u,
+                              const lapack_int* ldu, lapack_complex_float* v, const lapack_int* ldv, lapack_complex_float* q,
+                              const lapack_int* ldq, lapack_complex_float* work, float* rwork, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                               ,
                               size_t, size_t, size_t
@@ -4164,13 +3638,10 @@ lapack_int LAPACK_cggsvd_base(const char* jobu, const char* jobv, const char* jo
 #endif
 
 #define LAPACK_sggsvd_base LAPACK_GLOBAL(sggsvd, SGGSVD)
-lapack_int LAPACK_sggsvd_base(const char* jobu, const char* jobv, const char* jobq,
-                              const lapack_int* m, const lapack_int* n, const lapack_int* p,
-                              lapack_int* k, lapack_int* l, float* a, const lapack_int* lda,
-                              float* b, const lapack_int* ldb, float* alpha, float* beta, float* u,
-                              const lapack_int* ldu, float* v, const lapack_int* ldv, float* q,
-                              const lapack_int* ldq, float* work, lapack_int* iwork,
-                              lapack_int* info
+lapack_int LAPACK_sggsvd_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m, const lapack_int* n,
+                              const lapack_int* p, lapack_int* k, lapack_int* l, float* a, const lapack_int* lda, float* b,
+                              const lapack_int* ldb, float* alpha, float* beta, float* u, const lapack_int* ldu, float* v,
+                              const lapack_int* ldv, float* q, const lapack_int* ldq, float* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                               ,
                               size_t, size_t, size_t
@@ -4183,13 +3654,10 @@ lapack_int LAPACK_sggsvd_base(const char* jobu, const char* jobv, const char* jo
 #endif
 
 #define LAPACK_dggsvd_base LAPACK_GLOBAL(dggsvd, DGGSVD)
-lapack_int LAPACK_dggsvd_base(const char* jobu, const char* jobv, const char* jobq,
-                              const lapack_int* m, const lapack_int* n, const lapack_int* p,
-                              lapack_int* k, lapack_int* l, double* a, const lapack_int* lda,
-                              double* b, const lapack_int* ldb, double* alpha, double* beta,
-                              double* u, const lapack_int* ldu, double* v, const lapack_int* ldv,
-                              double* q, const lapack_int* ldq, double* work, lapack_int* iwork,
-                              lapack_int* info
+lapack_int LAPACK_dggsvd_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m, const lapack_int* n,
+                              const lapack_int* p, lapack_int* k, lapack_int* l, double* a, const lapack_int* lda, double* b,
+                              const lapack_int* ldb, double* alpha, double* beta, double* u, const lapack_int* ldu, double* v,
+                              const lapack_int* ldv, double* q, const lapack_int* ldq, double* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                               ,
                               size_t, size_t, size_t
@@ -4202,17 +3670,14 @@ lapack_int LAPACK_dggsvd_base(const char* jobu, const char* jobv, const char* jo
 #endif
 
 #define LAPACK_zggsvd_base LAPACK_GLOBAL(zggsvd, ZGGSVD)
-lapack_int
-LAPACK_zggsvd_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m,
-                   const lapack_int* n, const lapack_int* p, lapack_int* k, lapack_int* l,
-                   lapack_complex_double* a, const lapack_int* lda, lapack_complex_double* b,
-                   const lapack_int* ldb, double* alpha, double* beta, lapack_complex_double* u,
-                   const lapack_int* ldu, lapack_complex_double* v, const lapack_int* ldv,
-                   lapack_complex_double* q, const lapack_int* ldq, lapack_complex_double* work,
-                   double* rwork, lapack_int* iwork, lapack_int* info
+lapack_int LAPACK_zggsvd_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m, const lapack_int* n,
+                              const lapack_int* p, lapack_int* k, lapack_int* l, lapack_complex_double* a, const lapack_int* lda,
+                              lapack_complex_double* b, const lapack_int* ldb, double* alpha, double* beta, lapack_complex_double* u,
+                              const lapack_int* ldu, lapack_complex_double* v, const lapack_int* ldv, lapack_complex_double* q,
+                              const lapack_int* ldq, lapack_complex_double* work, double* rwork, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
-                   ,
-                   size_t, size_t, size_t
+                              ,
+                              size_t, size_t, size_t
 #endif
 );
 #ifdef LAPACK_FORTRAN_STRLEN_END
@@ -4222,13 +3687,12 @@ LAPACK_zggsvd_base(const char* jobu, const char* jobv, const char* jobq, const l
 #endif
 
 #define LAPACK_cggsvd3_base LAPACK_GLOBAL(cggsvd3, CGGSVD3)
-void LAPACK_cggsvd3_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m,
-                         const lapack_int* n, const lapack_int* p, lapack_int* k, lapack_int* l,
-                         lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* B,
-                         const lapack_int* ldb, float* alpha, float* beta, lapack_complex_float* U,
-                         const lapack_int* ldu, lapack_complex_float* V, const lapack_int* ldv,
-                         lapack_complex_float* Q, const lapack_int* ldq, lapack_complex_float* work,
-                         const lapack_int* lwork, float* rwork, lapack_int* iwork, lapack_int* info
+void LAPACK_cggsvd3_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m, const lapack_int* n,
+                         const lapack_int* p, lapack_int* k, lapack_int* l, lapack_complex_float* A, const lapack_int* lda,
+                         lapack_complex_float* B, const lapack_int* ldb, float* alpha, float* beta, lapack_complex_float* U,
+                         const lapack_int* ldu, lapack_complex_float* V, const lapack_int* ldv, lapack_complex_float* Q,
+                         const lapack_int* ldq, lapack_complex_float* work, const lapack_int* lwork, float* rwork, lapack_int* iwork,
+                         lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t
@@ -4241,12 +3705,11 @@ void LAPACK_cggsvd3_base(const char* jobu, const char* jobv, const char* jobq, c
 #endif
 
 #define LAPACK_dggsvd3_base LAPACK_GLOBAL(dggsvd3, DGGSVD3)
-void LAPACK_dggsvd3_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m,
-                         const lapack_int* n, const lapack_int* p, lapack_int* k, lapack_int* l,
-                         double* A, const lapack_int* lda, double* B, const lapack_int* ldb,
-                         double* alpha, double* beta, double* U, const lapack_int* ldu, double* V,
-                         const lapack_int* ldv, double* Q, const lapack_int* ldq, double* work,
-                         const lapack_int* lwork, lapack_int* iwork, lapack_int* info
+void LAPACK_dggsvd3_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m, const lapack_int* n,
+                         const lapack_int* p, lapack_int* k, lapack_int* l, double* A, const lapack_int* lda, double* B,
+                         const lapack_int* ldb, double* alpha, double* beta, double* U, const lapack_int* ldu, double* V,
+                         const lapack_int* ldv, double* Q, const lapack_int* ldq, double* work, const lapack_int* lwork, lapack_int* iwork,
+                         lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t
@@ -4259,12 +3722,10 @@ void LAPACK_dggsvd3_base(const char* jobu, const char* jobv, const char* jobq, c
 #endif
 
 #define LAPACK_sggsvd3_base LAPACK_GLOBAL(sggsvd3, SGGSVD3)
-void LAPACK_sggsvd3_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m,
-                         const lapack_int* n, const lapack_int* p, lapack_int* k, lapack_int* l,
-                         float* A, const lapack_int* lda, float* B, const lapack_int* ldb,
-                         float* alpha, float* beta, float* U, const lapack_int* ldu, float* V,
-                         const lapack_int* ldv, float* Q, const lapack_int* ldq, float* work,
-                         const lapack_int* lwork, lapack_int* iwork, lapack_int* info
+void LAPACK_sggsvd3_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m, const lapack_int* n,
+                         const lapack_int* p, lapack_int* k, lapack_int* l, float* A, const lapack_int* lda, float* B,
+                         const lapack_int* ldb, float* alpha, float* beta, float* U, const lapack_int* ldu, float* V, const lapack_int* ldv,
+                         float* Q, const lapack_int* ldq, float* work, const lapack_int* lwork, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t
@@ -4277,14 +3738,12 @@ void LAPACK_sggsvd3_base(const char* jobu, const char* jobv, const char* jobq, c
 #endif
 
 #define LAPACK_zggsvd3_base LAPACK_GLOBAL(zggsvd3, ZGGSVD3)
-void LAPACK_zggsvd3_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m,
-                         const lapack_int* n, const lapack_int* p, lapack_int* k, lapack_int* l,
-                         lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* B,
-                         const lapack_int* ldb, double* alpha, double* beta,
-                         lapack_complex_double* U, const lapack_int* ldu, lapack_complex_double* V,
-                         const lapack_int* ldv, lapack_complex_double* Q, const lapack_int* ldq,
-                         lapack_complex_double* work, const lapack_int* lwork, double* rwork,
-                         lapack_int* iwork, lapack_int* info
+void LAPACK_zggsvd3_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m, const lapack_int* n,
+                         const lapack_int* p, lapack_int* k, lapack_int* l, lapack_complex_double* A, const lapack_int* lda,
+                         lapack_complex_double* B, const lapack_int* ldb, double* alpha, double* beta, lapack_complex_double* U,
+                         const lapack_int* ldu, lapack_complex_double* V, const lapack_int* ldv, lapack_complex_double* Q,
+                         const lapack_int* ldq, lapack_complex_double* work, const lapack_int* lwork, double* rwork, lapack_int* iwork,
+                         lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t
@@ -4297,13 +3756,10 @@ void LAPACK_zggsvd3_base(const char* jobu, const char* jobv, const char* jobq, c
 #endif
 
 #define LAPACK_sggsvp_base LAPACK_GLOBAL(sggsvp, SGGSVP)
-lapack_int LAPACK_sggsvp_base(const char* jobu, const char* jobv, const char* jobq,
-                              const lapack_int* m, const lapack_int* p, const lapack_int* n,
-                              float* a, const lapack_int* lda, float* b, const lapack_int* ldb,
-                              float* tola, float* tolb, lapack_int* k, lapack_int* l, float* u,
-                              const lapack_int* ldu, float* v, const lapack_int* ldv, float* q,
-                              const lapack_int* ldq, lapack_int* iwork, float* tau, float* work,
-                              lapack_int* info
+lapack_int LAPACK_sggsvp_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m, const lapack_int* p,
+                              const lapack_int* n, float* a, const lapack_int* lda, float* b, const lapack_int* ldb, float* tola,
+                              float* tolb, lapack_int* k, lapack_int* l, float* u, const lapack_int* ldu, float* v, const lapack_int* ldv,
+                              float* q, const lapack_int* ldq, lapack_int* iwork, float* tau, float* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                               ,
                               size_t, size_t, size_t
@@ -4316,12 +3772,10 @@ lapack_int LAPACK_sggsvp_base(const char* jobu, const char* jobv, const char* jo
 #endif
 
 #define LAPACK_dggsvp_base LAPACK_GLOBAL(dggsvp, DGGSVP)
-lapack_int LAPACK_dggsvp_base(const char* jobu, const char* jobv, const char* jobq,
-                              const lapack_int* m, const lapack_int* p, const lapack_int* n,
-                              double* a, const lapack_int* lda, double* b, const lapack_int* ldb,
-                              double* tola, double* tolb, lapack_int* k, lapack_int* l, double* u,
-                              const lapack_int* ldu, double* v, const lapack_int* ldv, double* q,
-                              const lapack_int* ldq, lapack_int* iwork, double* tau, double* work,
+lapack_int LAPACK_dggsvp_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m, const lapack_int* p,
+                              const lapack_int* n, double* a, const lapack_int* lda, double* b, const lapack_int* ldb, double* tola,
+                              double* tolb, lapack_int* k, lapack_int* l, double* u, const lapack_int* ldu, double* v,
+                              const lapack_int* ldv, double* q, const lapack_int* ldq, lapack_int* iwork, double* tau, double* work,
                               lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                               ,
@@ -4335,14 +3789,11 @@ lapack_int LAPACK_dggsvp_base(const char* jobu, const char* jobv, const char* jo
 #endif
 
 #define LAPACK_cggsvp_base LAPACK_GLOBAL(cggsvp, CGGSVP)
-lapack_int LAPACK_cggsvp_base(const char* jobu, const char* jobv, const char* jobq,
-                              const lapack_int* m, const lapack_int* p, const lapack_int* n,
-                              lapack_complex_float* a, const lapack_int* lda,
-                              lapack_complex_float* b, const lapack_int* ldb, float* tola,
-                              float* tolb, lapack_int* k, lapack_int* l, lapack_complex_float* u,
-                              const lapack_int* ldu, lapack_complex_float* v, const lapack_int* ldv,
-                              lapack_complex_float* q, const lapack_int* ldq, lapack_int* iwork,
-                              float* rwork, lapack_complex_float* tau, lapack_complex_float* work,
+lapack_int LAPACK_cggsvp_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m, const lapack_int* p,
+                              const lapack_int* n, lapack_complex_float* a, const lapack_int* lda, lapack_complex_float* b,
+                              const lapack_int* ldb, float* tola, float* tolb, lapack_int* k, lapack_int* l, lapack_complex_float* u,
+                              const lapack_int* ldu, lapack_complex_float* v, const lapack_int* ldv, lapack_complex_float* q,
+                              const lapack_int* ldq, lapack_int* iwork, float* rwork, lapack_complex_float* tau, lapack_complex_float* work,
                               lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                               ,
@@ -4356,16 +3807,15 @@ lapack_int LAPACK_cggsvp_base(const char* jobu, const char* jobv, const char* jo
 #endif
 
 #define LAPACK_zggsvp_base LAPACK_GLOBAL(zggsvp, ZGGSVP)
-lapack_int LAPACK_zggsvp_base(
-    const char* jobu, const char* jobv, const char* jobq, const lapack_int* m, const lapack_int* p,
-    const lapack_int* n, lapack_complex_double* a, const lapack_int* lda, lapack_complex_double* b,
-    const lapack_int* ldb, double* tola, double* tolb, lapack_int* k, lapack_int* l,
-    lapack_complex_double* u, const lapack_int* ldu, lapack_complex_double* v,
-    const lapack_int* ldv, lapack_complex_double* q, const lapack_int* ldq, lapack_int* iwork,
-    double* rwork, lapack_complex_double* tau, lapack_complex_double* work, lapack_int* info
+lapack_int LAPACK_zggsvp_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m, const lapack_int* p,
+                              const lapack_int* n, lapack_complex_double* a, const lapack_int* lda, lapack_complex_double* b,
+                              const lapack_int* ldb, double* tola, double* tolb, lapack_int* k, lapack_int* l, lapack_complex_double* u,
+                              const lapack_int* ldu, lapack_complex_double* v, const lapack_int* ldv, lapack_complex_double* q,
+                              const lapack_int* ldq, lapack_int* iwork, double* rwork, lapack_complex_double* tau,
+                              lapack_complex_double* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
-    ,
-    size_t, size_t, size_t
+                              ,
+                              size_t, size_t, size_t
 #endif
 );
 #ifdef LAPACK_FORTRAN_STRLEN_END
@@ -4375,14 +3825,12 @@ lapack_int LAPACK_zggsvp_base(
 #endif
 
 #define LAPACK_cggsvp3_base LAPACK_GLOBAL(cggsvp3, CGGSVP3)
-void LAPACK_cggsvp3_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m,
-                         const lapack_int* p, const lapack_int* n, lapack_complex_float* A,
-                         const lapack_int* lda, lapack_complex_float* B, const lapack_int* ldb,
-                         const float* tola, const float* tolb, lapack_int* k, lapack_int* l,
-                         lapack_complex_float* U, const lapack_int* ldu, lapack_complex_float* V,
-                         const lapack_int* ldv, lapack_complex_float* Q, const lapack_int* ldq,
-                         lapack_int* iwork, float* rwork, lapack_complex_float* tau,
-                         lapack_complex_float* work, const lapack_int* lwork, lapack_int* info
+void LAPACK_cggsvp3_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m, const lapack_int* p,
+                         const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, lapack_complex_float* B,
+                         const lapack_int* ldb, const float* tola, const float* tolb, lapack_int* k, lapack_int* l, lapack_complex_float* U,
+                         const lapack_int* ldu, lapack_complex_float* V, const lapack_int* ldv, lapack_complex_float* Q,
+                         const lapack_int* ldq, lapack_int* iwork, float* rwork, lapack_complex_float* tau, lapack_complex_float* work,
+                         const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t
@@ -4395,12 +3843,11 @@ void LAPACK_cggsvp3_base(const char* jobu, const char* jobv, const char* jobq, c
 #endif
 
 #define LAPACK_dggsvp3_base LAPACK_GLOBAL(dggsvp3, DGGSVP3)
-void LAPACK_dggsvp3_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m,
-                         const lapack_int* p, const lapack_int* n, double* A, const lapack_int* lda,
-                         double* B, const lapack_int* ldb, const double* tola, const double* tolb,
-                         lapack_int* k, lapack_int* l, double* U, const lapack_int* ldu, double* V,
-                         const lapack_int* ldv, double* Q, const lapack_int* ldq, lapack_int* iwork,
-                         double* tau, double* work, const lapack_int* lwork, lapack_int* info
+void LAPACK_dggsvp3_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m, const lapack_int* p,
+                         const lapack_int* n, double* A, const lapack_int* lda, double* B, const lapack_int* ldb, const double* tola,
+                         const double* tolb, lapack_int* k, lapack_int* l, double* U, const lapack_int* ldu, double* V,
+                         const lapack_int* ldv, double* Q, const lapack_int* ldq, lapack_int* iwork, double* tau, double* work,
+                         const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t
@@ -4413,12 +3860,11 @@ void LAPACK_dggsvp3_base(const char* jobu, const char* jobv, const char* jobq, c
 #endif
 
 #define LAPACK_sggsvp3_base LAPACK_GLOBAL(sggsvp3, SGGSVP3)
-void LAPACK_sggsvp3_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m,
-                         const lapack_int* p, const lapack_int* n, float* A, const lapack_int* lda,
-                         float* B, const lapack_int* ldb, const float* tola, const float* tolb,
-                         lapack_int* k, lapack_int* l, float* U, const lapack_int* ldu, float* V,
-                         const lapack_int* ldv, float* Q, const lapack_int* ldq, lapack_int* iwork,
-                         float* tau, float* work, const lapack_int* lwork, lapack_int* info
+void LAPACK_sggsvp3_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m, const lapack_int* p,
+                         const lapack_int* n, float* A, const lapack_int* lda, float* B, const lapack_int* ldb, const float* tola,
+                         const float* tolb, lapack_int* k, lapack_int* l, float* U, const lapack_int* ldu, float* V, const lapack_int* ldv,
+                         float* Q, const lapack_int* ldq, lapack_int* iwork, float* tau, float* work, const lapack_int* lwork,
+                         lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t, size_t, size_t
@@ -4431,13 +3877,11 @@ void LAPACK_sggsvp3_base(const char* jobu, const char* jobv, const char* jobq, c
 #endif
 
 #define LAPACK_zggsvp3_base LAPACK_GLOBAL(zggsvp3, ZGGSVP3)
-void LAPACK_zggsvp3_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m,
-                         const lapack_int* p, const lapack_int* n, lapack_complex_double* A,
-                         const lapack_int* lda, lapack_complex_double* B, const lapack_int* ldb,
-                         const double* tola, const double* tolb, lapack_int* k, lapack_int* l,
-                         lapack_complex_double* U, const lapack_int* ldu, lapack_complex_double* V,
-                         const lapack_int* ldv, lapack_complex_double* Q, const lapack_int* ldq,
-                         lapack_int* iwork, double* rwork, lapack_complex_double* tau,
+void LAPACK_zggsvp3_base(const char* jobu, const char* jobv, const char* jobq, const lapack_int* m, const lapack_int* p,
+                         const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, lapack_complex_double* B,
+                         const lapack_int* ldb, const double* tola, const double* tolb, lapack_int* k, lapack_int* l,
+                         lapack_complex_double* U, const lapack_int* ldu, lapack_complex_double* V, const lapack_int* ldv,
+                         lapack_complex_double* Q, const lapack_int* ldq, lapack_int* iwork, double* rwork, lapack_complex_double* tau,
                          lapack_complex_double* work, const lapack_int* lwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
@@ -4451,9 +3895,8 @@ void LAPACK_zggsvp3_base(const char* jobu, const char* jobv, const char* jobq, c
 #endif
 
 #define LAPACK_cgtcon_base LAPACK_GLOBAL(cgtcon, CGTCON)
-void LAPACK_cgtcon_base(const char* norm, const lapack_int* n, const lapack_complex_float* DL,
-                        const lapack_complex_float* D, const lapack_complex_float* DU,
-                        const lapack_complex_float* DU2, const lapack_int* ipiv, const float* anorm,
+void LAPACK_cgtcon_base(const char* norm, const lapack_int* n, const lapack_complex_float* DL, const lapack_complex_float* D,
+                        const lapack_complex_float* DU, const lapack_complex_float* DU2, const lapack_int* ipiv, const float* anorm,
                         float* rcond, lapack_complex_float* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -4467,10 +3910,8 @@ void LAPACK_cgtcon_base(const char* norm, const lapack_int* n, const lapack_comp
 #endif
 
 #define LAPACK_dgtcon_base LAPACK_GLOBAL(dgtcon, DGTCON)
-void LAPACK_dgtcon_base(const char* norm, const lapack_int* n, const double* DL, const double* D,
-                        const double* DU, const double* DU2, const lapack_int* ipiv,
-                        const double* anorm, double* rcond, double* work, lapack_int* iwork,
-                        lapack_int* info
+void LAPACK_dgtcon_base(const char* norm, const lapack_int* n, const double* DL, const double* D, const double* DU, const double* DU2,
+                        const lapack_int* ipiv, const double* anorm, double* rcond, double* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -4483,10 +3924,8 @@ void LAPACK_dgtcon_base(const char* norm, const lapack_int* n, const double* DL,
 #endif
 
 #define LAPACK_sgtcon_base LAPACK_GLOBAL(sgtcon, SGTCON)
-void LAPACK_sgtcon_base(const char* norm, const lapack_int* n, const float* DL, const float* D,
-                        const float* DU, const float* DU2, const lapack_int* ipiv,
-                        const float* anorm, float* rcond, float* work, lapack_int* iwork,
-                        lapack_int* info
+void LAPACK_sgtcon_base(const char* norm, const lapack_int* n, const float* DL, const float* D, const float* DU, const float* DU2,
+                        const lapack_int* ipiv, const float* anorm, float* rcond, float* work, lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -4499,11 +3938,9 @@ void LAPACK_sgtcon_base(const char* norm, const lapack_int* n, const float* DL, 
 #endif
 
 #define LAPACK_zgtcon_base LAPACK_GLOBAL(zgtcon, ZGTCON)
-void LAPACK_zgtcon_base(const char* norm, const lapack_int* n, const lapack_complex_double* DL,
-                        const lapack_complex_double* D, const lapack_complex_double* DU,
-                        const lapack_complex_double* DU2, const lapack_int* ipiv,
-                        const double* anorm, double* rcond, lapack_complex_double* work,
-                        lapack_int* info
+void LAPACK_zgtcon_base(const char* norm, const lapack_int* n, const lapack_complex_double* DL, const lapack_complex_double* D,
+                        const lapack_complex_double* DU, const lapack_complex_double* DU2, const lapack_int* ipiv, const double* anorm,
+                        double* rcond, lapack_complex_double* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -4516,14 +3953,11 @@ void LAPACK_zgtcon_base(const char* norm, const lapack_int* n, const lapack_comp
 #endif
 
 #define LAPACK_cgtrfs_base LAPACK_GLOBAL(cgtrfs, CGTRFS)
-void LAPACK_cgtrfs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs,
-                        const lapack_complex_float* DL, const lapack_complex_float* D,
-                        const lapack_complex_float* DU, const lapack_complex_float* DLF,
-                        const lapack_complex_float* DF, const lapack_complex_float* DUF,
-                        const lapack_complex_float* DU2, const lapack_int* ipiv,
-                        const lapack_complex_float* B, const lapack_int* ldb,
-                        lapack_complex_float* X, const lapack_int* ldx, float* ferr, float* berr,
-                        lapack_complex_float* work, float* rwork, lapack_int* info
+void LAPACK_cgtrfs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs, const lapack_complex_float* DL,
+                        const lapack_complex_float* D, const lapack_complex_float* DU, const lapack_complex_float* DLF,
+                        const lapack_complex_float* DF, const lapack_complex_float* DUF, const lapack_complex_float* DU2,
+                        const lapack_int* ipiv, const lapack_complex_float* B, const lapack_int* ldb, lapack_complex_float* X,
+                        const lapack_int* ldx, float* ferr, float* berr, lapack_complex_float* work, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -4536,11 +3970,9 @@ void LAPACK_cgtrfs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_dgtrfs_base LAPACK_GLOBAL(dgtrfs, DGTRFS)
-void LAPACK_dgtrfs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs,
-                        const double* DL, const double* D, const double* DU, const double* DLF,
-                        const double* DF, const double* DUF, const double* DU2,
-                        const lapack_int* ipiv, const double* B, const lapack_int* ldb, double* X,
-                        const lapack_int* ldx, double* ferr, double* berr, double* work,
+void LAPACK_dgtrfs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs, const double* DL, const double* D, const double* DU,
+                        const double* DLF, const double* DF, const double* DUF, const double* DU2, const lapack_int* ipiv, const double* B,
+                        const lapack_int* ldb, double* X, const lapack_int* ldx, double* ferr, double* berr, double* work,
                         lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -4554,11 +3986,10 @@ void LAPACK_dgtrfs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_sgtrfs_base LAPACK_GLOBAL(sgtrfs, SGTRFS)
-void LAPACK_sgtrfs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs,
-                        const float* DL, const float* D, const float* DU, const float* DLF,
-                        const float* DF, const float* DUF, const float* DU2, const lapack_int* ipiv,
-                        const float* B, const lapack_int* ldb, float* X, const lapack_int* ldx,
-                        float* ferr, float* berr, float* work, lapack_int* iwork, lapack_int* info
+void LAPACK_sgtrfs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs, const float* DL, const float* D, const float* DU,
+                        const float* DLF, const float* DF, const float* DUF, const float* DU2, const lapack_int* ipiv, const float* B,
+                        const lapack_int* ldb, float* X, const lapack_int* ldx, float* ferr, float* berr, float* work, lapack_int* iwork,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -4571,14 +4002,11 @@ void LAPACK_sgtrfs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_zgtrfs_base LAPACK_GLOBAL(zgtrfs, ZGTRFS)
-void LAPACK_zgtrfs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs,
-                        const lapack_complex_double* DL, const lapack_complex_double* D,
-                        const lapack_complex_double* DU, const lapack_complex_double* DLF,
-                        const lapack_complex_double* DF, const lapack_complex_double* DUF,
-                        const lapack_complex_double* DU2, const lapack_int* ipiv,
-                        const lapack_complex_double* B, const lapack_int* ldb,
-                        lapack_complex_double* X, const lapack_int* ldx, double* ferr, double* berr,
-                        lapack_complex_double* work, double* rwork, lapack_int* info
+void LAPACK_zgtrfs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs, const lapack_complex_double* DL,
+                        const lapack_complex_double* D, const lapack_complex_double* DU, const lapack_complex_double* DLF,
+                        const lapack_complex_double* DF, const lapack_complex_double* DUF, const lapack_complex_double* DU2,
+                        const lapack_int* ipiv, const lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* X,
+                        const lapack_int* ldx, double* ferr, double* berr, lapack_complex_double* work, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -4591,32 +4019,27 @@ void LAPACK_zgtrfs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_cgtsv LAPACK_GLOBAL(cgtsv, CGTSV)
-void LAPACK_cgtsv(const lapack_int* n, const lapack_int* nrhs, lapack_complex_float* DL,
-                  lapack_complex_float* D, lapack_complex_float* DU, lapack_complex_float* B,
-                  const lapack_int* ldb, lapack_int* info);
+void LAPACK_cgtsv(const lapack_int* n, const lapack_int* nrhs, lapack_complex_float* DL, lapack_complex_float* D, lapack_complex_float* DU,
+                  lapack_complex_float* B, const lapack_int* ldb, lapack_int* info);
 
 #define LAPACK_dgtsv LAPACK_GLOBAL(dgtsv, DGTSV)
-void LAPACK_dgtsv(const lapack_int* n, const lapack_int* nrhs, double* DL, double* D, double* DU,
-                  double* B, const lapack_int* ldb, lapack_int* info);
+void LAPACK_dgtsv(const lapack_int* n, const lapack_int* nrhs, double* DL, double* D, double* DU, double* B, const lapack_int* ldb,
+                  lapack_int* info);
 
 #define LAPACK_sgtsv LAPACK_GLOBAL(sgtsv, SGTSV)
-void LAPACK_sgtsv(const lapack_int* n, const lapack_int* nrhs, float* DL, float* D, float* DU,
-                  float* B, const lapack_int* ldb, lapack_int* info);
+void LAPACK_sgtsv(const lapack_int* n, const lapack_int* nrhs, float* DL, float* D, float* DU, float* B, const lapack_int* ldb,
+                  lapack_int* info);
 
 #define LAPACK_zgtsv LAPACK_GLOBAL(zgtsv, ZGTSV)
-void LAPACK_zgtsv(const lapack_int* n, const lapack_int* nrhs, lapack_complex_double* DL,
-                  lapack_complex_double* D, lapack_complex_double* DU, lapack_complex_double* B,
-                  const lapack_int* ldb, lapack_int* info);
+void LAPACK_zgtsv(const lapack_int* n, const lapack_int* nrhs, lapack_complex_double* DL, lapack_complex_double* D,
+                  lapack_complex_double* DU, lapack_complex_double* B, const lapack_int* ldb, lapack_int* info);
 
 #define LAPACK_cgtsvx_base LAPACK_GLOBAL(cgtsvx, CGTSVX)
-void LAPACK_cgtsvx_base(const char* fact, const char* trans, const lapack_int* n,
-                        const lapack_int* nrhs, const lapack_complex_float* DL,
-                        const lapack_complex_float* D, const lapack_complex_float* DU,
-                        lapack_complex_float* DLF, lapack_complex_float* DF,
-                        lapack_complex_float* DUF, lapack_complex_float* DU2, lapack_int* ipiv,
-                        const lapack_complex_float* B, const lapack_int* ldb,
-                        lapack_complex_float* X, const lapack_int* ldx, float* rcond, float* ferr,
-                        float* berr, lapack_complex_float* work, float* rwork, lapack_int* info
+void LAPACK_cgtsvx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* nrhs, const lapack_complex_float* DL,
+                        const lapack_complex_float* D, const lapack_complex_float* DU, lapack_complex_float* DLF, lapack_complex_float* DF,
+                        lapack_complex_float* DUF, lapack_complex_float* DU2, lapack_int* ipiv, const lapack_complex_float* B,
+                        const lapack_int* ldb, lapack_complex_float* X, const lapack_int* ldx, float* rcond, float* ferr, float* berr,
+                        lapack_complex_float* work, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -4629,12 +4052,10 @@ void LAPACK_cgtsvx_base(const char* fact, const char* trans, const lapack_int* n
 #endif
 
 #define LAPACK_dgtsvx_base LAPACK_GLOBAL(dgtsvx, DGTSVX)
-void LAPACK_dgtsvx_base(const char* fact, const char* trans, const lapack_int* n,
-                        const lapack_int* nrhs, const double* DL, const double* D, const double* DU,
-                        double* DLF, double* DF, double* DUF, double* DU2, lapack_int* ipiv,
-                        const double* B, const lapack_int* ldb, double* X, const lapack_int* ldx,
-                        double* rcond, double* ferr, double* berr, double* work, lapack_int* iwork,
-                        lapack_int* info
+void LAPACK_dgtsvx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* nrhs, const double* DL, const double* D,
+                        const double* DU, double* DLF, double* DF, double* DUF, double* DU2, lapack_int* ipiv, const double* B,
+                        const lapack_int* ldb, double* X, const lapack_int* ldx, double* rcond, double* ferr, double* berr, double* work,
+                        lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -4647,12 +4068,10 @@ void LAPACK_dgtsvx_base(const char* fact, const char* trans, const lapack_int* n
 #endif
 
 #define LAPACK_sgtsvx_base LAPACK_GLOBAL(sgtsvx, SGTSVX)
-void LAPACK_sgtsvx_base(const char* fact, const char* trans, const lapack_int* n,
-                        const lapack_int* nrhs, const float* DL, const float* D, const float* DU,
-                        float* DLF, float* DF, float* DUF, float* DU2, lapack_int* ipiv,
-                        const float* B, const lapack_int* ldb, float* X, const lapack_int* ldx,
-                        float* rcond, float* ferr, float* berr, float* work, lapack_int* iwork,
-                        lapack_int* info
+void LAPACK_sgtsvx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* nrhs, const float* DL, const float* D,
+                        const float* DU, float* DLF, float* DF, float* DUF, float* DU2, lapack_int* ipiv, const float* B,
+                        const lapack_int* ldb, float* X, const lapack_int* ldx, float* rcond, float* ferr, float* berr, float* work,
+                        lapack_int* iwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -4665,15 +4084,11 @@ void LAPACK_sgtsvx_base(const char* fact, const char* trans, const lapack_int* n
 #endif
 
 #define LAPACK_zgtsvx_base LAPACK_GLOBAL(zgtsvx, ZGTSVX)
-void LAPACK_zgtsvx_base(const char* fact, const char* trans, const lapack_int* n,
-                        const lapack_int* nrhs, const lapack_complex_double* DL,
-                        const lapack_complex_double* D, const lapack_complex_double* DU,
-                        lapack_complex_double* DLF, lapack_complex_double* DF,
-                        lapack_complex_double* DUF, lapack_complex_double* DU2, lapack_int* ipiv,
-                        const lapack_complex_double* B, const lapack_int* ldb,
-                        lapack_complex_double* X, const lapack_int* ldx, double* rcond,
-                        double* ferr, double* berr, lapack_complex_double* work, double* rwork,
-                        lapack_int* info
+void LAPACK_zgtsvx_base(const char* fact, const char* trans, const lapack_int* n, const lapack_int* nrhs, const lapack_complex_double* DL,
+                        const lapack_complex_double* D, const lapack_complex_double* DU, lapack_complex_double* DLF,
+                        lapack_complex_double* DF, lapack_complex_double* DUF, lapack_complex_double* DU2, lapack_int* ipiv,
+                        const lapack_complex_double* B, const lapack_int* ldb, lapack_complex_double* X, const lapack_int* ldx,
+                        double* rcond, double* ferr, double* berr, lapack_complex_double* work, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -4686,29 +4101,23 @@ void LAPACK_zgtsvx_base(const char* fact, const char* trans, const lapack_int* n
 #endif
 
 #define LAPACK_cgttrf LAPACK_GLOBAL(cgttrf, CGTTRF)
-void LAPACK_cgttrf(const lapack_int* n, lapack_complex_float* DL, lapack_complex_float* D,
-                   lapack_complex_float* DU, lapack_complex_float* DU2, lapack_int* ipiv,
-                   lapack_int* info);
+void LAPACK_cgttrf(const lapack_int* n, lapack_complex_float* DL, lapack_complex_float* D, lapack_complex_float* DU,
+                   lapack_complex_float* DU2, lapack_int* ipiv, lapack_int* info);
 
 #define LAPACK_dgttrf LAPACK_GLOBAL(dgttrf, DGTTRF)
-void LAPACK_dgttrf(const lapack_int* n, double* DL, double* D, double* DU, double* DU2,
-                   lapack_int* ipiv, lapack_int* info);
+void LAPACK_dgttrf(const lapack_int* n, double* DL, double* D, double* DU, double* DU2, lapack_int* ipiv, lapack_int* info);
 
 #define LAPACK_sgttrf LAPACK_GLOBAL(sgttrf, SGTTRF)
-void LAPACK_sgttrf(const lapack_int* n, float* DL, float* D, float* DU, float* DU2,
-                   lapack_int* ipiv, lapack_int* info);
+void LAPACK_sgttrf(const lapack_int* n, float* DL, float* D, float* DU, float* DU2, lapack_int* ipiv, lapack_int* info);
 
 #define LAPACK_zgttrf LAPACK_GLOBAL(zgttrf, ZGTTRF)
-void LAPACK_zgttrf(const lapack_int* n, lapack_complex_double* DL, lapack_complex_double* D,
-                   lapack_complex_double* DU, lapack_complex_double* DU2, lapack_int* ipiv,
-                   lapack_int* info);
+void LAPACK_zgttrf(const lapack_int* n, lapack_complex_double* DL, lapack_complex_double* D, lapack_complex_double* DU,
+                   lapack_complex_double* DU2, lapack_int* ipiv, lapack_int* info);
 
 #define LAPACK_cgttrs_base LAPACK_GLOBAL(cgttrs, CGTTRS)
-void LAPACK_cgttrs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs,
-                        const lapack_complex_float* DL, const lapack_complex_float* D,
-                        const lapack_complex_float* DU, const lapack_complex_float* DU2,
-                        const lapack_int* ipiv, lapack_complex_float* B, const lapack_int* ldb,
-                        lapack_int* info
+void LAPACK_cgttrs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs, const lapack_complex_float* DL,
+                        const lapack_complex_float* D, const lapack_complex_float* DU, const lapack_complex_float* DU2,
+                        const lapack_int* ipiv, lapack_complex_float* B, const lapack_int* ldb, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -4721,9 +4130,8 @@ void LAPACK_cgttrs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_dgttrs_base LAPACK_GLOBAL(dgttrs, DGTTRS)
-void LAPACK_dgttrs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs,
-                        const double* DL, const double* D, const double* DU, const double* DU2,
-                        const lapack_int* ipiv, double* B, const lapack_int* ldb, lapack_int* info
+void LAPACK_dgttrs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs, const double* DL, const double* D, const double* DU,
+                        const double* DU2, const lapack_int* ipiv, double* B, const lapack_int* ldb, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -4736,9 +4144,8 @@ void LAPACK_dgttrs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_sgttrs_base LAPACK_GLOBAL(sgttrs, SGTTRS)
-void LAPACK_sgttrs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs,
-                        const float* DL, const float* D, const float* DU, const float* DU2,
-                        const lapack_int* ipiv, float* B, const lapack_int* ldb, lapack_int* info
+void LAPACK_sgttrs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs, const float* DL, const float* D, const float* DU,
+                        const float* DU2, const lapack_int* ipiv, float* B, const lapack_int* ldb, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -4751,11 +4158,9 @@ void LAPACK_sgttrs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_zgttrs_base LAPACK_GLOBAL(zgttrs, ZGTTRS)
-void LAPACK_zgttrs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs,
-                        const lapack_complex_double* DL, const lapack_complex_double* D,
-                        const lapack_complex_double* DU, const lapack_complex_double* DU2,
-                        const lapack_int* ipiv, lapack_complex_double* B, const lapack_int* ldb,
-                        lapack_int* info
+void LAPACK_zgttrs_base(const char* trans, const lapack_int* n, const lapack_int* nrhs, const lapack_complex_double* DL,
+                        const lapack_complex_double* D, const lapack_complex_double* DU, const lapack_complex_double* DU2,
+                        const lapack_int* ipiv, lapack_complex_double* B, const lapack_int* ldb, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -4768,10 +4173,9 @@ void LAPACK_zgttrs_base(const char* trans, const lapack_int* n, const lapack_int
 #endif
 
 #define LAPACK_chbev_base LAPACK_GLOBAL(chbev, CHBEV)
-void LAPACK_chbev_base(const char* jobz, const char* uplo, const lapack_int* n,
-                       const lapack_int* kd, lapack_complex_float* AB, const lapack_int* ldab,
-                       float* W, lapack_complex_float* Z, const lapack_int* ldz,
-                       lapack_complex_float* work, float* rwork, lapack_int* info
+void LAPACK_chbev_base(const char* jobz, const char* uplo, const lapack_int* n, const lapack_int* kd, lapack_complex_float* AB,
+                       const lapack_int* ldab, float* W, lapack_complex_float* Z, const lapack_int* ldz, lapack_complex_float* work,
+                       float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t
@@ -4784,10 +4188,9 @@ void LAPACK_chbev_base(const char* jobz, const char* uplo, const lapack_int* n,
 #endif
 
 #define LAPACK_zhbev_base LAPACK_GLOBAL(zhbev, ZHBEV)
-void LAPACK_zhbev_base(const char* jobz, const char* uplo, const lapack_int* n,
-                       const lapack_int* kd, lapack_complex_double* AB, const lapack_int* ldab,
-                       double* W, lapack_complex_double* Z, const lapack_int* ldz,
-                       lapack_complex_double* work, double* rwork, lapack_int* info
+void LAPACK_zhbev_base(const char* jobz, const char* uplo, const lapack_int* n, const lapack_int* kd, lapack_complex_double* AB,
+                       const lapack_int* ldab, double* W, lapack_complex_double* Z, const lapack_int* ldz, lapack_complex_double* work,
+                       double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t
@@ -4800,10 +4203,8 @@ void LAPACK_zhbev_base(const char* jobz, const char* uplo, const lapack_int* n,
 #endif
 
 #define LAPACK_chbev_2stage_base LAPACK_GLOBAL(chbev_2stage, CHBEV_2STAGE)
-void LAPACK_chbev_2stage_base(const char* jobz, const char* uplo, const lapack_int* n,
-                              const lapack_int* kd, lapack_complex_float* AB,
-                              const lapack_int* ldab, float* W, lapack_complex_float* Z,
-                              const lapack_int* ldz, lapack_complex_float* work,
+void LAPACK_chbev_2stage_base(const char* jobz, const char* uplo, const lapack_int* n, const lapack_int* kd, lapack_complex_float* AB,
+                              const lapack_int* ldab, float* W, lapack_complex_float* Z, const lapack_int* ldz, lapack_complex_float* work,
                               const lapack_int* lwork, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                               ,
@@ -4817,11 +4218,9 @@ void LAPACK_chbev_2stage_base(const char* jobz, const char* uplo, const lapack_i
 #endif
 
 #define LAPACK_zhbev_2stage_base LAPACK_GLOBAL(zhbev_2stage, ZHBEV_2STAGE)
-void LAPACK_zhbev_2stage_base(const char* jobz, const char* uplo, const lapack_int* n,
-                              const lapack_int* kd, lapack_complex_double* AB,
-                              const lapack_int* ldab, double* W, lapack_complex_double* Z,
-                              const lapack_int* ldz, lapack_complex_double* work,
-                              const lapack_int* lwork, double* rwork, lapack_int* info
+void LAPACK_zhbev_2stage_base(const char* jobz, const char* uplo, const lapack_int* n, const lapack_int* kd, lapack_complex_double* AB,
+                              const lapack_int* ldab, double* W, lapack_complex_double* Z, const lapack_int* ldz,
+                              lapack_complex_double* work, const lapack_int* lwork, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                               ,
                               size_t, size_t
@@ -4834,11 +4233,9 @@ void LAPACK_zhbev_2stage_base(const char* jobz, const char* uplo, const lapack_i
 #endif
 
 #define LAPACK_chbevd_base LAPACK_GLOBAL(chbevd, CHBEVD)
-void LAPACK_chbevd_base(const char* jobz, const char* uplo, const lapack_int* n,
-                        const lapack_int* kd, lapack_complex_float* AB, const lapack_int* ldab,
-                        float* W, lapack_complex_float* Z, const lapack_int* ldz,
-                        lapack_complex_float* work, const lapack_int* lwork, float* rwork,
-                        const lapack_int* lrwork, lapack_int* iwork, const lapack_int* liwork,
+void LAPACK_chbevd_base(const char* jobz, const char* uplo, const lapack_int* n, const lapack_int* kd, lapack_complex_float* AB,
+                        const lapack_int* ldab, float* W, lapack_complex_float* Z, const lapack_int* ldz, lapack_complex_float* work,
+                        const lapack_int* lwork, float* rwork, const lapack_int* lrwork, lapack_int* iwork, const lapack_int* liwork,
                         lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -4852,11 +4249,9 @@ void LAPACK_chbevd_base(const char* jobz, const char* uplo, const lapack_int* n,
 #endif
 
 #define LAPACK_zhbevd_base LAPACK_GLOBAL(zhbevd, ZHBEVD)
-void LAPACK_zhbevd_base(const char* jobz, const char* uplo, const lapack_int* n,
-                        const lapack_int* kd, lapack_complex_double* AB, const lapack_int* ldab,
-                        double* W, lapack_complex_double* Z, const lapack_int* ldz,
-                        lapack_complex_double* work, const lapack_int* lwork, double* rwork,
-                        const lapack_int* lrwork, lapack_int* iwork, const lapack_int* liwork,
+void LAPACK_zhbevd_base(const char* jobz, const char* uplo, const lapack_int* n, const lapack_int* kd, lapack_complex_double* AB,
+                        const lapack_int* ldab, double* W, lapack_complex_double* Z, const lapack_int* ldz, lapack_complex_double* work,
+                        const lapack_int* lwork, double* rwork, const lapack_int* lrwork, lapack_int* iwork, const lapack_int* liwork,
                         lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -4870,12 +4265,10 @@ void LAPACK_zhbevd_base(const char* jobz, const char* uplo, const lapack_int* n,
 #endif
 
 #define LAPACK_chbevd_2stage_base LAPACK_GLOBAL(chbevd_2stage, CHBEVD_2STAGE)
-void LAPACK_chbevd_2stage_base(const char* jobz, const char* uplo, const lapack_int* n,
-                               const lapack_int* kd, lapack_complex_float* AB,
-                               const lapack_int* ldab, float* W, lapack_complex_float* Z,
-                               const lapack_int* ldz, lapack_complex_float* work,
-                               const lapack_int* lwork, float* rwork, const lapack_int* lrwork,
-                               lapack_int* iwork, const lapack_int* liwork, lapack_int* info
+void LAPACK_chbevd_2stage_base(const char* jobz, const char* uplo, const lapack_int* n, const lapack_int* kd, lapack_complex_float* AB,
+                               const lapack_int* ldab, float* W, lapack_complex_float* Z, const lapack_int* ldz, lapack_complex_float* work,
+                               const lapack_int* lwork, float* rwork, const lapack_int* lrwork, lapack_int* iwork, const lapack_int* liwork,
+                               lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                                ,
                                size_t, size_t
@@ -4888,11 +4281,9 @@ void LAPACK_chbevd_2stage_base(const char* jobz, const char* uplo, const lapack_
 #endif
 
 #define LAPACK_zhbevd_2stage_base LAPACK_GLOBAL(zhbevd_2stage, ZHBEVD_2STAGE)
-void LAPACK_zhbevd_2stage_base(const char* jobz, const char* uplo, const lapack_int* n,
-                               const lapack_int* kd, lapack_complex_double* AB,
-                               const lapack_int* ldab, double* W, lapack_complex_double* Z,
-                               const lapack_int* ldz, lapack_complex_double* work,
-                               const lapack_int* lwork, double* rwork, const lapack_int* lrwork,
+void LAPACK_zhbevd_2stage_base(const char* jobz, const char* uplo, const lapack_int* n, const lapack_int* kd, lapack_complex_double* AB,
+                               const lapack_int* ldab, double* W, lapack_complex_double* Z, const lapack_int* ldz,
+                               lapack_complex_double* work, const lapack_int* lwork, double* rwork, const lapack_int* lrwork,
                                lapack_int* iwork, const lapack_int* liwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                                ,
@@ -4906,13 +4297,11 @@ void LAPACK_zhbevd_2stage_base(const char* jobz, const char* uplo, const lapack_
 #endif
 
 #define LAPACK_chbevx_base LAPACK_GLOBAL(chbevx, CHBEVX)
-void LAPACK_chbevx_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n,
-                        const lapack_int* kd, lapack_complex_float* AB, const lapack_int* ldab,
-                        lapack_complex_float* Q, const lapack_int* ldq, const float* vl,
-                        const float* vu, const lapack_int* il, const lapack_int* iu,
-                        const float* abstol, lapack_int* m, float* W, lapack_complex_float* Z,
-                        const lapack_int* ldz, lapack_complex_float* work, float* rwork,
-                        lapack_int* iwork, lapack_int* IFAIL, lapack_int* info
+void LAPACK_chbevx_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n, const lapack_int* kd,
+                        lapack_complex_float* AB, const lapack_int* ldab, lapack_complex_float* Q, const lapack_int* ldq, const float* vl,
+                        const float* vu, const lapack_int* il, const lapack_int* iu, const float* abstol, lapack_int* m, float* W,
+                        lapack_complex_float* Z, const lapack_int* ldz, lapack_complex_float* work, float* rwork, lapack_int* iwork,
+                        lapack_int* IFAIL, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -4925,12 +4314,10 @@ void LAPACK_chbevx_base(const char* jobz, const char* range, const char* uplo, c
 #endif
 
 #define LAPACK_zhbevx_base LAPACK_GLOBAL(zhbevx, ZHBEVX)
-void LAPACK_zhbevx_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n,
-                        const lapack_int* kd, lapack_complex_double* AB, const lapack_int* ldab,
-                        lapack_complex_double* Q, const lapack_int* ldq, const double* vl,
-                        const double* vu, const lapack_int* il, const lapack_int* iu,
-                        const double* abstol, lapack_int* m, double* W, lapack_complex_double* Z,
-                        const lapack_int* ldz, lapack_complex_double* work, double* rwork,
+void LAPACK_zhbevx_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n, const lapack_int* kd,
+                        lapack_complex_double* AB, const lapack_int* ldab, lapack_complex_double* Q, const lapack_int* ldq,
+                        const double* vl, const double* vu, const lapack_int* il, const lapack_int* iu, const double* abstol, lapack_int* m,
+                        double* W, lapack_complex_double* Z, const lapack_int* ldz, lapack_complex_double* work, double* rwork,
                         lapack_int* iwork, lapack_int* IFAIL, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -4944,15 +4331,11 @@ void LAPACK_zhbevx_base(const char* jobz, const char* range, const char* uplo, c
 #endif
 
 #define LAPACK_chbevx_2stage_base LAPACK_GLOBAL(chbevx_2stage, CHBEVX_2STAGE)
-void LAPACK_chbevx_2stage_base(const char* jobz, const char* range, const char* uplo,
-                               const lapack_int* n, const lapack_int* kd, lapack_complex_float* AB,
-                               const lapack_int* ldab, lapack_complex_float* Q,
-                               const lapack_int* ldq, const float* vl, const float* vu,
-                               const lapack_int* il, const lapack_int* iu, const float* abstol,
-                               lapack_int* m, float* W, lapack_complex_float* Z,
-                               const lapack_int* ldz, lapack_complex_float* work,
-                               const lapack_int* lwork, float* rwork, lapack_int* iwork,
-                               lapack_int* IFAIL, lapack_int* info
+void LAPACK_chbevx_2stage_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n, const lapack_int* kd,
+                               lapack_complex_float* AB, const lapack_int* ldab, lapack_complex_float* Q, const lapack_int* ldq,
+                               const float* vl, const float* vu, const lapack_int* il, const lapack_int* iu, const float* abstol,
+                               lapack_int* m, float* W, lapack_complex_float* Z, const lapack_int* ldz, lapack_complex_float* work,
+                               const lapack_int* lwork, float* rwork, lapack_int* iwork, lapack_int* IFAIL, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                                ,
                                size_t, size_t, size_t
@@ -4965,15 +4348,11 @@ void LAPACK_chbevx_2stage_base(const char* jobz, const char* range, const char* 
 #endif
 
 #define LAPACK_zhbevx_2stage_base LAPACK_GLOBAL(zhbevx_2stage, ZHBEVX_2STAGE)
-void LAPACK_zhbevx_2stage_base(const char* jobz, const char* range, const char* uplo,
-                               const lapack_int* n, const lapack_int* kd, lapack_complex_double* AB,
-                               const lapack_int* ldab, lapack_complex_double* Q,
-                               const lapack_int* ldq, const double* vl, const double* vu,
-                               const lapack_int* il, const lapack_int* iu, const double* abstol,
-                               lapack_int* m, double* W, lapack_complex_double* Z,
-                               const lapack_int* ldz, lapack_complex_double* work,
-                               const lapack_int* lwork, double* rwork, lapack_int* iwork,
-                               lapack_int* IFAIL, lapack_int* info
+void LAPACK_zhbevx_2stage_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n, const lapack_int* kd,
+                               lapack_complex_double* AB, const lapack_int* ldab, lapack_complex_double* Q, const lapack_int* ldq,
+                               const double* vl, const double* vu, const lapack_int* il, const lapack_int* iu, const double* abstol,
+                               lapack_int* m, double* W, lapack_complex_double* Z, const lapack_int* ldz, lapack_complex_double* work,
+                               const lapack_int* lwork, double* rwork, lapack_int* iwork, lapack_int* IFAIL, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                                ,
                                size_t, size_t, size_t
@@ -4986,11 +4365,9 @@ void LAPACK_zhbevx_2stage_base(const char* jobz, const char* range, const char* 
 #endif
 
 #define LAPACK_chbgst_base LAPACK_GLOBAL(chbgst, CHBGST)
-void LAPACK_chbgst_base(const char* vect, const char* uplo, const lapack_int* n,
-                        const lapack_int* ka, const lapack_int* kb, lapack_complex_float* AB,
-                        const lapack_int* ldab, const lapack_complex_float* BB,
-                        const lapack_int* ldbb, lapack_complex_float* X, const lapack_int* ldx,
-                        lapack_complex_float* work, float* rwork, lapack_int* info
+void LAPACK_chbgst_base(const char* vect, const char* uplo, const lapack_int* n, const lapack_int* ka, const lapack_int* kb,
+                        lapack_complex_float* AB, const lapack_int* ldab, const lapack_complex_float* BB, const lapack_int* ldbb,
+                        lapack_complex_float* X, const lapack_int* ldx, lapack_complex_float* work, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -5003,11 +4380,9 @@ void LAPACK_chbgst_base(const char* vect, const char* uplo, const lapack_int* n,
 #endif
 
 #define LAPACK_zhbgst_base LAPACK_GLOBAL(zhbgst, ZHBGST)
-void LAPACK_zhbgst_base(const char* vect, const char* uplo, const lapack_int* n,
-                        const lapack_int* ka, const lapack_int* kb, lapack_complex_double* AB,
-                        const lapack_int* ldab, const lapack_complex_double* BB,
-                        const lapack_int* ldbb, lapack_complex_double* X, const lapack_int* ldx,
-                        lapack_complex_double* work, double* rwork, lapack_int* info
+void LAPACK_zhbgst_base(const char* vect, const char* uplo, const lapack_int* n, const lapack_int* ka, const lapack_int* kb,
+                        lapack_complex_double* AB, const lapack_int* ldab, const lapack_complex_double* BB, const lapack_int* ldbb,
+                        lapack_complex_double* X, const lapack_int* ldx, lapack_complex_double* work, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -5020,11 +4395,9 @@ void LAPACK_zhbgst_base(const char* vect, const char* uplo, const lapack_int* n,
 #endif
 
 #define LAPACK_chbgv_base LAPACK_GLOBAL(chbgv, CHBGV)
-void LAPACK_chbgv_base(const char* jobz, const char* uplo, const lapack_int* n,
-                       const lapack_int* ka, const lapack_int* kb, lapack_complex_float* AB,
-                       const lapack_int* ldab, lapack_complex_float* BB, const lapack_int* ldbb,
-                       float* W, lapack_complex_float* Z, const lapack_int* ldz,
-                       lapack_complex_float* work, float* rwork, lapack_int* info
+void LAPACK_chbgv_base(const char* jobz, const char* uplo, const lapack_int* n, const lapack_int* ka, const lapack_int* kb,
+                       lapack_complex_float* AB, const lapack_int* ldab, lapack_complex_float* BB, const lapack_int* ldbb, float* W,
+                       lapack_complex_float* Z, const lapack_int* ldz, lapack_complex_float* work, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t
@@ -5037,11 +4410,9 @@ void LAPACK_chbgv_base(const char* jobz, const char* uplo, const lapack_int* n,
 #endif
 
 #define LAPACK_zhbgv_base LAPACK_GLOBAL(zhbgv, ZHBGV)
-void LAPACK_zhbgv_base(const char* jobz, const char* uplo, const lapack_int* n,
-                       const lapack_int* ka, const lapack_int* kb, lapack_complex_double* AB,
-                       const lapack_int* ldab, lapack_complex_double* BB, const lapack_int* ldbb,
-                       double* W, lapack_complex_double* Z, const lapack_int* ldz,
-                       lapack_complex_double* work, double* rwork, lapack_int* info
+void LAPACK_zhbgv_base(const char* jobz, const char* uplo, const lapack_int* n, const lapack_int* ka, const lapack_int* kb,
+                       lapack_complex_double* AB, const lapack_int* ldab, lapack_complex_double* BB, const lapack_int* ldbb, double* W,
+                       lapack_complex_double* Z, const lapack_int* ldz, lapack_complex_double* work, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t
@@ -5054,13 +4425,10 @@ void LAPACK_zhbgv_base(const char* jobz, const char* uplo, const lapack_int* n,
 #endif
 
 #define LAPACK_chbgvd_base LAPACK_GLOBAL(chbgvd, CHBGVD)
-void LAPACK_chbgvd_base(const char* jobz, const char* uplo, const lapack_int* n,
-                        const lapack_int* ka, const lapack_int* kb, lapack_complex_float* AB,
-                        const lapack_int* ldab, lapack_complex_float* BB, const lapack_int* ldbb,
-                        float* W, lapack_complex_float* Z, const lapack_int* ldz,
-                        lapack_complex_float* work, const lapack_int* lwork, float* rwork,
-                        const lapack_int* lrwork, lapack_int* iwork, const lapack_int* liwork,
-                        lapack_int* info
+void LAPACK_chbgvd_base(const char* jobz, const char* uplo, const lapack_int* n, const lapack_int* ka, const lapack_int* kb,
+                        lapack_complex_float* AB, const lapack_int* ldab, lapack_complex_float* BB, const lapack_int* ldbb, float* W,
+                        lapack_complex_float* Z, const lapack_int* ldz, lapack_complex_float* work, const lapack_int* lwork, float* rwork,
+                        const lapack_int* lrwork, lapack_int* iwork, const lapack_int* liwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -5073,13 +4441,10 @@ void LAPACK_chbgvd_base(const char* jobz, const char* uplo, const lapack_int* n,
 #endif
 
 #define LAPACK_zhbgvd_base LAPACK_GLOBAL(zhbgvd, ZHBGVD)
-void LAPACK_zhbgvd_base(const char* jobz, const char* uplo, const lapack_int* n,
-                        const lapack_int* ka, const lapack_int* kb, lapack_complex_double* AB,
-                        const lapack_int* ldab, lapack_complex_double* BB, const lapack_int* ldbb,
-                        double* W, lapack_complex_double* Z, const lapack_int* ldz,
-                        lapack_complex_double* work, const lapack_int* lwork, double* rwork,
-                        const lapack_int* lrwork, lapack_int* iwork, const lapack_int* liwork,
-                        lapack_int* info
+void LAPACK_zhbgvd_base(const char* jobz, const char* uplo, const lapack_int* n, const lapack_int* ka, const lapack_int* kb,
+                        lapack_complex_double* AB, const lapack_int* ldab, lapack_complex_double* BB, const lapack_int* ldbb, double* W,
+                        lapack_complex_double* Z, const lapack_int* ldz, lapack_complex_double* work, const lapack_int* lwork,
+                        double* rwork, const lapack_int* lrwork, lapack_int* iwork, const lapack_int* liwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -5092,14 +4457,12 @@ void LAPACK_zhbgvd_base(const char* jobz, const char* uplo, const lapack_int* n,
 #endif
 
 #define LAPACK_chbgvx_base LAPACK_GLOBAL(chbgvx, CHBGVX)
-void LAPACK_chbgvx_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n,
-                        const lapack_int* ka, const lapack_int* kb, lapack_complex_float* AB,
-                        const lapack_int* ldab, lapack_complex_float* BB, const lapack_int* ldbb,
-                        lapack_complex_float* Q, const lapack_int* ldq, const float* vl,
-                        const float* vu, const lapack_int* il, const lapack_int* iu,
-                        const float* abstol, lapack_int* m, float* W, lapack_complex_float* Z,
-                        const lapack_int* ldz, lapack_complex_float* work, float* rwork,
-                        lapack_int* iwork, lapack_int* IFAIL, lapack_int* info
+void LAPACK_chbgvx_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n, const lapack_int* ka,
+                        const lapack_int* kb, lapack_complex_float* AB, const lapack_int* ldab, lapack_complex_float* BB,
+                        const lapack_int* ldbb, lapack_complex_float* Q, const lapack_int* ldq, const float* vl, const float* vu,
+                        const lapack_int* il, const lapack_int* iu, const float* abstol, lapack_int* m, float* W, lapack_complex_float* Z,
+                        const lapack_int* ldz, lapack_complex_float* work, float* rwork, lapack_int* iwork, lapack_int* IFAIL,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -5112,14 +4475,12 @@ void LAPACK_chbgvx_base(const char* jobz, const char* range, const char* uplo, c
 #endif
 
 #define LAPACK_zhbgvx_base LAPACK_GLOBAL(zhbgvx, ZHBGVX)
-void LAPACK_zhbgvx_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n,
-                        const lapack_int* ka, const lapack_int* kb, lapack_complex_double* AB,
-                        const lapack_int* ldab, lapack_complex_double* BB, const lapack_int* ldbb,
-                        lapack_complex_double* Q, const lapack_int* ldq, const double* vl,
-                        const double* vu, const lapack_int* il, const lapack_int* iu,
-                        const double* abstol, lapack_int* m, double* W, lapack_complex_double* Z,
-                        const lapack_int* ldz, lapack_complex_double* work, double* rwork,
-                        lapack_int* iwork, lapack_int* IFAIL, lapack_int* info
+void LAPACK_zhbgvx_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n, const lapack_int* ka,
+                        const lapack_int* kb, lapack_complex_double* AB, const lapack_int* ldab, lapack_complex_double* BB,
+                        const lapack_int* ldbb, lapack_complex_double* Q, const lapack_int* ldq, const double* vl, const double* vu,
+                        const lapack_int* il, const lapack_int* iu, const double* abstol, lapack_int* m, double* W,
+                        lapack_complex_double* Z, const lapack_int* ldz, lapack_complex_double* work, double* rwork, lapack_int* iwork,
+                        lapack_int* IFAIL, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -5132,9 +4493,8 @@ void LAPACK_zhbgvx_base(const char* jobz, const char* range, const char* uplo, c
 #endif
 
 #define LAPACK_chbtrd_base LAPACK_GLOBAL(chbtrd, CHBTRD)
-void LAPACK_chbtrd_base(const char* vect, const char* uplo, const lapack_int* n,
-                        const lapack_int* kd, lapack_complex_float* AB, const lapack_int* ldab,
-                        float* D, float* E, lapack_complex_float* Q, const lapack_int* ldq,
+void LAPACK_chbtrd_base(const char* vect, const char* uplo, const lapack_int* n, const lapack_int* kd, lapack_complex_float* AB,
+                        const lapack_int* ldab, float* D, float* E, lapack_complex_float* Q, const lapack_int* ldq,
                         lapack_complex_float* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -5148,9 +4508,8 @@ void LAPACK_chbtrd_base(const char* vect, const char* uplo, const lapack_int* n,
 #endif
 
 #define LAPACK_zhbtrd_base LAPACK_GLOBAL(zhbtrd, ZHBTRD)
-void LAPACK_zhbtrd_base(const char* vect, const char* uplo, const lapack_int* n,
-                        const lapack_int* kd, lapack_complex_double* AB, const lapack_int* ldab,
-                        double* D, double* E, lapack_complex_double* Q, const lapack_int* ldq,
+void LAPACK_zhbtrd_base(const char* vect, const char* uplo, const lapack_int* n, const lapack_int* kd, lapack_complex_double* AB,
+                        const lapack_int* ldab, double* D, double* E, lapack_complex_double* Q, const lapack_int* ldq,
                         lapack_complex_double* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
@@ -5164,9 +4523,8 @@ void LAPACK_zhbtrd_base(const char* vect, const char* uplo, const lapack_int* n,
 #endif
 
 #define LAPACK_checon_base LAPACK_GLOBAL(checon, CHECON)
-void LAPACK_checon_base(const char* uplo, const lapack_int* n, const lapack_complex_float* A,
-                        const lapack_int* lda, const lapack_int* ipiv, const float* anorm,
-                        float* rcond, lapack_complex_float* work, lapack_int* info
+void LAPACK_checon_base(const char* uplo, const lapack_int* n, const lapack_complex_float* A, const lapack_int* lda, const lapack_int* ipiv,
+                        const float* anorm, float* rcond, lapack_complex_float* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -5179,9 +4537,8 @@ void LAPACK_checon_base(const char* uplo, const lapack_int* n, const lapack_comp
 #endif
 
 #define LAPACK_zhecon_base LAPACK_GLOBAL(zhecon, ZHECON)
-void LAPACK_zhecon_base(const char* uplo, const lapack_int* n, const lapack_complex_double* A,
-                        const lapack_int* lda, const lapack_int* ipiv, const double* anorm,
-                        double* rcond, lapack_complex_double* work, lapack_int* info
+void LAPACK_zhecon_base(const char* uplo, const lapack_int* n, const lapack_complex_double* A, const lapack_int* lda,
+                        const lapack_int* ipiv, const double* anorm, double* rcond, lapack_complex_double* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t
@@ -5194,9 +4551,8 @@ void LAPACK_zhecon_base(const char* uplo, const lapack_int* n, const lapack_comp
 #endif
 
 #define LAPACK_checon_3_base LAPACK_GLOBAL(checon_3, CHECON_3)
-void LAPACK_checon_3_base(const char* uplo, const lapack_int* n, const lapack_complex_float* A,
-                          const lapack_int* lda, const lapack_complex_float* E,
-                          const lapack_int* ipiv, const float* anorm, float* rcond,
+void LAPACK_checon_3_base(const char* uplo, const lapack_int* n, const lapack_complex_float* A, const lapack_int* lda,
+                          const lapack_complex_float* E, const lapack_int* ipiv, const float* anorm, float* rcond,
                           lapack_complex_float* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                           ,
@@ -5210,9 +4566,8 @@ void LAPACK_checon_3_base(const char* uplo, const lapack_int* n, const lapack_co
 #endif
 
 #define LAPACK_zhecon_3_base LAPACK_GLOBAL(zhecon_3, ZHECON_3)
-void LAPACK_zhecon_3_base(const char* uplo, const lapack_int* n, const lapack_complex_double* A,
-                          const lapack_int* lda, const lapack_complex_double* E,
-                          const lapack_int* ipiv, const double* anorm, double* rcond,
+void LAPACK_zhecon_3_base(const char* uplo, const lapack_int* n, const lapack_complex_double* A, const lapack_int* lda,
+                          const lapack_complex_double* E, const lapack_int* ipiv, const double* anorm, double* rcond,
                           lapack_complex_double* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                           ,
@@ -5226,9 +4581,8 @@ void LAPACK_zhecon_3_base(const char* uplo, const lapack_int* n, const lapack_co
 #endif
 
 #define LAPACK_cheequb_base LAPACK_GLOBAL(cheequb, CHEEQUB)
-void LAPACK_cheequb_base(const char* uplo, const lapack_int* n, const lapack_complex_float* A,
-                         const lapack_int* lda, float* S, float* scond, float* amax,
-                         lapack_complex_float* work, lapack_int* info
+void LAPACK_cheequb_base(const char* uplo, const lapack_int* n, const lapack_complex_float* A, const lapack_int* lda, float* S,
+                         float* scond, float* amax, lapack_complex_float* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t
@@ -5241,9 +4595,8 @@ void LAPACK_cheequb_base(const char* uplo, const lapack_int* n, const lapack_com
 #endif
 
 #define LAPACK_zheequb_base LAPACK_GLOBAL(zheequb, ZHEEQUB)
-void LAPACK_zheequb_base(const char* uplo, const lapack_int* n, const lapack_complex_double* A,
-                         const lapack_int* lda, double* S, double* scond, double* amax,
-                         lapack_complex_double* work, lapack_int* info
+void LAPACK_zheequb_base(const char* uplo, const lapack_int* n, const lapack_complex_double* A, const lapack_int* lda, double* S,
+                         double* scond, double* amax, lapack_complex_double* work, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                          ,
                          size_t
@@ -5256,10 +4609,8 @@ void LAPACK_zheequb_base(const char* uplo, const lapack_int* n, const lapack_com
 #endif
 
 #define LAPACK_cheev_base LAPACK_GLOBAL(cheev, CHEEV)
-void LAPACK_cheev_base(const char* jobz, const char* uplo, const lapack_int* n,
-                       lapack_complex_float* A, const lapack_int* lda, float* W,
-                       lapack_complex_float* work, const lapack_int* lwork, float* rwork,
-                       lapack_int* info
+void LAPACK_cheev_base(const char* jobz, const char* uplo, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, float* W,
+                       lapack_complex_float* work, const lapack_int* lwork, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t
@@ -5272,10 +4623,8 @@ void LAPACK_cheev_base(const char* jobz, const char* uplo, const lapack_int* n,
 #endif
 
 #define LAPACK_zheev_base LAPACK_GLOBAL(zheev, ZHEEV)
-void LAPACK_zheev_base(const char* jobz, const char* uplo, const lapack_int* n,
-                       lapack_complex_double* A, const lapack_int* lda, double* W,
-                       lapack_complex_double* work, const lapack_int* lwork, double* rwork,
-                       lapack_int* info
+void LAPACK_zheev_base(const char* jobz, const char* uplo, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, double* W,
+                       lapack_complex_double* work, const lapack_int* lwork, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                        ,
                        size_t, size_t
@@ -5288,10 +4637,8 @@ void LAPACK_zheev_base(const char* jobz, const char* uplo, const lapack_int* n,
 #endif
 
 #define LAPACK_cheev_2stage_base LAPACK_GLOBAL(cheev_2stage, CHEEV_2STAGE)
-void LAPACK_cheev_2stage_base(const char* jobz, const char* uplo, const lapack_int* n,
-                              lapack_complex_float* A, const lapack_int* lda, float* W,
-                              lapack_complex_float* work, const lapack_int* lwork, float* rwork,
-                              lapack_int* info
+void LAPACK_cheev_2stage_base(const char* jobz, const char* uplo, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda,
+                              float* W, lapack_complex_float* work, const lapack_int* lwork, float* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                               ,
                               size_t, size_t
@@ -5304,10 +4651,8 @@ void LAPACK_cheev_2stage_base(const char* jobz, const char* uplo, const lapack_i
 #endif
 
 #define LAPACK_zheev_2stage_base LAPACK_GLOBAL(zheev_2stage, ZHEEV_2STAGE)
-void LAPACK_zheev_2stage_base(const char* jobz, const char* uplo, const lapack_int* n,
-                              lapack_complex_double* A, const lapack_int* lda, double* W,
-                              lapack_complex_double* work, const lapack_int* lwork, double* rwork,
-                              lapack_int* info
+void LAPACK_zheev_2stage_base(const char* jobz, const char* uplo, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda,
+                              double* W, lapack_complex_double* work, const lapack_int* lwork, double* rwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                               ,
                               size_t, size_t
@@ -5320,11 +4665,9 @@ void LAPACK_zheev_2stage_base(const char* jobz, const char* uplo, const lapack_i
 #endif
 
 #define LAPACK_cheevd_base LAPACK_GLOBAL(cheevd, CHEEVD)
-void LAPACK_cheevd_base(const char* jobz, const char* uplo, const lapack_int* n,
-                        lapack_complex_float* A, const lapack_int* lda, float* W,
-                        lapack_complex_float* work, const lapack_int* lwork, float* rwork,
-                        const lapack_int* lrwork, lapack_int* iwork, const lapack_int* liwork,
-                        lapack_int* info
+void LAPACK_cheevd_base(const char* jobz, const char* uplo, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda, float* W,
+                        lapack_complex_float* work, const lapack_int* lwork, float* rwork, const lapack_int* lrwork, lapack_int* iwork,
+                        const lapack_int* liwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -5337,11 +4680,9 @@ void LAPACK_cheevd_base(const char* jobz, const char* uplo, const lapack_int* n,
 #endif
 
 #define LAPACK_zheevd_base LAPACK_GLOBAL(zheevd, ZHEEVD)
-void LAPACK_zheevd_base(const char* jobz, const char* uplo, const lapack_int* n,
-                        lapack_complex_double* A, const lapack_int* lda, double* W,
-                        lapack_complex_double* work, const lapack_int* lwork, double* rwork,
-                        const lapack_int* lrwork, lapack_int* iwork, const lapack_int* liwork,
-                        lapack_int* info
+void LAPACK_zheevd_base(const char* jobz, const char* uplo, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda, double* W,
+                        lapack_complex_double* work, const lapack_int* lwork, double* rwork, const lapack_int* lrwork, lapack_int* iwork,
+                        const lapack_int* liwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t
@@ -5354,11 +4695,9 @@ void LAPACK_zheevd_base(const char* jobz, const char* uplo, const lapack_int* n,
 #endif
 
 #define LAPACK_cheevd_2stage_base LAPACK_GLOBAL(cheevd_2stage, CHEEVD_2STAGE)
-void LAPACK_cheevd_2stage_base(const char* jobz, const char* uplo, const lapack_int* n,
-                               lapack_complex_float* A, const lapack_int* lda, float* W,
-                               lapack_complex_float* work, const lapack_int* lwork, float* rwork,
-                               const lapack_int* lrwork, lapack_int* iwork,
-                               const lapack_int* liwork, lapack_int* info
+void LAPACK_cheevd_2stage_base(const char* jobz, const char* uplo, const lapack_int* n, lapack_complex_float* A, const lapack_int* lda,
+                               float* W, lapack_complex_float* work, const lapack_int* lwork, float* rwork, const lapack_int* lrwork,
+                               lapack_int* iwork, const lapack_int* liwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                                ,
                                size_t, size_t
@@ -5371,11 +4710,9 @@ void LAPACK_cheevd_2stage_base(const char* jobz, const char* uplo, const lapack_
 #endif
 
 #define LAPACK_zheevd_2stage_base LAPACK_GLOBAL(zheevd_2stage, ZHEEVD_2STAGE)
-void LAPACK_zheevd_2stage_base(const char* jobz, const char* uplo, const lapack_int* n,
-                               lapack_complex_double* A, const lapack_int* lda, double* W,
-                               lapack_complex_double* work, const lapack_int* lwork, double* rwork,
-                               const lapack_int* lrwork, lapack_int* iwork,
-                               const lapack_int* liwork, lapack_int* info
+void LAPACK_zheevd_2stage_base(const char* jobz, const char* uplo, const lapack_int* n, lapack_complex_double* A, const lapack_int* lda,
+                               double* W, lapack_complex_double* work, const lapack_int* lwork, double* rwork, const lapack_int* lrwork,
+                               lapack_int* iwork, const lapack_int* liwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                                ,
                                size_t, size_t
@@ -5388,13 +4725,11 @@ void LAPACK_zheevd_2stage_base(const char* jobz, const char* uplo, const lapack_
 #endif
 
 #define LAPACK_cheevr_base LAPACK_GLOBAL(cheevr, CHEEVR)
-void LAPACK_cheevr_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n,
-                        lapack_complex_float* A, const lapack_int* lda, const float* vl,
-                        const float* vu, const lapack_int* il, const lapack_int* iu,
-                        const float* abstol, lapack_int* m, float* W, lapack_complex_float* Z,
-                        const lapack_int* ldz, lapack_int* ISUPPZ, lapack_complex_float* work,
-                        const lapack_int* lwork, float* rwork, const lapack_int* lrwork,
-                        lapack_int* iwork, const lapack_int* liwork, lapack_int* info
+void LAPACK_cheevr_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n, lapack_complex_float* A,
+                        const lapack_int* lda, const float* vl, const float* vu, const lapack_int* il, const lapack_int* iu,
+                        const float* abstol, lapack_int* m, float* W, lapack_complex_float* Z, const lapack_int* ldz, lapack_int* ISUPPZ,
+                        lapack_complex_float* work, const lapack_int* lwork, float* rwork, const lapack_int* lrwork, lapack_int* iwork,
+                        const lapack_int* liwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -5407,13 +4742,11 @@ void LAPACK_cheevr_base(const char* jobz, const char* range, const char* uplo, c
 #endif
 
 #define LAPACK_zheevr_base LAPACK_GLOBAL(zheevr, ZHEEVR)
-void LAPACK_zheevr_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n,
-                        lapack_complex_double* A, const lapack_int* lda, const double* vl,
-                        const double* vu, const lapack_int* il, const lapack_int* iu,
-                        const double* abstol, lapack_int* m, double* W, lapack_complex_double* Z,
-                        const lapack_int* ldz, lapack_int* ISUPPZ, lapack_complex_double* work,
-                        const lapack_int* lwork, double* rwork, const lapack_int* lrwork,
-                        lapack_int* iwork, const lapack_int* liwork, lapack_int* info
+void LAPACK_zheevr_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n, lapack_complex_double* A,
+                        const lapack_int* lda, const double* vl, const double* vu, const lapack_int* il, const lapack_int* iu,
+                        const double* abstol, lapack_int* m, double* W, lapack_complex_double* Z, const lapack_int* ldz, lapack_int* ISUPPZ,
+                        lapack_complex_double* work, const lapack_int* lwork, double* rwork, const lapack_int* lrwork, lapack_int* iwork,
+                        const lapack_int* liwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -5426,14 +4759,11 @@ void LAPACK_zheevr_base(const char* jobz, const char* range, const char* uplo, c
 #endif
 
 #define LAPACK_cheevr_2stage_base LAPACK_GLOBAL(cheevr_2stage, CHEEVR_2STAGE)
-void LAPACK_cheevr_2stage_base(const char* jobz, const char* range, const char* uplo,
-                               const lapack_int* n, lapack_complex_float* A, const lapack_int* lda,
-                               const float* vl, const float* vu, const lapack_int* il,
-                               const lapack_int* iu, const float* abstol, lapack_int* m, float* W,
-                               lapack_complex_float* Z, const lapack_int* ldz, lapack_int* ISUPPZ,
-                               lapack_complex_float* work, const lapack_int* lwork, float* rwork,
-                               const lapack_int* lrwork, lapack_int* iwork,
-                               const lapack_int* liwork, lapack_int* info
+void LAPACK_cheevr_2stage_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n, lapack_complex_float* A,
+                               const lapack_int* lda, const float* vl, const float* vu, const lapack_int* il, const lapack_int* iu,
+                               const float* abstol, lapack_int* m, float* W, lapack_complex_float* Z, const lapack_int* ldz,
+                               lapack_int* ISUPPZ, lapack_complex_float* work, const lapack_int* lwork, float* rwork,
+                               const lapack_int* lrwork, lapack_int* iwork, const lapack_int* liwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                                ,
                                size_t, size_t, size_t
@@ -5446,14 +4776,11 @@ void LAPACK_cheevr_2stage_base(const char* jobz, const char* range, const char* 
 #endif
 
 #define LAPACK_zheevr_2stage_base LAPACK_GLOBAL(zheevr_2stage, ZHEEVR_2STAGE)
-void LAPACK_zheevr_2stage_base(const char* jobz, const char* range, const char* uplo,
-                               const lapack_int* n, lapack_complex_double* A, const lapack_int* lda,
-                               const double* vl, const double* vu, const lapack_int* il,
-                               const lapack_int* iu, const double* abstol, lapack_int* m, double* W,
-                               lapack_complex_double* Z, const lapack_int* ldz, lapack_int* ISUPPZ,
-                               lapack_complex_double* work, const lapack_int* lwork, double* rwork,
-                               const lapack_int* lrwork, lapack_int* iwork,
-                               const lapack_int* liwork, lapack_int* info
+void LAPACK_zheevr_2stage_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n, lapack_complex_double* A,
+                               const lapack_int* lda, const double* vl, const double* vu, const lapack_int* il, const lapack_int* iu,
+                               const double* abstol, lapack_int* m, double* W, lapack_complex_double* Z, const lapack_int* ldz,
+                               lapack_int* ISUPPZ, lapack_complex_double* work, const lapack_int* lwork, double* rwork,
+                               const lapack_int* lrwork, lapack_int* iwork, const lapack_int* liwork, lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                                ,
                                size_t, size_t, size_t
@@ -5466,12 +4793,11 @@ void LAPACK_zheevr_2stage_base(const char* jobz, const char* range, const char* 
 #endif
 
 #define LAPACK_cheevx_base LAPACK_GLOBAL(cheevx, CHEEVX)
-void LAPACK_cheevx_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n,
-                        lapack_complex_float* A, const lapack_int* lda, const float* vl,
-                        const float* vu, const lapack_int* il, const lapack_int* iu,
-                        const float* abstol, lapack_int* m, float* W, lapack_complex_float* Z,
-                        const lapack_int* ldz, lapack_complex_float* work, const lapack_int* lwork,
-                        float* rwork, lapack_int* iwork, lapack_int* IFAIL, lapack_int* info
+void LAPACK_cheevx_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n, lapack_complex_float* A,
+                        const lapack_int* lda, const float* vl, const float* vu, const lapack_int* il, const lapack_int* iu,
+                        const float* abstol, lapack_int* m, float* W, lapack_complex_float* Z, const lapack_int* ldz,
+                        lapack_complex_float* work, const lapack_int* lwork, float* rwork, lapack_int* iwork, lapack_int* IFAIL,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -5484,12 +4810,11 @@ void LAPACK_cheevx_base(const char* jobz, const char* range, const char* uplo, c
 #endif
 
 #define LAPACK_zheevx_base LAPACK_GLOBAL(zheevx, ZHEEVX)
-void LAPACK_zheevx_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n,
-                        lapack_complex_double* A, const lapack_int* lda, const double* vl,
-                        const double* vu, const lapack_int* il, const lapack_int* iu,
-                        const double* abstol, lapack_int* m, double* W, lapack_complex_double* Z,
-                        const lapack_int* ldz, lapack_complex_double* work, const lapack_int* lwork,
-                        double* rwork, lapack_int* iwork, lapack_int* IFAIL, lapack_int* info
+void LAPACK_zheevx_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n, lapack_complex_double* A,
+                        const lapack_int* lda, const double* vl, const double* vu, const lapack_int* il, const lapack_int* iu,
+                        const double* abstol, lapack_int* m, double* W, lapack_complex_double* Z, const lapack_int* ldz,
+                        lapack_complex_double* work, const lapack_int* lwork, double* rwork, lapack_int* iwork, lapack_int* IFAIL,
+                        lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                         ,
                         size_t, size_t, size_t
@@ -5502,13 +4827,11 @@ void LAPACK_zheevx_base(const char* jobz, const char* range, const char* uplo, c
 #endif
 
 #define LAPACK_cheevx_2stage_base LAPACK_GLOBAL(cheevx_2stage, CHEEVX_2STAGE)
-void LAPACK_cheevx_2stage_base(const char* jobz, const char* range, const char* uplo,
-                               const lapack_int* n, lapack_complex_float* A, const lapack_int* lda,
-                               const float* vl, const float* vu, const lapack_int* il,
-                               const lapack_int* iu, const float* abstol, lapack_int* m, float* W,
-                               lapack_complex_float* Z, const lapack_int* ldz,
-                               lapack_complex_float* work, const lapack_int* lwork, float* rwork,
-                               lapack_int* iwork, lapack_int* IFAIL, lapack_int* info
+void LAPACK_cheevx_2stage_base(const char* jobz, const char* range, const char* uplo, const lapack_int* n, lapack_complex_float* A,
+                               const lapack_int* lda, const float* vl, const float* vu, const lapack_int* il, const lapack_int* iu,
+                               const float* abstol, lapack_int* m, float* W, lapack_complex_float* Z, const lapack_int* ldz,
+                               lapack_complex_float* work, const lapack_int* lwork, float* rwork, lapack_int* iwork, lapack_int* IFAIL,
+                               lapack_int* info
 #ifdef LAPACK_FORTRAN_STRLEN_END
                                ,
                                size_t, size_t, size_t

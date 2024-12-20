@@ -46,17 +46,14 @@ class DLMgr {
 
         template <class... Args>
         RType operator()(Args&&... args) {
-            return std::invoke(std::any_cast<std::function<RType(Args...)>>(m_any_),
-                               std::forward<Args>(args)...);
+            return std::invoke(std::any_cast<std::function<RType(Args...)>>(m_any_), std::forward<Args>(args)...);
         }
     };
 
   public:
     DLMgr() = default;
 
-    DLMgr(const std::unordered_map<std::string, std::string>& cfg = {}) : DLMgr() {
-        cfg_.merge(cfg);
-    };
+    DLMgr(const std::unordered_map<std::string, std::string>& cfg = {}) : DLMgr() { cfg_.merge(cfg); };
 
     DLMgr(const DLMgr&) = delete;
     DLMgr(DLMgr&&) = delete;

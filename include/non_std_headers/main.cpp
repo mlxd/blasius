@@ -13,8 +13,7 @@ int main(int argc, char* argv[]) {
     // repetitions to keep wall clock time short
     std::size_t repetitions{};
     std::size_t size{};
-    for (size = minSize, repetitions = maxRepetitions; size <= maxSize;
-         size *= 2, repetitions /= 2) {
+    for (size = minSize, repetitions = maxRepetitions; size <= maxSize; size *= 2, repetitions /= 2) {
 
         /// set up data
         const auto aRows = size;
@@ -43,9 +42,8 @@ int main(int argc, char* argv[]) {
             time += timed([&]() { gemm(a.data(), b.data(), c.data(), aRows, aCols, bCols); });
 
             // validate the result c
-            if (!std::equal(
-                    std::begin(c), std::end(c), std::begin(reference), std::end(reference),
-                    [](const Real& l, const Real& r) { return std::abs(l - r) < 1.0e-3; })) {
+            if (!std::equal(std::begin(c), std::end(c), std::begin(reference), std::end(reference),
+                            [](const Real& l, const Real& r) { return std::abs(l - r) < 1.0e-3; })) {
                 std::cerr << "validation error!\n";
                 return EXIT_FAILURE;
             }
