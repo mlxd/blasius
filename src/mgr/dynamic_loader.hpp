@@ -1,5 +1,8 @@
 #pragma once
+#include <any>
 #include <filesystem>
+#include <functional>
+#include <stdexcept>
 #include <unordered_map>
 
 // Adapted from
@@ -26,7 +29,6 @@
 class DLMgr {
   private:
     DYNHANDLE lib_handle_;
-    std::unordered_map<std::string, std::vector> cfg_;
 
     // Follows
     // https://stackoverflow.com/questions/45715219/store-functions-with-different-signatures-in-a-map
@@ -49,11 +51,12 @@ class DLMgr {
             return std::invoke(std::any_cast<std::function<RType(Args...)>>(m_any_), std::forward<Args>(args)...);
         }
     };
+    std::unordered_map<std::string, std::vector<FuncCallableSig<std::any>>> cfg_;
+
 
   public:
     DLMgr() = default;
-
-    DLMgr(const std::unordered_map<std::string, std::string>& cfg = {}) : DLMgr() { cfg_.merge(cfg); };
+    //DLMgr(const std::unordered_map<std::string, std::string>& cfg) : DLMgr() { cfg_.merge(cfg); };
 
     DLMgr(const DLMgr&) = delete;
     DLMgr(DLMgr&&) = delete;
@@ -63,7 +66,7 @@ class DLMgr {
     DYNHANDLE loadLibrary(const char* lib_name) {
 #ifdef __unix__ || __linux__
         auto local_cfg = cfg_["dlopen"];
-        lib_handle_ = DYNOPEN(lib_name, );
+        lib_handle_ = DYNOPEN(lib_name, local_cfg["flags"]);
 #else
         auto local_cfg = cfg_["LoadLibraryEx"];
         lib_handle_ = DYNOPEN(lib_name);
@@ -78,7 +81,7 @@ class DLMgr {
     virtual ~DLMgr() {
         if (lib_handle_) {
             auto ret = closeLibrary();
-            if (ret) { throw std::exception(DYNERROR()); }
+            if (ret) { throw std::runtime_error(DYNERROR());}
         }
     };
 };
