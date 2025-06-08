@@ -1,16 +1,23 @@
+/**
+ * @brief Dynamic loader header.
+
+          This file defines an interface for OS-agnostic dynamic library loading, and function calling. Error handling is provided in the form of a system-agnostic error wrapper routine, with associated error code reporting.
+ * @author Lee J. O'Riordan (loriordan@gmail.com)
+ * @version 0.1
+ * @date 2025-06-08
+ * @copyright Copyright (c) 2025
+ */
 #pragma once
 #include <any>
-#include <filesystem>
 #include <functional>
 #include <stdexcept>
 #include <unordered_map>
 
-
 #include "system_macros.hpp"
 
-///
-/// Dynamic library loader manager
-///
+/**
+ * @brief Dynamic library loader manager.
+ */
 class DLMgr {
   private:
     DYNHANDLE lib_handle_;
@@ -65,14 +72,19 @@ class DLMgr {
     };
 };
 
+/**
+ * @brief OS-specific error code to string mapper.
+ * 
+ * @tparam T Encoded error indicator type.
+ */
 template<class T>
-class ResultT{
+class ErrResultT{
     private:
         bool is_success_;
-        char*  err_msg_;
+        const char * err_msg_;
 
     public:
-        ResultT(T result){
+        ErrResultT(T result){
             #if defined(__unix__) || defined(__linux__)
             if(result>0){
                 err_msg_ = dlerror();
@@ -81,13 +93,10 @@ class ResultT{
             if(result){
                 // Retrieve the system error message for the last-error code
                 // Adapted directly from https://learn.microsoft.com/en-us/windows/win32/debug/retrieving-the-last-error-code
-                DWORD dw = GetLastError(); 
-                FormatMessage(
-                    FORMAT_MESSAGE_ALLOCATE_BUFFER | 
-                    FORMAT_MESSAGE_FROM_SYSTEM |
+                FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM |
                     FORMAT_MESSAGE_IGNORE_INSERTS,
                     NULL,
-                    dw,
+                    GetLastError(),
                     MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
                     err_msg_,
                     0, nullptr);

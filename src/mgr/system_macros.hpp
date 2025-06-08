@@ -1,3 +1,10 @@
+/**
+ * @brief System macros for dynamic library loading and function resolution.
+ * @author Lee J. O'Riordan (loriordan@gmail.com)
+ * @version 0.1
+ * @date 2025-06-08
+ * @copyright Copyright (c) 2025
+ */
 #pragma once
 
 // Adapted from
