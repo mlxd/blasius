@@ -5,23 +5,8 @@
 #include <stdexcept>
 #include <unordered_map>
 
-// Adapted from
-// https://stackoverflow.com/questions/53530566/loading-dll-in-windows-c-for-cross-platform-design
-#ifdef __unix__ || __linux__
-#include <dlfcn.h>
-#define DYNHANDLE              void*
-#define DYNOPEN(lib_path, ...) dlopen(lib_path __VA_OPT__(, ) __VA_ARGS__)
-#define DYNSYM(lib, fn)        dlsym(lib, (fn))
-#define DYNCLOSE(lib)          dlclose(lib)
-#define DYNERROR               dlerror
-#elif defined(_WIN32) || defined(WIN32)
-#include <Windows.h>
-#define DYNHANDLE              HINSTANCE
-#define DYNOPEN(lib_path, ...) LoadLibraryEx(lib_path __VA_OPT__(, ) __VA_ARGS__)
-#define DYNSYM(lib, fn)        GetProcAddress(lib, (fn))
-#define DYNCLOSE(lib)          FreeLibrary(lib)
-#define DYNERROR
-#endif
+
+#include "system_macros.hpp"
 
 ///
 /// Dynamic library loader manager
@@ -63,15 +48,9 @@ class DLMgr {
     DLMgr& operator=(DLMgr&&) = delete;
     DLMgr& operator=(const DLMgr&) = delete;
 
-    DYNHANDLE loadLibrary(const char* lib_name) {
-#ifdef __unix__ || __linux__
-        auto local_cfg = cfg_["dlopen"];
-        lib_handle_ = DYNOPEN(lib_name, local_cfg["flags"]);
-#else
-        auto local_cfg = cfg_["LoadLibraryEx"];
-        lib_handle_ = DYNOPEN(lib_name);
-#endif
-    }
+    template<class T>
+    DYNHANDLE loadLibrary(T lib_name);
+
     auto closeLibrary() {
         auto ret = DYNCLOSE(lib_handle_);
         return ret;
@@ -84,4 +63,48 @@ class DLMgr {
             if (ret) { throw std::runtime_error(DYNERROR());}
         }
     };
+};
+
+template<class T>
+class ResultT{
+    private:
+        bool is_success_;
+        char* err_msg_;
+
+    public:
+        ResultT(T result){
+            #if defined(__unix__) || defined(__linux__)
+            if(result>0){
+                err_msg_ = dlerror();
+            }
+            #elif defined(_WIN32) || defined(WIN32)
+            if(result){
+                // Retrieve the system error message for the last-error code
+                // Adapted directly from https://learn.microsoft.com/en-us/windows/win32/debug/retrieving-the-last-error-code
+                LPVOID lpMsgBuf;
+                DWORD dw = GetLastError(); 
+
+                if (FormatMessage(
+                    FORMAT_MESSAGE_ALLOCATE_BUFFER | 
+                    FORMAT_MESSAGE_FROM_SYSTEM |
+                    FORMAT_MESSAGE_IGNORE_INSERTS,
+                    NULL,
+                    dw,
+                    MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+                    static_cast<LPTSTR>(&lpMsgBuf),
+                    0, nullptr) == 0) {
+                    MessageBox(NULL, TEXT("FormatMessage failed"), TEXT("Error"), MB_OK);
+                }
+                MessageBox(NULL, static_cast<LPCTSTR>(lpMsgBuf), TEXT("Error"), MB_OK);
+                LocalFree(lpMsgBuf);
+            }
+            #endif
+        }
+        bool is_success(){
+            return is_success_;
+        }
+        const char* err_msg(){
+            return err_msg_;
+        }
+
 };
