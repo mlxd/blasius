@@ -10,7 +10,7 @@
 #pragma once
 #include <any>
 #include <functional>
-#include <stdexcept>
+#include <iostream>
 #include <unordered_map>
 
 #include "system_macros.hpp"
@@ -62,12 +62,15 @@ class DLMgr {
         auto ret = DYNCLOSE(lib_handle_);
         return ret;
     }
-    auto loadFunc(const char* f_name) { auto f = DYNSYM(lib_handle_, f_name); }
+    auto loadFunc(const char* f_name) { 
+        auto f = DYNSYM(lib_handle_, f_name); 
+        return f;
+    }
 
     virtual ~DLMgr() {
         if (lib_handle_) {
             auto ret = closeLibrary();
-            if (ret) { throw std::runtime_error(DYNERROR());}
+            if (ret) { std::cerr << DYNERROR();}
         }
     };
 };
