@@ -69,7 +69,7 @@ template<class T>
 class ResultT{
     private:
         bool is_success_;
-        char* err_msg_;
+        char*  err_msg_;
 
     public:
         ResultT(T result){
@@ -81,22 +81,16 @@ class ResultT{
             if(result){
                 // Retrieve the system error message for the last-error code
                 // Adapted directly from https://learn.microsoft.com/en-us/windows/win32/debug/retrieving-the-last-error-code
-                LPVOID lpMsgBuf;
                 DWORD dw = GetLastError(); 
-
-                if (FormatMessage(
+                FormatMessage(
                     FORMAT_MESSAGE_ALLOCATE_BUFFER | 
                     FORMAT_MESSAGE_FROM_SYSTEM |
                     FORMAT_MESSAGE_IGNORE_INSERTS,
                     NULL,
                     dw,
                     MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-                    static_cast<LPTSTR>(&lpMsgBuf),
-                    0, nullptr) == 0) {
-                    MessageBox(NULL, TEXT("FormatMessage failed"), TEXT("Error"), MB_OK);
-                }
-                MessageBox(NULL, static_cast<LPCTSTR>(lpMsgBuf), TEXT("Error"), MB_OK);
-                LocalFree(lpMsgBuf);
+                    err_msg_,
+                    0, nullptr);
             }
             #endif
         }
