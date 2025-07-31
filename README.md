@@ -1,4 +1,4 @@
-# BLASius
+# [Experimental] BLASius
 
 Dynamic BLAS/LAPACK dispatch library through the C interface.
 
