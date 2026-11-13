@@ -5,7 +5,7 @@
 set -u
 cd "$(dirname "$0")"; B=$PWD/build; mkdir -p $B
 V=${OPENBLAS_TAG:-v0.3.34}; J=${JOBS:-$(sysctl -n hw.physicalcpu)}
-echo "ld: $(ld -v 2>&1 | head -1)"; echo "clang: $(clang --version | head -1)"
+echo "ld: $(ld -v 2>&1 | head -1)"; echo "OpenBLAS TARGET will be auto-detected on: $(sysctl -n machdep.cpu.brand_string)"; echo "clang: $(clang --version | head -1)"
 [ -d $B/src ] || git clone -q --depth 1 -b $V https://github.com/OpenMathLib/OpenBLAS $B/src
 for W in lp ilp; do
   [ -f $B/ob_$W/libopenblas.a ] && continue
@@ -46,6 +46,6 @@ for M in A Ac B; do
     echo "  globals not prefixed bl_ in the binary: $(nm -gU $B/bl_test_$M | awk 'NF==3{print $3}' | grep -vE '^_bl_(lp|ilp)_' | grep -vE '^(__mh_execute_header|_main)$' | wc -l | tr -d ' ')"
     nm -gU $B/bl_test_$M | awk 'NF==3{print $3}' | grep -vE '^_bl_(lp|ilp)_' | grep -vE '^(__mh_execute_header|_main)$' | head -5 | sed 's/^/    leak: /'
     echo "  undefined: $(nm -u $B/bl_test_$M | tr '\n' ' ' | cut -c1-300)"
-    OPENBLAS_NUM_THREADS=2 $B/bl_test_$M | sed 's/^/  /'; echo "  rc=$?"
+    OPENBLAS_NUM_THREADS=2 $B/bl_test_$M 2>&1 | sed 's/^/  /'; echo "  rc=${PIPESTATUS[0]}"
   else echo "  LINK FAILED:"; head -8 $B/link_$M.log | sed 's/^/    /'; fi
 done

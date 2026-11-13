@@ -30,9 +30,11 @@ static double check(int ilp) {
 }
 static void* th(void* w) { double* r = malloc(8); *r = 0; for (int k = 0; k < 5; k++) *r = fmax(*r, check((int)(long)w)); return r; }
 int main(void) {
+    setvbuf(stdout, 0, _IOLBF, 0);
     double lp = check(0), ilp = check(1);
     printf("sequential: lp64 %s (%.1e)  ilp64 %s (%.1e)\n", lp < 1e-9 ? "CORRECT" : "WRONG", lp, ilp < 1e-9 ? "CORRECT" : "WRONG", ilp);
-    pthread_t t[4]; for (long i = 0; i < 4; i++) pthread_create(&t[i], 0, th, (void*)(i & 1));
+    pthread_t t[4]; pthread_attr_t at; pthread_attr_init(&at); pthread_attr_setstacksize(&at, 16u << 20); /* macOS default 512 KiB */
+    for (long i = 0; i < 4; i++) pthread_create(&t[i], &at, th, (void*)(i & 1));
     double w = 0; for (int i = 0; i < 4; i++) { double* r; pthread_join(t[i], (void**)&r); w = fmax(w, *r); free(r); }
     printf("4 threads, both widths concurrently: %s (%.1e)\n", w < 1e-9 ? "CORRECT" : "WRONG", w);
     return !(lp < 1e-9 && ilp < 1e-9 && w < 1e-9);
