@@ -19,7 +19,7 @@ for W in lp64 ilp64; do
     acc/ilp64)  SFX='$NEWLAPACK$ILP64'; echo '#define LAPACK_GLOBAL(lcname,UCNAME) lcname##$NEWLAPACK$ILP64' > $O/inc/lapacke_mangling.h ;;
   esac
   D=; [ $W = ilp64 ] && D=-DLAPACK_ILP64
-  files=$(for r in $R; do echo $L/src/lapacke_$r.c $L/src/lapacke_${r}_work.c; done; ls $L/utils/*.c | grep -v lapacke_lsame.c; echo lapacke_lsame.c)
+  files=$(for r in $R; do echo $L/src/lapacke_$r.c $L/src/lapacke_${r}_work.c; done; ls $L/utils/*.c | grep -v lapacke_lsame.c; echo $L/src/lapacke_nancheck.c; echo lapacke_lsame.c)
   for f in $files; do $CC -O2 -w $D -I$O/inc -I$L/include -c $f -o $O/obj/$(basename $f .c).o & done; wait
   ar rcs $O/liblapacke_ref.a $O/obj/*.o
   if [ -n "$SFX" ]; then

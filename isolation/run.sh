@@ -37,11 +37,14 @@ for p in "$BREW_OB" "$SCIPY32" "$SCIPY64"; do
   echo "  $p"
   echo "    flags: $(otool -hv "$p" | tail -1 | awk '{for(i=8;i<=NF;i++) printf "%s ", $i}')"
   echo "    exports: $(nm -gU "$p" | wc -l | tr -d ' '), weak defs: $(nm -gUm "$p" | grep -c 'weak external')"
+  echo "    weak-def names: $(nm -gUm "$p" | grep 'weak external' | awk '{print $NF}' | tr '\n' ' ')"
   echo "    deps: $(otool -L "$p" | tail -n +2 | awk '{print $1}' | tr '\n' ' ')"
 done
 OB="$BREW_OB|||0"; S32="$SCIPY32|scipy_||0"; S64="$SCIPY64|scipy_|64_|1"
 t() { label=$1; shift; out=$(OPENBLAS_NUM_THREADS=2 perl -e 'alarm 300; exec @ARGV' "$@" 2>&1); rc=$?; echo "  [rc=$rc] $label: $(echo "$out" | tail -1)"; }
 
+echo "== 512 KiB default thread stacks (control for the earlier SIGBUS)"
+for s in "$S32"; do SMALL_STACK=1 t "$(basename "${s%%|*}") alone, default stack" $B/prov_test --slot "$s"; done
 echo "== real providers, RTLD_LOCAL"
 for s in "$OB" "$S32" "$S64"; do n=$(basename "${s%%|*}")
   t "$n alone" $B/prov_test --slot "$s"

@@ -22,6 +22,12 @@ if step in ("local", "global"):
 def vis():
     return {n: bool(libc.dlsym(RTLD_DEFAULT, n.encode())) for n in ("blasius_probe_version", "cblas_ddot")}
 before = vis()
+class DlInfo(ctypes.Structure):
+    _fields_ = [("fname", ctypes.c_char_p), ("fbase", ctypes.c_void_p), ("sname", ctypes.c_char_p), ("saddr", ctypes.c_void_p)]
+p = libc.dlsym(RTLD_DEFAULT, b"cblas_ddot")
+if p and step == "none":
+    d = DlInfo(); libc.dladdr.argtypes = [ctypes.c_void_p, ctypes.POINTER(DlInfo)]; libc.dladdr(p, ctypes.byref(d))
+    print(f"  cblas_ddot before any preload comes from {d.fname.decode()}")
 try:
     import probe_ext  # noqa: F401
     res = "import OK"

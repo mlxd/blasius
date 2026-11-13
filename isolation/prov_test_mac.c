@@ -57,8 +57,9 @@ int main(int c, char** v) {
         slots[k].h = dlopen(slots[k].lib, RTLD_NOW | RTLD_LOCAL);
         if (!slots[k].h) { printf("LOADFAIL %s\n", dlerror()); return 3; }
     }
-    pthread_t th[64];
-    for (long i = 0; i < callers; i++) pthread_create(&th[i], 0, caller, (void*)i);
+    pthread_t th[64]; pthread_attr_t at; pthread_attr_init(&at);
+    if (!getenv("SMALL_STACK")) pthread_attr_setstacksize(&at, 16u << 20); /* macOS default is 512 KiB */
+    for (long i = 0; i < callers; i++) pthread_create(&th[i], &at, caller, (void*)i);
     for (int i = 0; i < callers; i++) pthread_join(th[i], 0);
     double worst = 0; for (int i = 0; i < callers; i++) if (results[i] > worst) worst = results[i];
     int ok = worst < 1e-6 && hits > 0;

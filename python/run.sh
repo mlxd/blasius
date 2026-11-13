@@ -22,7 +22,7 @@ while IFS='=' read -r label py; do
   ext=$B/ext-$label; mkdir -p $ext
   if [ -f "$inc/Python.h" ] && clang -bundle -undefined dynamic_lookup -I"$inc" -o $ext/probe_ext.so probe_ext.c -L$B -lblasius.0.1 2>/dev/null; then
     echo "  probe_ext LC_RPATH entries: $(otool -l $ext/probe_ext.so | grep -c LC_RPATH); deps: $(otool -L $ext/probe_ext.so | tail -n +2 | awk '{print $1}' | tr '\n' ' ')"
-    for step in none local global; do "$py" probe.py $B/libblasius.0.1.dylib $ext $step 2>&1 | tail -1; done
+    for step in none local global; do "$py" probe.py $B/libblasius.0.1.dylib $ext $step 2>&1 | tail -2; done
   else
     echo "  (7) skipped: no Python.h at $inc"
   fi

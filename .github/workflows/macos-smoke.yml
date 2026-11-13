@@ -77,6 +77,7 @@ jobs:
           name: probes-${{ matrix.os }}
           path: out/
   baseline:
+    if: "!contains(github.event.head_commit.message, '[probes-only]')"
     strategy:
       fail-fast: false
       matrix:
