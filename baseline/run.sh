@@ -15,6 +15,9 @@ for W in lp ilp; do
   make -s -C $B/ob_$W -j$J NOFORTRAN=1 C_LAPACK=1 NO_SHARED=1 USE_OPENMP=0 NUM_THREADS=64 $I libs netlib > $B/make_$W.log 2>&1 || { echo "OpenBLAS $W build FAILED"; tail -30 $B/make_$W.log; continue; }
   echo "OpenBLAS $V $W built in $(( $(date +%s) - t0 ))s: $(ls -l $B/ob_$W/libopenblas.a | awk '{print $NF}') $(du -h $B/ob_$W/libopenblas_*.a | cut -f1)"
 done
+# ld-1267 (Xcode 26) requires -platform_version on a raw ld -r; ld-1167 (Xcode 16) did not
+PV="-platform_version macos 15.0 $(xcrun --show-sdk-version)"
+echo "platform flag: $PV"
 names() { nm -gU "$1" 2>/dev/null | awk 'NF==3{print $3}' | sort -u; }
 for W in lp ilp; do
   A=$B/ob_$W/libopenblas.a; [ -f $A ] || continue
@@ -24,18 +27,18 @@ for W in lp ilp; do
   sed "s/^_\(.*\)/_\1 _bl_${W}_\1/" $B/api_$W.txt > $B/alias_$W.txt
   sed "s/^_/_bl_${W}_/" $B/api_$W.txt > $B/exp_$W.txt
   # Method A: one partial link; -alias_list renames, -exported_symbols_list localizes the rest
-  ld -r -arch arm64 -o $B/A_$W.o -all_load $A -alias_list $B/alias_$W.txt -exported_symbols_list $B/exp_$W.txt > $B/A_$W.log 2>&1 \
+  ld -r $PV -arch arm64 -o $B/A_$W.o -all_load $A -alias_list $B/alias_$W.txt -exported_symbols_list $B/exp_$W.txt > $B/A_$W.log 2>&1 \
     && echo "  method A (ld -r -alias_list -exported_symbols_list): OK" || { echo "  method A FAILED:"; head -5 $B/A_$W.log; }
   # Method A-classic: same with the classic linker, if this Xcode still has it
-  ld -r -ld_classic -arch arm64 -o $B/Ac_$W.o -all_load $A -alias_list $B/alias_$W.txt -exported_symbols_list $B/exp_$W.txt > $B/Ac_$W.log 2>&1 \
+  ld -r -ld_classic $PV -arch arm64 -o $B/Ac_$W.o -all_load $A -alias_list $B/alias_$W.txt -exported_symbols_list $B/exp_$W.txt > $B/Ac_$W.log 2>&1 \
     && echo "  method A with -ld_classic: OK" || { echo "  method A with -ld_classic FAILED: $(head -2 $B/Ac_$W.log | tr '\n' ' ')"; }
   # Method B: partial link first, then llvm-objcopy renames and ld -r localizes
   OC=$(brew --prefix llvm 2>/dev/null)/bin/llvm-objcopy
   sed "s/^_\(.*\)/_\1 _bl_${W}_\1/" $B/api_$W.txt > $B/redef_$W.txt
   if [ -x "$OC" ]; then
-    ld -r -arch arm64 -o $B/B0_$W.o -all_load $A > $B/B_$W.log 2>&1 \
+    ld -r $PV -arch arm64 -o $B/B0_$W.o -all_load $A > $B/B_$W.log 2>&1 \
     && $OC --redefine-syms=$B/redef_$W.txt $B/B0_$W.o $B/B1_$W.o >> $B/B_$W.log 2>&1 \
-    && ld -r -arch arm64 -o $B/B_$W.o $B/B1_$W.o -exported_symbols_list $B/exp_$W.txt >> $B/B_$W.log 2>&1 \
+    && ld -r $PV -arch arm64 -o $B/B_$W.o $B/B1_$W.o -exported_symbols_list $B/exp_$W.txt >> $B/B_$W.log 2>&1 \
     && echo "  method B (llvm-objcopy --redefine-syms + ld -r -exported_symbols_list): OK" || { echo "  method B FAILED:"; head -5 $B/B_$W.log; }
   else echo "  method B skipped: no llvm-objcopy"; fi
 done
